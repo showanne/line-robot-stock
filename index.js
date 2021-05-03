@@ -21,7 +21,7 @@ bot.on('message', async event => {
   if (event.message.type === 'text') {
     try {
       const response = await axios.get(
-        `https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=${event.message.text}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+        `https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
       )
       const data = response.data.filter(data => {
         return data.info['symbolId'] === event.message.text
