@@ -30,16 +30,16 @@ bot.on('message', async event => {
       let reply = ''
       for (const d of data) {
         reply += `
-        股票中文簡稱：${d.meta.nameZhTw} 
-        \n今日參考價：${d.meta.priceReference} 
-        \n漲停價：${d.meta.priceHighLimit} 
-        \n跌停價：${d.meta.priceLowLimit}  \n\n`
+        股票中文簡稱：${d.data.meta.nameZhTw} 
+        \n今日參考價：${d.data.meta.priceReference} 
+        \n漲停價：${d.data.meta.priceHighLimit} 
+        \n跌停價：${d.data.meta.priceLowLimit}  \n\n`
       }
 
       event.reply(reply)
     } catch (error) {
       console.log(error)
-      event.reply('發生錯誤')
+      event.reply('發生錯誤QQ')
     }
   }
 })

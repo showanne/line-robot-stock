@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    console.log(0);
+
+    const stock = async () => {
+      // console.log(event)
+      // if (event.message.type === 2884) {
+      try {
+        const response = await axios.get(
+          `https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=2884&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+        )
+        console.log('股票中文簡稱：' + response.data.data.meta.nameZhTw);
+        console.log('今日參考價：' + response.data.data.meta.priceReference);
+        console.log('漲停價：' + response.data.data.meta.priceHighLimit);
+        console.log('跌停價：' + response.data.data.meta.priceLowLimit);
+
+
+        //   const data = response.data.filter(data => {
+        //     return data.info.symbolId === event.message.text
+        //   })
+
+        //   let reply = ''
+        //   for (const d of data) {
+        //     reply += `
+        // 股票中文簡稱：${d.meta.nameZhTw} 
+        // \n今日參考價：${d.meta.priceReference} 
+        // \n漲停價：${d.meta.priceHighLimit} 
+        // \n跌停價：${d.meta.priceLowLimit}  \n\n`
+        //   }
+
+        //   event.reply(reply)
+      } catch (error) {
+        console.log(error)
+        event.reply('發生錯誤QQ')
+      }
+      // }
+    }
+    stock()
+  </script>
+</body>
+
+</html>
