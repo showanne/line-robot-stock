@@ -24,19 +24,21 @@ bot.on('message', async event => {
         `https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
       )
       const data = response.data.filter(data => {
-        return data.info['symbolId'] === event.message.text
+        return data.info.symbolId === event.message.text
       })
 
       let reply = ''
       for (const d of data) {
         reply += `
-        股票中文簡稱：${d.meta['nameZhTw']} 
-        \n今日參考價：${d.meta['priceReference']} 
-        \n漲停價：${d.meta['priceHighLimit']} 
-        \n跌停價：${d.meta['priceLowLimit']}  \n\n`
+        股票中文簡稱：${d.meta.nameZhTw} 
+        \n今日參考價：${d.meta.priceReference} 
+        \n漲停價：${d.meta.priceHighLimit} 
+        \n跌停價：${d.meta.priceLowLimit}  \n\n`
       }
+
       event.reply(reply)
     } catch (error) {
+      console.log(error)
       event.reply('發生錯誤')
     }
   }
