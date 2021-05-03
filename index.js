@@ -6,9 +6,7 @@ import axios from 'axios'
 dotenv.config()
 // 讀取後可以用 process.env.變數 使用
 const bot = linebot({
-  channelId: process.env.CHANNEL_ID,
-  channelSecret: process.env.CHANNEL_SECRET,
-  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
+  channelAccessToken: process.env.apiToken
 })
 
 bot.listen('/', process.env.PORT, () => {
@@ -20,14 +18,18 @@ bot.on('message', async event => {
   console.log(event)
   if (event.message.type === 'text') {
     try {
-      const response = await axios.get('https://datacenter.taichung.gov.tw/swagger/OpenData/f116d1db-56f7-4984-bad8-c82e383765c0')
+      const response = await axios.get(`https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=${event.message.text}&apiToken=`)
       const data = response.data.filter(data => {
-        return data['花種'] === event.message.text
+        return data.info['symbolId'] === event.message.text
       })
 
       let reply = ''
       for (const d of data) {
-        reply += `地點：${d['地點']} \n地址：${d['地址']} \n觀賞時期：${d['觀賞時期']} \n\n`
+        reply += `
+        股票中文簡稱：${d.meta['nameZhTw']} 
+        \n今日參考價：${d.meta['priceReference']} 
+        \n漲停價：${d.meta['priceHighLimit']} 
+        \n跌停價：${d.meta['priceLowLimit']}  \n\n`
       }
       event.reply(reply)
     } catch (error) {
