@@ -6,7 +6,9 @@ import axios from 'axios'
 dotenv.config()
 // 讀取後可以用 process.env.變數 使用
 const bot = linebot({
-  channelAccessToken: process.env.apiToken
+  channelId: process.env.CHANNEL_ID,
+  channelSecret: process.env.CHANNEL_SECRET,
+  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
 })
 
 bot.listen('/', process.env.PORT, () => {
@@ -18,7 +20,9 @@ bot.on('message', async event => {
   console.log(event)
   if (event.message.type === 'text') {
     try {
-      const response = await axios.get(`https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=${event.message.text}&apiToken=`)
+      const response = await axios.get(
+        `https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=${event.message.text}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+      )
       const data = response.data.filter(data => {
         return data.info['symbolId'] === event.message.text
       })
