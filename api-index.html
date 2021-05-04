@@ -13,19 +13,22 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <script>
-    console.log(0);
+    // console.log(0);
+
+    const text = prompt('請輸入股票代號')
 
     const stock = async () => {
       // console.log(event)
       // if (event.message.type === 2884) {
+
       try {
         const response = await axios.get(
-          `https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=2884&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+          `https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=${encodeURI(text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
         )
-        console.log('股票中文簡稱：' + response.data.data.meta.nameZhTw);
-        console.log('今日參考價：' + response.data.data.meta.priceReference);
-        console.log('漲停價：' + response.data.data.meta.priceHighLimit);
-        console.log('跌停價：' + response.data.data.meta.priceLowLimit);
+        document.write('<br>股票中文簡稱：' + response.data.data.meta.nameZhTw);
+        document.write('<br>今日參考價：' + response.data.data.meta.priceReference);
+        document.write('<br>漲停價：' + response.data.data.meta.priceHighLimit);
+        document.write('<br>跌停價：' + response.data.data.meta.priceLowLimit);
 
 
         //   const data = response.data.filter(data => {
