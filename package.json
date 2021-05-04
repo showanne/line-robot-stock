@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "iconv-lite": "^0.4.24",
     "linebot": "^1.6.1",
     "ngrok": "^4.0.1"
   },
