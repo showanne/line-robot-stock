@@ -20,25 +20,27 @@ bot.on('message', async event => {
   console.log(event)
   if (event.message.type === 'text') {
     try {
-      const response = await axios.get(
+      const response1 = await axios.get(
         `https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
       )
-      const data = response.data.filter(data => {
-        return data.info.symbolId === event.message.text
-      })
-
-      let reply = ''
-      for (const d of data) {
-        reply += `
-        股票中文簡稱：${d.data.meta.nameZhTw} 
-        \n今日參考價：${d.data.meta.priceReference} 
-        \n漲停價：${d.data.meta.priceHighLimit} 
-        \n跌停價：${d.data.meta.priceLowLimit}  \n\n`
-      }
+      const response2 = await axios.get(
+        `https://api.fugle.tw/realtime/v0/intraday/quote?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+      )
+      // console.log(response1.data)
+      // console.log(response1.data.data.info.symbolId)
+      // console.log(response1.data.data.meta.nameZhTw)
+      // const  = new Date(response2.data.data.quote.trial.at)
+      const reply = `股票中文簡稱：${response1.data.data.meta.nameZhTw}
+        \n股票代號：${response1.data.data.info.symbolId}
+        \n最新一筆成交時間：${new Date(response2.data.data.quote.total.at)}
+        \n今日參考價：${response1.data.data.meta.priceReference}
+        \n漲停價：${response1.data.data.meta.priceHighLimit}
+        \n跌停價：${response1.data.data.meta.priceLowLimit}`
 
       event.reply(reply)
     } catch (error) {
       console.log(error)
+      // event.reply(error)
       event.reply('發生錯誤QQ')
     }
   }
