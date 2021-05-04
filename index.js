@@ -28,15 +28,14 @@ bot.on('message', async event => {
         `https://api.fugle.tw/realtime/v0/intraday/quote?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
       )
       // console.log(response1.data)
-      // console.log(response1.data.data.info.symbolId)
-      // console.log(response1.data.data.meta.nameZhTw)
-      // const  = new Date(response2.data.data.quote.trial.at)
+      console.log(response2.data.data.quote.change)
       const reply = `股票中文簡稱：${response1.data.data.meta.nameZhTw}
         \n股票代號：${response1.data.data.info.symbolId}
         \n最新一筆成交時間：${new Date(response2.data.data.quote.total.at).toLocaleString('zh-tw')}
         \n今日參考價：${response1.data.data.meta.priceReference}
         \n漲停價：${response1.data.data.meta.priceHighLimit}
-        \n跌停價：${response1.data.data.meta.priceLowLimit}`
+        \n跌停價：${response1.data.data.meta.priceLowLimit}
+        \n當日股價之漲跌：${parseInt(response2.data.data.quote.change)}`
 
       event.reply(reply)
     } catch (error) {
