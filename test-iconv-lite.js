@@ -9,17 +9,19 @@ const test = async () => {
       responseType: 'arraybuffer',
       transformResponse: [
         data => {
+          // 將檔案編碼改big5
           return iconv.decode(Buffer.from(data), 'big5')
         }
       ]
     })
+    // 文字轉成陣列 .split(分割文字)
     const arr = data.split('\r\n')
     for (const i in arr) {
       arr[i] = arr[i].split(',')
     }
     console.log(arr)
+    console.log(arr[3])
   } catch (error) {
-    // console.error(error)
     console.log(error)
   }
 }
