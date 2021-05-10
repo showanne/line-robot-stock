@@ -34,18 +34,55 @@
           `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=5`
         )
 
-        // document.write(`<br> ${new Date('2021-05-06T09:01:00.000+08:00').getMonth() + 1}月 ${new Date('2021-05-06T09:01:00.000+08:00').getDate()}日`);
-        // Thu May 06 2021 09:01:00 GMT+0800 (台北標準時間)
-        const now = new Date()
         document.write('<br>股票中文簡稱：' + responseMeta.data.data.meta.nameZhTw);
         document.write('<br>股票代號：' + responseMeta.data.data.info.symbolId);
         document.write('<br>今日參考價：' + responseMeta.data.data.meta.priceReference);
         document.write('<br>漲停價：' + responseMeta.data.data.meta.priceHighLimit);
         document.write('<br>跌停價：' + responseMeta.data.data.meta.priceLowLimit);
         document.write('<br>最新一筆成交時間：' + new Date(responseQuote.data.data.quote.total.at).toLocaleString('zh-tw'));
-        document.write('<br>當日股價之漲跌：' + Math.abs(responseQuote.data.data.quote.change));
-        document.write('<br>dealts：<br>' + JSON.stringify(responseDealts.data.data.dealts));
-        document.write('<br>chart：<br>' + JSON.stringify(responseChart.data.data.chart));
+        document.write('<br><br>')
+
+
+        // document.write(`<br> ${new Date('2021-05-06T09:01:00.000+08:00').getMonth() + 1}月 ${new Date('2021-05-06T09:01:00.000+08:00').getDate()}日`);
+        // Thu May 06 2021 09:01:00 GMT+0800 (台北標準時間)
+        const now = new Date()
+        document.write(now)
+
+        const Y = now.getFullYear()
+        const M = now.getMonth() + 1
+        const D = now.getDate()
+        const hr = now.getHours()
+        const min = now.getMinutes() - 1
+        document.write('<br>')
+        // 2021-05-10T09:23:00.000+08:00":
+        // document.write(Y + '-0' + M + '-' + D + 'T0' + hr + ':' + min + ':00.000+08:00')
+        // 2021-05-10T09:33:00.000+08:00
+        document.write('<br>')
+
+        const nowMinutes = Y + '-0' + M + '-' + D + 'T' + hr + ':' + min + ':00.000+08:00'
+        document.write(nowMinutes)
+
+        // document.write('<br><br><br>chart-nowMinutes：<br>' + responseChart.data.data.chart[`${nowMinutes}`]);//object
+
+        // document.write('<br><br><br>chart-nowMinutes：<br>' + JSON.stringify(responseChart.data.data.chart[`${nowMinutes}`]))
+        // {"open":138.35,"high":138.35,"low":138.35,"close":138.35,"volume":2000,"unit":2}
+
+        // document.write('<br><br><br>
+        // 此分鐘的最高價：<br>' + JSON.stringify(responseChart.data.data.chart[`${nowMinutes}`].high)); //138.35
+
+        // document.write('<br><br><br>此分鐘的最低價：<br>' + JSON.stringify(responseChart.data.data.chart[`${nowMinutes}`].low)); //138.35
+
+        for (const i in responseChart.data.data.chart) {
+          document.write('<br>此分鐘的最高價：<br>' + responseChart.data.data.chart[i].high);
+
+        }
+
+
+
+
+        // document.write('<br>當日股價之漲跌：' + responseQuote.data.data.quote.change);  //undefined
+        // document.write('<br><br><br>dealts：<br>' + JSON.stringify(responseDealts.data.data.dealts));
+        document.write('<br><br><br>chart：<br>' + JSON.stringify(responseChart.data.data.chart));
         // document.write('<br>此分鐘的：' + responseChart.data.data.chart);
         // document.write('<br>此分鐘的開盤價：' + responseChart.data.data.chart.now.open);
         // document.write('<br>此分鐘的最高價：' + responseChart.data.data.chart.now.high);
