@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "0056 Stock Market Live",
+  "altText": "2330 Stock Market Live",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -19,14 +19,14 @@
             },
             {
               "type": "text",
-              "text": "0056",
+              "text": "2330",
               "weight": "bold",
               "size": "xxl",
               "margin": "md"
             },
             {
               "type": "text",
-              "text": "元大高股息",
+              "text": "台積電",
               "size": "xs",
               "color": "#aaaaaa",
               "wrap": true
@@ -54,7 +54,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "35.72",
+                      "text": "599",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -74,7 +74,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "39.29",
+                      "text": "658",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -94,7 +94,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "32.15",
+                      "text": "540",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -114,7 +114,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "0.16",
+                      "text": "-10",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -157,7 +157,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "35.88",
+                      "text": "589",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -176,7 +176,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "35.88",
+                      "text": "589",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -195,7 +195,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "35.88",
+                      "text": "589",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -214,7 +214,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "35.88",
+                      "text": "589",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -233,7 +233,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "247",
+                      "text": "3527",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -260,12 +260,12 @@
                   "action": {
                     "type": "uri",
                     "label": "action",
-                    "uri": "https://www.google.com/finance/quote/0056:TPE?window=MAX"
+                    "uri": "https://www.google.com/finance/quote/2330:TPE?window=MAX"
                   }
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/10 23:38",
+                  "text": "2021/5/11 0:15",
                   "color": "#aaaaaa",
                   "size": "xs",
                   "align": "end"
