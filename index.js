@@ -30,7 +30,6 @@ const getlist = async () => {
       arr[i] = arr[i].split(',')
       arrSymbolId.push(arr[i][0])
     }
-
     // console.log(arrSymbolId)
   } catch (error) {
     console.log(error)
@@ -45,48 +44,70 @@ bot.listen('/', process.env.PORT, () => {
 // async <-> await
 bot.on('message', async event => {
   console.log(event)
-  if (getlist.includes(event.message.type)) {
-    if (event.message.type === 'text') {
-      try {
-        const responseChart = await axios.get(
-          `https://api.fugle.tw/realtime/v0.2/intraday/chart?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
-        )
-        const responseMeta = await axios.get(
-          `https://api.fugle.tw/realtime/v0/intraday/meta?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
-        )
-        const responseQuote = await axios.get(
-          `https://api.fugle.tw/realtime/v0/intraday/quote?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
-        )
-        const responseDealts = await axios.get(
-          `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=5`
-        )
-        console.log(responseChart.data.data.chart)
-        // console.log(responseQuote.data.data.quote.change)
-        const reply = `股票中文簡稱：${responseMeta.data.data.meta.nameZhTw}
+  if (event.message.type === 'text') {
+    // if (getlist.includes(event.message.text)) {
+    try {
+      const responseChart = await axios.get(
+        `https://api.fugle.tw/realtime/v0.2/intraday/chart?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+      )
+      const responseMeta = await axios.get(
+        `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+      )
+      const responseQuote = await axios.get(
+        `https://api.fugle.tw/realtime/v0.2/intraday/quote?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+      )
+      const responseDealts = await axios.get(
+        `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(event.message.text)}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
+      )
+      const googleFin = await axios.get(`https://www.google.com/finance/quote/${encodeURI(event.message.text)}:TPE`)
+
+      // console.log(responseChart.data.data.chart)
+      // console.log(responseQuote.data.data.quote.change)
+
+      for (const c in responseChart.data.data.chart) {
+        console.log(c.substr(11, 5))
+        var chartMin = c.substr(11, 5)
+        var chartData = responseChart.data.data.chart[c]
+        console.log(chartMin)
+        console.log(chartData)
+      }
+
+      for (const d in responseDealts.data.data.dealts) {
+        var dealtsData = responseDealts.data.data.dealts[d]
+        console.log(dealtsData)
+      }
+
+      const reply = `股票中文簡稱：${responseMeta.data.data.meta.nameZhTw}
           \n股票代號：${responseMeta.data.data.info.symbolId}
-          \n此分鐘的：${responseChart.data.data.chart}
-          \n此分鐘的開盤價：${responseChart.data.data.chart.open}
-          \n此分鐘的最高價：${responseChart.data.data.chart.high}
-          \n此分鐘的最低價：${responseChart.data.data.chart.low}
-          \n此分鐘的收盤價：${responseChart.data.data.chart.close}
-          \n此分鐘的交易張數：${responseChart.data.data.chart.unit}
-  
-          \n最新一筆成交時間：${new Date(responseQuote.data.data.quote.total.at).toLocaleString('zh-tw')}
           \n今日參考價：${responseMeta.data.data.meta.priceReference}
           \n漲停價：${responseMeta.data.data.meta.priceHighLimit}
           \n跌停價：${responseMeta.data.data.meta.priceLowLimit}
-          \n當日股價之漲跌：${parseInt(responseQuote.data.data.quote.change)}
-          \n跌停價：${responseDealts.data.data.dealts}
-          `
+          \n當日股價之漲跌幅：${responseQuote.data.data.quote.change}
 
-        event.reply(reply)
-      } catch (error) {
-        console.log(error)
-        // event.reply(error)
-        event.reply('發生錯誤QQ')
-      }
+
+          \n此分鐘：${chartMin}
+          \n此分鐘的開盤價：${chartData.open}
+          \n此分鐘的最高價：${chartData.high}
+          \n此分鐘的最低價：${chartData.low}
+          \n此分鐘的收盤價：${chartData.close}
+          \n此分鐘的交易張數：${chartData.unit}
+
+          \n成交時間：${dealtsData.at.substr(11, 8)}
+          \n成交價格：${dealtsData.price}
+          \n成交張數：${dealtsData.unit}
+
+          \n最新一筆成交時間：${new Date(responseQuote.data.data.quote.total.at).toLocaleString('zh-tw')}
+
+          \n歷史資料查詢：${googleFin}
+          `
+      event.reply(reply)
+    } catch (error) {
+      console.log(error)
+      // event.reply(error)
+      event.reply('發生錯誤QQ')
     }
-  } else {
-    event.reply('沒有這個股票喔OwO')
+    // } else {
+    //   event.reply('沒有這個股票喔OwO')
+    // }
   }
 })
