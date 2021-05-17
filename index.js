@@ -94,6 +94,7 @@ bot.on('message', async event => {
                           type: 'span',
                           text: `${event.message.text}`,
                           weight: 'bold',
+                          size: 'md',
                           color: '#00AA00'
                         },
                         {
@@ -114,15 +115,11 @@ bot.on('message', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: `${newsArr[1].content}`,
+                          text: `${new Date(newsArr[1].publishAt * 1000).toLocaleString('zh-tw').substr(0, 10)}`,
                           size: 'sm',
-                          color: '#bcbcbc'
-                        },
-                        {
-                          type: 'text',
-                          text: `${newsArr[1].publishAt}`,
-                          size: 'sm',
-                          color: '#bcbcbc'
+                          color: '#bcbcbc',
+                          align: 'end'
+                          // margin: 'xxl'
                         }
                       ],
                       spacing: 'sm',
