@@ -46,9 +46,11 @@ bot.listen('/', process.env.PORT, () => {
 bot.on('message', async event => {
   console.log(event)
 
-  if (event.message.type === 'text') {
+  if (event.type === 'postback') {
+    console.log(event.postback.data)
+    event.reply(event.postback.data)
+  } else if (event.type === 'message') {
     console.log(arrSymbolId.includes(event.message.text))
-
     try {
       if (arrSymbolId.includes(event.message.text)) {
         const flex = [
@@ -85,7 +87,7 @@ bot.on('message', async event => {
                   action: {
                     type: 'postback',
                     label: 'stock live',
-                    data: 'stock live'
+                    data: `${event.message.text}`
                   }
                 },
                 {
@@ -95,7 +97,7 @@ bot.on('message', async event => {
                   action: {
                     type: 'message',
                     label: 'stock news',
-                    text: `${event.message.text} news`
+                    text: `${event.message.text}`
                   }
                 },
                 {
@@ -130,7 +132,104 @@ bot.on('message', async event => {
         fs.writeFileSync('stock-menu.json', JSON.stringify(message, null, 2))
         event.reply(message)
       } else {
-        event.reply('無')
+        event.reply('查無此股票')
+      }
+    } catch (error) {
+      console.log(error)
+      // event.reply(error)
+      event.reply('發生錯誤QQ')
+    }
+  }
+})
+
+bot.on('postback', async event => {
+  console.log(event)
+
+  if (event.type === 'postback') {
+    console.log(event.postback.data)
+    console.log(arrSymbolId.includes(event.postback.data))
+    try {
+      if (arrSymbolId.includes(event.postback.data)) {
+        const flex = [
+          {
+            type: 'bubble',
+            hero: {
+              type: 'image',
+              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png',
+              size: 'full',
+              aspectMode: 'cover'
+            },
+            body: {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'text',
+                  text: `${event.postback.data}`,
+                  weight: 'bold',
+                  size: 'xl',
+                  align: 'center'
+                }
+              ]
+            },
+            footer: {
+              type: 'box',
+              layout: 'vertical',
+              spacing: 'sm',
+              contents: [
+                {
+                  type: 'button',
+                  style: 'link',
+                  height: 'sm',
+                  action: {
+                    type: 'postback',
+                    label: 'stock live',
+                    data: `${event.postback.data}`
+                  }
+                },
+                {
+                  type: 'button',
+                  style: 'link',
+                  height: 'sm',
+                  action: {
+                    type: 'message',
+                    label: 'stock news',
+                    text: `${event.postback.data}`
+                  }
+                },
+                {
+                  type: 'button',
+                  style: 'link',
+                  height: 'sm',
+                  action: {
+                    type: 'uri',
+                    label: 'stock history',
+                    uri: `https://www.google.com/finance/quote/${encodeURI(event.postback.data)}:TPE?window=MAX`
+                  }
+                },
+                {
+                  type: 'spacer',
+                  size: 'sm'
+                }
+              ],
+              flex: 0
+            }
+          }
+        ]
+
+        const message = {
+          type: 'flex',
+          altText: `${event.postback.data} Stock News`,
+          contents: {
+            type: 'carousel',
+            contents: flex
+          }
+        }
+
+        fs.writeFileSync('stock-menu.json', JSON.stringify(message, null, 2))
+        event.reply(message)
+      } else {
+        event.reply('查無此股票')
       }
     } catch (error) {
       console.log(error)
