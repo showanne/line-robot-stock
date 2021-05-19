@@ -55,6 +55,7 @@ bot.on('message', async event => {
 
           const newsArr = responseSearch.data.items.data
 
+          // 回復新聞
           const flex = [
             {
               type: 'bubble',
@@ -227,7 +228,7 @@ bot.on('message', async event => {
               size: 'micro',
               hero: {
                 type: 'image',
-                url: `${newsArr[2].coverSrc.xl.src}`,
+                url: `${newsArr[3].coverSrc.xl.src}`,
                 size: 'full',
                 aspectMode: 'cover',
                 aspectRatio: '320:213',
@@ -243,7 +244,7 @@ bot.on('message', async event => {
                 contents: [
                   {
                     type: 'text',
-                    text: `${newsArr[2].title}`,
+                    text: `${newsArr[3].title}`,
                     weight: 'bold',
                     size: 'sm',
                     wrap: true,
@@ -289,7 +290,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: `${newsArr[2].keyword.join('、')}`,
+                            text: `${newsArr[3].keyword.join('、')}`,
                             wrap: false,
                             style: 'italic',
                             color: '#8c8c8c',
@@ -322,6 +323,7 @@ bot.on('message', async event => {
         // if (event.message.text.includes('live')) {}
 
         if (arrSymbolId.includes(event.message.text)) {
+          // 回復選單
           const flex = [
             {
               type: 'bubble',

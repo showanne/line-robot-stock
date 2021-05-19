@@ -1,0 +1,258 @@
+{
+  "type": "flex",
+  "altText": "2330 news Stock News",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "size": "micro",
+        "hero": {
+          "type": "image",
+          "url": "https://cimg.cnyes.cool/prod/news/4648012/xl/8fcd363f31eb9f01a8f177f988eace6e.jpg",
+          "size": "full",
+          "aspectMode": "cover",
+          "aspectRatio": "320:213",
+          "action": {
+            "type": "uri",
+            "label": "action",
+            "uri": "http://linecorp.com/"
+          }
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "〈美股早盤〉區塊鏈概念股殺聲隆隆 四大指數全線挫逾1% 道瓊狂跌400點",
+              "weight": "bold",
+              "size": "sm",
+              "wrap": true,
+              "action": {
+                "type": "uri",
+                "label": "action",
+                "uri": "https://news.cnyes.com/news/id/4648012"
+              },
+              "maxLines": 3
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "icon",
+                  "size": "xs",
+                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                },
+                {
+                  "type": "icon",
+                  "size": "xs",
+                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+                },
+                {
+                  "type": "text",
+                  "text": "2021/5/19 ",
+                  "size": "xs",
+                  "color": "#8c8c8c",
+                  "margin": "md",
+                  "flex": 0
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "spacing": "sm",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "美股、早盤、比特幣、區塊鏈、通膨、Fed、會議紀要、科技股",
+                      "wrap": false,
+                      "style": "italic",
+                      "color": "#8c8c8c",
+                      "size": "xs",
+                      "flex": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "spacing": "sm",
+          "paddingAll": "13px"
+        }
+      },
+      {
+        "type": "bubble",
+        "size": "micro",
+        "hero": {
+          "type": "image",
+          "url": "https://cimg.cnyes.cool/prod/news/4648146/xl/d3f54b3489c0f48a13cbd6a399f866fc.jpg",
+          "size": "full",
+          "aspectMode": "cover",
+          "aspectRatio": "320:213",
+          "action": {
+            "type": "uri",
+            "label": "action",
+            "uri": "http://linecorp.com/"
+          }
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "〈國內疫情升溫〉官股轉買44億元回補權值股 為520行情暖身",
+              "weight": "bold",
+              "size": "sm",
+              "wrap": true,
+              "action": {
+                "type": "uri",
+                "label": "action",
+                "uri": "https://news.cnyes.com/news/id/4648146"
+              },
+              "maxLines": 3
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "icon",
+                  "size": "xs",
+                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                },
+                {
+                  "type": "icon",
+                  "size": "xs",
+                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+                },
+                {
+                  "type": "text",
+                  "text": "2021/5/19 ",
+                  "size": "xs",
+                  "color": "#8c8c8c",
+                  "margin": "md",
+                  "flex": 0
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "spacing": "sm",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "520、疫情、確診、官股、台積電",
+                      "wrap": false,
+                      "style": "italic",
+                      "color": "#8c8c8c",
+                      "size": "xs",
+                      "flex": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "spacing": "sm",
+          "paddingAll": "13px"
+        }
+      },
+      {
+        "type": "bubble",
+        "size": "micro",
+        "hero": {
+          "type": "image",
+          "url": "https://cimg.cnyes.cool/prod/news/4647934/l/8aa41154a296c775eaf346f3fd3b7d6c.jpg",
+          "size": "full",
+          "aspectMode": "cover",
+          "aspectRatio": "320:213",
+          "action": {
+            "type": "uri",
+            "label": "action",
+            "uri": "http://linecorp.com/"
+          }
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "三星5奈米廠落腳德州 投資金額上修至180億美元",
+              "weight": "bold",
+              "size": "sm",
+              "wrap": true,
+              "action": {
+                "type": "uri",
+                "label": "action",
+                "uri": "https://news.cnyes.com/news/id/4647959"
+              },
+              "maxLines": 3
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "icon",
+                  "size": "xs",
+                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                },
+                {
+                  "type": "icon",
+                  "size": "xs",
+                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+                },
+                {
+                  "type": "text",
+                  "text": "2021/5/19 ",
+                  "size": "xs",
+                  "color": "#8c8c8c",
+                  "margin": "md",
+                  "flex": 0
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "spacing": "sm",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "三星、半導體、台積電、英特爾",
+                      "wrap": false,
+                      "style": "italic",
+                      "color": "#8c8c8c",
+                      "size": "xs",
+                      "flex": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "spacing": "sm",
+          "paddingAll": "13px"
+        }
+      }
+    ]
+  }
+}
