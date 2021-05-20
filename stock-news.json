@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "2330 news Stock News",
+  "altText": "2330 Stock News",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -9,7 +9,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4648012/xl/8fcd363f31eb9f01a8f177f988eace6e.jpg",
+          "url": "https://cimg.cnyes.cool/prod/news/4648457/xl/5e998592b52033414eaaf70702a5b7d4.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213",
@@ -25,14 +25,14 @@
           "contents": [
             {
               "type": "text",
-              "text": "〈美股早盤〉區塊鏈概念股殺聲隆隆 四大指數全線挫逾1% 道瓊狂跌400點",
+              "text": "〈美股早盤〉失業金數據報喜 美股止跌回升 主要指數開盤小漲",
               "weight": "bold",
               "size": "sm",
               "wrap": true,
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4648012"
+                "uri": "https://news.cnyes.com/news/id/4648457"
               },
               "maxLines": 3
             },
@@ -52,7 +52,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/19 ",
+                  "text": "2021/5/20 ",
                   "size": "xs",
                   "color": "#8c8c8c",
                   "margin": "md",
@@ -71,7 +71,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "美股、早盤、比特幣、區塊鏈、通膨、Fed、會議紀要、科技股",
+                      "text": "美股、早盤、失業金、Fed、QE、通膨、科技股、比特幣、區塊鏈",
                       "wrap": false,
                       "style": "italic",
                       "color": "#8c8c8c",
@@ -92,7 +92,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4648146/xl/d3f54b3489c0f48a13cbd6a399f866fc.jpg",
+          "url": "https://cimg.cnyes.cool/prod/news/4648475/xl/682959749fb41160c9d4739ae20a713f.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213",
@@ -108,14 +108,14 @@
           "contents": [
             {
               "type": "text",
-              "text": "〈國內疫情升溫〉官股轉買44億元回補權值股 為520行情暖身",
+              "text": "〈美股盤前要聞〉Fed考慮減碼政策 美股期貨走低",
               "weight": "bold",
               "size": "sm",
               "wrap": true,
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4648146"
+                "uri": "https://news.cnyes.com/news/id/4648475"
               },
               "maxLines": 3
             },
@@ -135,7 +135,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/19 ",
+                  "text": "2021/5/20 ",
                   "size": "xs",
                   "color": "#8c8c8c",
                   "margin": "md",
@@ -154,7 +154,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "520、疫情、確診、官股、台積電",
+                      "text": "fed、貨幣寬鬆、思科、超微、福特、晶片",
                       "wrap": false,
                       "style": "italic",
                       "color": "#8c8c8c",
@@ -175,7 +175,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4647934/l/8aa41154a296c775eaf346f3fd3b7d6c.jpg",
+          "url": "https://cimg.cnyes.cool/prod/news/4648574/xl/995acfd2e70beb921d53799c287c40e6.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213",
@@ -191,14 +191,14 @@
           "contents": [
             {
               "type": "text",
-              "text": "三星5奈米廠落腳德州 投資金額上修至180億美元",
+              "text": "外資閃人股匯雙挫 台幣連二貶失守28元關卡",
               "weight": "bold",
               "size": "sm",
               "wrap": true,
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4647959"
+                "uri": "https://news.cnyes.com/news/id/4648667"
               },
               "maxLines": 3
             },
@@ -218,7 +218,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/19 ",
+                  "text": "2021/5/20 ",
                   "size": "xs",
                   "color": "#8c8c8c",
                   "margin": "md",
@@ -237,7 +237,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "三星、半導體、台積電、英特爾",
+                      "text": "新台幣、匯率、貶值、外資、外匯市場",
                       "wrap": false,
                       "style": "italic",
                       "color": "#8c8c8c",

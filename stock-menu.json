@@ -12,7 +12,7 @@
           "contents": [
             {
               "type": "image",
-              "url": "https://www.frevvo.com/blog/wp-content/uploads/2020/01/Frevvo-Improve-Finance-hero.png",
+              "url": "https://i.imgur.com/HFn5hpS.png",
               "size": "full",
               "aspectMode": "cover",
               "aspectRatio": "15:19",
@@ -42,7 +42,7 @@
                         },
                         {
                           "type": "text",
-                          "text": "stock market live",
+                          "text": "stock market",
                           "color": "#2A1E5C",
                           "flex": 0,
                           "offsetTop": "-2px"
@@ -65,8 +65,8 @@
                   "height": "40px",
                   "action": {
                     "type": "postback",
-                    "label": "stock market live",
-                    "data": "2330"
+                    "label": "stock market",
+                    "data": "2330 market"
                   }
                 },
                 {
