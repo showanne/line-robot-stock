@@ -17,17 +17,19 @@ const test = async () => {
     })
     // 文字轉成陣列 .split(分割文字)
     const arr = data.split('\r\n')
+
     for (const i in arr) {
       arr[i] = arr[i].split(',')
       arrSymbolId.push(arr[i][0])
+      arrSymbolId.push(arr[i][2])
     }
 
     // for (const s in arr) {
     //   arrSymbolId.push(arr[s][0])
     // }
     // console.log(arr)
-    // console.log(arr[30][0])
-    // console.log(arrSymbolId)
+    // console.log(arr[30][0], arr[30][2])
+    console.log(arrSymbolId)
     // const reply = arrSymbolId
     // reply()
   } catch (error) {

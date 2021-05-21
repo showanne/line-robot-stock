@@ -327,11 +327,11 @@ bot.on('message', async event => {
           const marketI = event.message.text.indexOf('market') - 1
           console.log(marketI)
 
-          const responseChart = await axios.get(
-            `https://api.fugle.tw/realtime/v0.2/intraday/chart?symbolId=${encodeURI(
-              event.message.text.substr(0, marketI)
-            )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
-          )
+          // const responseChart = await axios.get(
+          //   `https://api.fugle.tw/realtime/v0.2/intraday/chart?symbolId=${encodeURI(
+          //     event.message.text.substr(0, marketI)
+          //   )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+          // )
           const responseMeta = await axios.get(
             `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
               event.message.text.substr(0, marketI)
@@ -347,304 +347,650 @@ bot.on('message', async event => {
           // )
           // const googleFin = await axios.get(`https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, (event.message.text.indexOf("news")-1)))}:TPE`)
 
-          for (const c in responseChart.data.data.chart) {
-            // console.log(c.substr(11, 5))
-            // var chartMin = c.substr(11, 5)
-            var chartData = responseChart.data.data.chart[c]
-            // console.log(chartMin)
-            // console.log(chartData)
-          }
+          // for (const c in responseChart.data.data.chart) {
+          // console.log(c.substr(11, 5))
+          // var chartMin = c.substr(11, 5)
+          // var chartData = responseChart.data.data.chart[c]
+          // console.log(chartMin)
+          // console.log(chartData)
+          // }
 
           // for (const d in responseDealts.data.data.dealts) {
           // var dealtsData = responseDealts.data.data.dealts[d]
           // console.log(dealtsData)
           // }
 
-          const flex = {
-            type: 'bubble',
-            body: {
-              type: 'box',
-              layout: 'vertical',
-              contents: [
-                {
-                  type: 'text',
-                  text: 'Detail',
-                  weight: 'bold',
-                  color: '#1DB446',
-                  size: 'sm'
-                },
-                {
-                  type: 'text',
-                  text: `${responseMeta.data.data.info.symbolId}`,
-                  weight: 'bold',
-                  size: 'xxl',
-                  margin: 'md'
-                },
-                {
-                  type: 'text',
-                  text: `${responseMeta.data.data.meta.nameZhTw}`,
-                  size: 'xs',
-                  color: '#aaaaaa',
-                  wrap: true
-                },
-                {
-                  type: 'separator',
-                  margin: 'xxl'
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  margin: 'xxl',
-                  spacing: 'sm',
-                  contents: [
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '今日參考價',
-                          size: 'sm',
-                          color: '#555555',
-                          flex: 0
-                        },
-                        {
-                          type: 'text',
-                          text: `${responseMeta.data.data.meta.priceReference}`,
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '漲停價',
-                          size: 'sm',
-                          color: '#555555',
-                          flex: 0
-                        },
-                        {
-                          type: 'text',
-                          text: `${responseMeta.data.data.meta.priceHighLimit}`,
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '跌停價',
-                          size: 'sm',
-                          color: '#555555',
-                          flex: 0
-                        },
-                        {
-                          type: 'text',
-                          text: `${responseMeta.data.data.meta.priceLowLimit}`,
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '今日漲跌幅',
-                          size: 'sm',
-                          color: '#555555',
-                          flex: 0
-                        },
-                        {
-                          type: 'text',
-                          text: `${responseQuote.data.data.quote.change}`,
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'separator',
-                      margin: 'xxl'
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      margin: 'xxl',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '此分鐘',
-                          size: 'sm',
-                          color: '#555555'
-                        },
-                        {
-                          type: 'text',
-                          text: 'chartMin',
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '此分鐘的開盤價',
-                          size: 'sm',
-                          color: '#555555'
-                        },
-                        {
-                          type: 'text',
-                          text: `${chartData.open}`,
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '此分鐘的最高價',
-                          size: 'sm',
-                          color: '#555555'
-                        },
-                        {
-                          type: 'text',
-                          text: `${chartData.high}`,
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '此分鐘的最低價',
-                          size: 'sm',
-                          color: '#555555'
-                        },
-                        {
-                          type: 'text',
-                          text: `${chartData.low}`,
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '此分鐘的收盤價',
-                          size: 'sm',
-                          color: '#555555'
-                        },
-                        {
-                          type: 'text',
-                          text: `${chartData.close}`,
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
-                        {
-                          type: 'text',
-                          text: '此分鐘的交易張數',
-                          size: 'sm',
-                          color: '#555555'
-                        },
-                        {
-                          type: 'text',
-                          text: `${chartData.unit}`,
-                          size: 'sm',
-                          color: '#111111',
-                          align: 'end'
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  type: 'separator',
-                  margin: 'xxl'
-                },
-                {
-                  type: 'box',
-                  layout: 'horizontal',
-                  margin: 'md',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '歷史資料查詢',
-                      size: 'xs',
-                      color: '#aaaaaa',
-                      flex: 0,
-                      action: {
-                        type: 'uri',
-                        label: 'action',
-                        uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, marketI))}:TPE?window=MAX`
+          // for (let i=0; i<5; i++;){
+          //               {
+          //                 type: 'box',
+          //                 layout: 'horizontal',
+          //                 contents: [
+          //                   {
+          //                     type: 'text',
+          //                     text: `${responseQuote.data.data.quote.order.bestBids[i].unit}`,
+          //                     size: 'sm',
+          //                     color: '#FF5D73',
+          //                     align: 'center',
+          //                     wrap: false,
+          //                     adjustMode: 'shrink-to-fit'
+          //                   },
+          //                   {
+          //                     type: 'text',
+          //                     text: `${responseQuote.data.data.quote.order.bestBids[i].price}`,
+          //                     size: 'sm',
+          //                     color: '#FF5D73',
+          //                     align: 'center',
+          //                     wrap: false,
+          //                     adjustMode: 'shrink-to-fit'
+          //                   },
+          //                   {
+          //                     type: 'filler'
+          //                   },
+          //                   {
+          //                     type: 'text',
+          //                     text: `${responseQuote.data.data.quote.order.bestAsks[i].price}`,
+          //                     size: 'sm',
+          //                     color: '#06A77D',
+          //                     align: 'center',
+          //                     wrap: false,
+          //                     adjustMode: 'shrink-to-fit'
+          //                   },
+          //                   {
+          //                     type: 'text',
+          //                     text: `${responseQuote.data.data.quote.order.bestAsks[i].unit}`,
+          //                     size: 'sm',
+          //                     color: '#06A77D',
+          //                     align: 'center',
+          //                     wrap: false,
+          //                     adjustMode: 'shrink-to-fit'
+          //                   }
+          //                 ]
+          //               }
+          //             }
+
+          const flex = [
+            {
+              type: 'bubble',
+              body: {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'text',
+                    text: `${responseMeta.data.data.info.symbolId}`,
+                    weight: 'bold',
+                    size: 'xxl',
+                    margin: 'none',
+                    color: '#2A1E5C'
+                  },
+                  {
+                    type: 'text',
+                    text: `${responseMeta.data.data.meta.nameZhTw}`,
+                    size: 'sm',
+                    color: '#2A1E5Caa',
+                    wrap: true,
+                    margin: 'sm',
+                    offsetStart: 'xs'
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl'
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    margin: 'xxl',
+                    spacing: 'sm',
+                    contents: [
+                      // 開盤價 priceOpen
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '開盤價',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.priceOpen}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 最高價 priceHigh
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '最高價',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.priceHigh}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 最低價 priceLow
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '最低價',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.priceLow}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 收盤價 chart 的最後一分鐘的 close
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '收盤價',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: '000',
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 漲跌 change
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '漲跌',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.change}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 漲跌幅 changePercent
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '漲跌幅',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.changePercent}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 總成交張數 unit
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '總成交張數',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.unit}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
                       }
-                    },
-                    {
-                      type: 'text',
-                      text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
-                        new Date().getMinutes() + 1
-                      }`,
-                      color: '#aaaaaa',
-                      size: 'xs',
-                      align: 'end'
-                    }
-                  ]
+                    ]
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl'
+                  },
+                  // 歷史走勢
+                  {
+                    type: 'box',
+                    layout: 'horizontal',
+                    margin: 'md',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '歷史走勢',
+                        size: 'xs',
+                        color: '#aaaaaa',
+                        flex: 0,
+                        action: {
+                          type: 'uri',
+                          label: 'action',
+                          uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, marketI))}:TPE?window=MAX`
+                        }
+                      },
+                      {
+                        type: 'text',
+                        text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
+                          new Date().getMinutes() + 1
+                        }`,
+                        color: '#aaaaaa',
+                        size: 'xs',
+                        align: 'end'
+                      }
+                    ]
+                  }
+                ]
+              },
+              styles: {
+                footer: {
+                  separator: true
                 }
-              ]
+              }
             },
-            styles: {
-              footer: {
-                separator: true
+            {
+              type: 'bubble',
+              body: {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'text',
+                    text: `${responseMeta.data.data.info.symbolId}`,
+                    weight: 'bold',
+                    size: 'xxl',
+                    margin: 'none',
+                    color: '#2A1E5C'
+                  },
+                  {
+                    type: 'text',
+                    text: `${responseMeta.data.data.meta.nameZhTw}`,
+                    size: 'sm',
+                    color: '#2A1E5Caa',
+                    wrap: true,
+                    margin: 'sm',
+                    offsetStart: 'xs'
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl'
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    margin: 'md',
+                    spacing: 'sm',
+                    contents: [
+                      // for (let i=0;i<5;i++ ;){i}
+                      // 買 bestBids 賣 bestAsks
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '買 bestBids',
+                            align: 'end',
+                            color: '#FF5D73'
+                          },
+                          {
+                            type: 'filler'
+                          },
+                          {
+                            type: 'text',
+                            text: '賣 bestAsks',
+                            align: 'start',
+                            color: '#06A77D'
+                          }
+                        ],
+                        // backgroundColor: '#6CD4FFaa',
+                        // paddingAll: 'sm',
+                        justifyContent: 'space-between',
+                        margin: 'lg'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[0].unit}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[0].price}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'filler'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[0].price}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[0].unit}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          }
+                        ]
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[1].unit}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[1].price}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'filler'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[1].price}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[1].unit}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          }
+                        ]
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[2].unit}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[2].price}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'filler'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[2].price}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[2].unit}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          }
+                        ]
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[3].unit}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[3].price}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'filler'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[3].price}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[3].unit}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          }
+                        ]
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[4].unit}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestBids[4].price}`,
+                            size: 'sm',
+                            color: '#FF5D73',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'filler'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[4].price}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseQuote.data.data.quote.order.bestAsks[4].unit}`,
+                            size: 'sm',
+                            color: '#06A77D',
+                            align: 'center',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          }
+                        ]
+                      },
+                      // 百分比
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [
+                          {
+                            type: 'box',
+                            layout: 'vertical',
+                            contents: [
+                              {
+                                type: 'filler'
+                              }
+                            ],
+                            width: '39%',
+                            backgroundColor: '#FF5D73',
+                            height: '8px'
+                          }
+                        ],
+                        backgroundColor: '#06A77D',
+                        height: '8px',
+                        margin: 'md'
+                      }
+                    ]
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl'
+                  },
+                  {
+                    type: 'box',
+                    layout: 'horizontal',
+                    margin: 'md',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '即時走勢',
+                        size: 'xs',
+                        color: '#aaaaaa',
+                        flex: 0,
+                        offsetStart: 'sm',
+                        action: {
+                          type: 'uri',
+                          label: 'action',
+                          uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, marketI))}:TPE`
+                        }
+                      },
+                      {
+                        type: 'text',
+                        text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
+                          new Date().getMinutes() + 1
+                        }`,
+                        color: '#aaaaaa',
+                        size: 'xs',
+                        align: 'end',
+                        offsetEnd: 'sm'
+                      }
+                    ]
+                  }
+                ]
+              },
+              styles: {
+                footer: {
+                  separator: true
+                }
               }
             }
-          }
+          ]
 
           const message = {
             type: 'flex',
             altText: `${event.message.text.substr(0, marketI)} Stock Market`,
             contents: {
               type: 'carousel',
-              contents: [flex]
+              contents: flex
             }
           }
 
