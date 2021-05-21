@@ -148,7 +148,7 @@ bot.on('message', async event => {
               size: 'micro',
               hero: {
                 type: 'image',
-                url: `${newsArr[1].coverSrc.xl.src}`,
+                url: `${newsArr[0].coverSrc.xl.src}`,
                 size: 'full',
                 aspectMode: 'cover',
                 aspectRatio: '320:213',
@@ -231,7 +231,7 @@ bot.on('message', async event => {
               size: 'micro',
               hero: {
                 type: 'image',
-                url: `${newsArr[3].coverSrc.xl.src}`,
+                url: `${newsArr[0].coverSrc.xl.src}`,
                 size: 'full',
                 aspectMode: 'cover',
                 aspectRatio: '320:213',
@@ -345,68 +345,6 @@ bot.on('message', async event => {
           // const responseDealts = await axios.get(
           //   `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(event.message.text.substr(0, (event.message.text.indexOf("news")-1)))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
           // )
-          // const googleFin = await axios.get(`https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, (event.message.text.indexOf("news")-1)))}:TPE`)
-
-          // for (const c in responseChart.data.data.chart) {
-          // console.log(c.substr(11, 5))
-          // var chartMin = c.substr(11, 5)
-          // var chartData = responseChart.data.data.chart[c]
-          // console.log(chartMin)
-          // console.log(chartData)
-          // }
-
-          // for (const d in responseDealts.data.data.dealts) {
-          // var dealtsData = responseDealts.data.data.dealts[d]
-          // console.log(dealtsData)
-          // }
-
-          // for (let i=0; i<5; i++;){
-          //               {
-          //                 type: 'box',
-          //                 layout: 'horizontal',
-          //                 contents: [
-          //                   {
-          //                     type: 'text',
-          //                     text: `${responseQuote.data.data.quote.order.bestBids[i].unit}`,
-          //                     size: 'sm',
-          //                     color: '#FF5D73',
-          //                     align: 'center',
-          //                     wrap: false,
-          //                     adjustMode: 'shrink-to-fit'
-          //                   },
-          //                   {
-          //                     type: 'text',
-          //                     text: `${responseQuote.data.data.quote.order.bestBids[i].price}`,
-          //                     size: 'sm',
-          //                     color: '#FF5D73',
-          //                     align: 'center',
-          //                     wrap: false,
-          //                     adjustMode: 'shrink-to-fit'
-          //                   },
-          //                   {
-          //                     type: 'filler'
-          //                   },
-          //                   {
-          //                     type: 'text',
-          //                     text: `${responseQuote.data.data.quote.order.bestAsks[i].price}`,
-          //                     size: 'sm',
-          //                     color: '#06A77D',
-          //                     align: 'center',
-          //                     wrap: false,
-          //                     adjustMode: 'shrink-to-fit'
-          //                   },
-          //                   {
-          //                     type: 'text',
-          //                     text: `${responseQuote.data.data.quote.order.bestAsks[i].unit}`,
-          //                     size: 'sm',
-          //                     color: '#06A77D',
-          //                     align: 'center',
-          //                     wrap: false,
-          //                     adjustMode: 'shrink-to-fit'
-          //                   }
-          //                 ]
-          //               }
-          //             }
 
           const flex = [
             {
@@ -415,6 +353,7 @@ bot.on('message', async event => {
                 type: 'box',
                 layout: 'vertical',
                 contents: [
+                  // 股票代號
                   {
                     type: 'text',
                     text: `${responseMeta.data.data.info.symbolId}`,
@@ -423,6 +362,7 @@ bot.on('message', async event => {
                     margin: 'none',
                     color: '#2A1E5C'
                   },
+                  // 股票中文名稱
                   {
                     type: 'text',
                     text: `${responseMeta.data.data.meta.nameZhTw}`,
@@ -456,7 +396,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.priceOpen}`,
+                            text: `${responseQuote.data.data.quote.priceOpen.price}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
@@ -477,7 +417,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.priceHigh}`,
+                            text: `${responseQuote.data.data.quote.priceHigh.price}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
@@ -498,7 +438,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.priceLow}`,
+                            text: `${responseQuote.data.data.quote.priceLow.price}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
@@ -582,7 +522,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.unit}`,
+                            text: `${responseQuote.data.data.quote.total.unit}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
@@ -673,7 +613,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: '買 bestBids',
+                            text: '買',
                             align: 'end',
                             color: '#FF5D73'
                           },
@@ -682,7 +622,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: '賣 bestAsks',
+                            text: '賣',
                             align: 'start',
                             color: '#06A77D'
                           }
