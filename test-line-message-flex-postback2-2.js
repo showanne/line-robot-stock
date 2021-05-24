@@ -194,7 +194,8 @@
           "angle": "135deg",
           "endColor": "#3c3899bb",
           "centerColor": "#3c389977",
-          "startColor": "#3c3899cc"
+          "startColor": "#3c3899cc",
+           "centerPosition": "80%"
         },
         "paddingEnd": "98px",
         "offsetEnd": "0px",

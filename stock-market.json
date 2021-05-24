@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "2330 Stock Market",
+  "altText": "0056 Stock Market",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -12,24 +12,20 @@
           "contents": [
             {
               "type": "text",
-              "text": "Detail",
-              "weight": "bold",
-              "color": "#1DB446",
-              "size": "sm"
-            },
-            {
-              "type": "text",
-              "text": "2330",
+              "text": "0056",
               "weight": "bold",
               "size": "xxl",
-              "margin": "md"
+              "margin": "none",
+              "color": "#2A1E5C"
             },
             {
               "type": "text",
-              "text": "台積電",
-              "size": "xs",
-              "color": "#aaaaaa",
-              "wrap": true
+              "text": "元大高股息",
+              "size": "sm",
+              "color": "#2A1E5Caa",
+              "wrap": true,
+              "margin": "sm",
+              "offsetStart": "xs"
             },
             {
               "type": "separator",
@@ -47,14 +43,14 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "今日參考價",
+                      "text": "開盤價",
                       "size": "sm",
                       "color": "#555555",
                       "flex": 0
                     },
                     {
                       "type": "text",
-                      "text": "567",
+                      "text": "33.84",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -67,14 +63,14 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "漲停價",
+                      "text": "最高價",
                       "size": "sm",
                       "color": "#555555",
                       "flex": 0
                     },
                     {
                       "type": "text",
-                      "text": "623",
+                      "text": "34.1",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -87,14 +83,14 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "跌停價",
+                      "text": "最低價",
                       "size": "sm",
                       "color": "#555555",
                       "flex": 0
                     },
                     {
                       "type": "text",
-                      "text": "511",
+                      "text": "33.65",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -107,38 +103,14 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "今日漲跌幅",
+                      "text": "收盤價",
                       "size": "sm",
                       "color": "#555555",
                       "flex": 0
                     },
                     {
                       "type": "text",
-                      "text": "6",
-                      "size": "sm",
-                      "color": "#111111",
-                      "align": "end"
-                    }
-                  ]
-                },
-                {
-                  "type": "separator",
-                  "margin": "xxl"
-                },
-                {
-                  "type": "box",
-                  "layout": "horizontal",
-                  "margin": "xxl",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "此分鐘",
-                      "size": "sm",
-                      "color": "#555555"
-                    },
-                    {
-                      "type": "text",
-                      "text": "chartMin",
+                      "text": "000",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -151,13 +123,14 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "此分鐘的開盤價",
+                      "text": "漲跌",
                       "size": "sm",
-                      "color": "#555555"
+                      "color": "#555555",
+                      "flex": 0
                     },
                     {
                       "type": "text",
-                      "text": "573",
+                      "text": "0.05",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -170,13 +143,14 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "此分鐘的最高價",
+                      "text": "漲跌幅",
                       "size": "sm",
-                      "color": "#555555"
+                      "color": "#555555",
+                      "flex": 0
                     },
                     {
                       "type": "text",
-                      "text": "573",
+                      "text": "0.00147058823529",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -189,51 +163,14 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "此分鐘的最低價",
+                      "text": "總成交張數",
                       "size": "sm",
-                      "color": "#555555"
+                      "color": "#555555",
+                      "flex": 0
                     },
                     {
                       "type": "text",
-                      "text": "573",
-                      "size": "sm",
-                      "color": "#111111",
-                      "align": "end"
-                    }
-                  ]
-                },
-                {
-                  "type": "box",
-                  "layout": "horizontal",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "此分鐘的收盤價",
-                      "size": "sm",
-                      "color": "#555555"
-                    },
-                    {
-                      "type": "text",
-                      "text": "573",
-                      "size": "sm",
-                      "color": "#111111",
-                      "align": "end"
-                    }
-                  ]
-                },
-                {
-                  "type": "box",
-                  "layout": "horizontal",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "此分鐘的交易張數",
-                      "size": "sm",
-                      "color": "#555555"
-                    },
-                    {
-                      "type": "text",
-                      "text": "4147",
+                      "text": "19491",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -253,22 +190,366 @@
               "contents": [
                 {
                   "type": "text",
-                  "text": "歷史資料查詢",
+                  "text": "歷史走勢",
                   "size": "xs",
                   "color": "#aaaaaa",
                   "flex": 0,
                   "action": {
                     "type": "uri",
                     "label": "action",
-                    "uri": "https://www.google.com/finance/quote/2330:TPE?window=MAX"
+                    "uri": "https://www.google.com/finance/quote/0056:TPE?window=MAX"
                   }
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/21 23:28",
+                  "text": "2021/5/25 0:36",
                   "color": "#aaaaaa",
                   "size": "xs",
                   "align": "end"
+                }
+              ]
+            }
+          ]
+        },
+        "styles": {
+          "footer": {
+            "separator": true
+          }
+        }
+      },
+      {
+        "type": "bubble",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "0056",
+              "weight": "bold",
+              "size": "xxl",
+              "margin": "none",
+              "color": "#2A1E5C"
+            },
+            {
+              "type": "text",
+              "text": "元大高股息",
+              "size": "sm",
+              "color": "#2A1E5Caa",
+              "wrap": true,
+              "margin": "sm",
+              "offsetStart": "xs"
+            },
+            {
+              "type": "separator",
+              "margin": "xxl"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "margin": "md",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "買",
+                      "align": "center",
+                      "color": "#FF5D73"
+                    },
+                    {
+                      "type": "filler"
+                    },
+                    {
+                      "type": "text",
+                      "text": "賣",
+                      "align": "center",
+                      "color": "#06A77D"
+                    }
+                  ],
+                  "justifyContent": "space-between",
+                  "margin": "lg"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "219",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "start",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34.05",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "end",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "filler"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34.06",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "26",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "2",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "start",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34.03",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "end",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "filler"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34.07",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "5",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "1",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "start",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34.02",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "end",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "filler"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34.08",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "109",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "2",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "start",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34.01",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "end",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "filler"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34.09",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "2",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "76",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "start",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "end",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "filler"
+                    },
+                    {
+                      "type": "text",
+                      "text": "34.1",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "112",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "center",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "filler"
+                        }
+                      ],
+                      "width": "39%",
+                      "backgroundColor": "#FF5D73",
+                      "height": "8px"
+                    }
+                  ],
+                  "backgroundColor": "#06A77D",
+                  "height": "8px",
+                  "margin": "md"
+                }
+              ]
+            },
+            {
+              "type": "separator",
+              "margin": "xxl"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "margin": "lg",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "即時走勢",
+                  "size": "xs",
+                  "color": "#aaaaaa",
+                  "flex": 0,
+                  "offsetStart": "sm",
+                  "action": {
+                    "type": "uri",
+                    "label": "action",
+                    "uri": "https://www.google.com/finance/quote/0056:TPE"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "2021/5/25 0:36",
+                  "color": "#aaaaaa",
+                  "size": "xs",
+                  "align": "end",
+                  "offsetEnd": "sm"
                 }
               ]
             }

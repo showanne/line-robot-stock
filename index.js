@@ -325,13 +325,8 @@ bot.on('message', async event => {
 
         if (event.message.text.includes('market')) {
           const marketI = event.message.text.indexOf('market') - 1
-          console.log(marketI)
+          // console.log(marketI)
 
-          // const responseChart = await axios.get(
-          //   `https://api.fugle.tw/realtime/v0.2/intraday/chart?symbolId=${encodeURI(
-          //     event.message.text.substr(0, marketI)
-          //   )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
-          // )
           const responseMeta = await axios.get(
             `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
               event.message.text.substr(0, marketI)
@@ -614,7 +609,7 @@ bot.on('message', async event => {
                           {
                             type: 'text',
                             text: '買',
-                            align: 'end',
+                            align: 'center',
                             color: '#FF5D73'
                           },
                           {
@@ -623,7 +618,7 @@ bot.on('message', async event => {
                           {
                             type: 'text',
                             text: '賣',
-                            align: 'start',
+                            align: 'center',
                             color: '#06A77D'
                           }
                         ],
@@ -641,7 +636,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[0].unit}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -650,7 +645,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[0].price}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -686,7 +681,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[1].unit}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -695,7 +690,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[1].price}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -731,7 +726,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[2].unit}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -740,7 +735,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[2].price}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -776,7 +771,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[3].unit}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -785,7 +780,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[3].price}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -821,7 +816,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[4].unit}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -830,7 +825,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestBids[4].price}`,
                             size: 'sm',
                             color: '#FF5D73',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -888,7 +883,7 @@ bot.on('message', async event => {
                   {
                     type: 'box',
                     layout: 'horizontal',
-                    margin: 'md',
+                    margin: 'lg',
                     contents: [
                       {
                         type: 'text',
@@ -947,11 +942,9 @@ bot.on('message', async event => {
                 type: 'box',
                 layout: 'vertical',
                 contents: [
-                  // 背景圖片
                   {
                     type: 'image',
-                    url: 'https://i.imgur.com/HFn5hpS.png',
-                    // url: 'https://www.frevvo.com/blog/wp-content/uploads/2020/01/Frevvo-Improve-Finance-hero.png',
+                    url: 'https://imgur.com/lvTvZ6Z.png',
                     size: 'full',
                     aspectMode: 'cover',
                     aspectRatio: '15:19',
@@ -974,35 +967,31 @@ bot.on('message', async event => {
                             layout: 'baseline',
                             contents: [
                               {
-                                type: 'filler'
-                              },
-                              {
                                 type: 'icon',
                                 url: 'https://img.icons8.com/nolan/344/stock-share.png'
                               },
                               {
                                 type: 'text',
                                 text: 'stock market',
-                                color: '#2A1E5C',
+                                color: '#3c3899',
                                 flex: 0,
                                 offsetTop: '-2px'
-                              },
-                              {
-                                type: 'filler'
                               }
                             ],
-                            spacing: 'sm'
+                            spacing: 'sm',
+                            paddingStart: 'lg'
                           },
                           {
                             type: 'filler'
                           }
                         ],
-                        borderWidth: '1px',
+                        borderWidth: '1.5px',
                         cornerRadius: '4px',
                         spacing: 'sm',
-                        borderColor: '#8B80F9',
-                        margin: 'xxl',
-                        height: '40px',
+                        borderColor: '#5e50ff',
+                        backgroundColor: '#DEDAFBaa',
+                        margin: 'md',
+                        height: '45px',
                         action: {
                           type: 'postback',
                           label: 'stock market',
@@ -1022,35 +1011,31 @@ bot.on('message', async event => {
                             layout: 'baseline',
                             contents: [
                               {
-                                type: 'filler'
-                              },
-                              {
                                 type: 'icon',
                                 url: 'https://img.icons8.com/nolan/344/card-exchange.png'
                               },
                               {
                                 type: 'text',
                                 text: 'stock news',
-                                color: '#2A1E5C',
+                                color: '#3c3899',
                                 flex: 0,
                                 offsetTop: '-2px'
-                              },
-                              {
-                                type: 'filler'
                               }
                             ],
-                            spacing: 'sm'
+                            spacing: 'sm',
+                            paddingStart: 'lg'
                           },
                           {
                             type: 'filler'
                           }
                         ],
-                        borderWidth: '1px',
+                        borderWidth: '1.5px',
                         cornerRadius: '4px',
                         spacing: 'sm',
-                        borderColor: '#8B80F9',
-                        margin: 'xxl',
-                        height: '40px',
+                        borderColor: '#5e50ff',
+                        backgroundColor: '#DEDAFBaa',
+                        margin: 'md',
+                        height: '45px',
                         action: {
                           type: 'postback',
                           label: 'stock news',
@@ -1070,21 +1055,15 @@ bot.on('message', async event => {
                             layout: 'baseline',
                             contents: [
                               {
-                                type: 'filler'
-                              },
-                              {
                                 type: 'icon',
                                 url: 'https://img.icons8.com/nolan/344/pay-date.png'
                               },
                               {
                                 type: 'text',
                                 text: 'stock history',
-                                color: '#2A1E5C',
+                                color: '#3c3899',
                                 flex: 0,
                                 offsetTop: '-2px'
-                              },
-                              {
-                                type: 'filler'
                               }
                             ],
                             spacing: 'sm',
@@ -1092,29 +1071,85 @@ bot.on('message', async event => {
                               type: 'uri',
                               label: 'stock history',
                               uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text)}:TPE?window=MAX`
-                            }
+                            },
+                            paddingStart: 'lg'
                           },
                           {
                             type: 'filler'
                           }
                         ],
+                        borderWidth: '1.5px',
                         cornerRadius: '4px',
                         spacing: 'sm',
-                        borderColor: '#8B80F9',
-                        margin: 'xxl',
-                        height: '40px',
-                        borderWidth: '1px'
+                        borderColor: '#5e50ff',
+                        backgroundColor: '#DEDAFBaa',
+                        margin: 'md',
+                        height: '45px'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [
+                          {
+                            type: 'filler'
+                          },
+                          // 使用說明
+                          {
+                            type: 'box',
+                            layout: 'baseline',
+                            contents: [
+                              {
+                                type: 'icon',
+                                url: 'https://img.icons8.com/nolan/344/stock-share.png'
+                              },
+                              {
+                                type: 'text',
+                                text: 'Instructions',
+                                color: '#3c3899',
+                                flex: 0,
+                                offsetTop: '-2px'
+                              }
+                            ],
+                            spacing: 'sm',
+                            paddingStart: 'lg'
+                          },
+                          {
+                            type: 'filler'
+                          }
+                        ],
+                        borderWidth: '1.5px',
+                        cornerRadius: '4px',
+                        spacing: 'sm',
+                        borderColor: '#5e50ff',
+                        backgroundColor: '#DEDAFBaa',
+                        margin: 'md',
+                        height: '45px',
+                        action: {
+                          type: 'postback',
+                          label: 'action',
+                          data: 'stock market live'
+                        }
                       }
                     ],
                     position: 'absolute',
+                    // backgroundColor: '#2A1E5C66',
+                    paddingAll: '70px',
+                    paddingTop: '115px',
+                    paddingEnd: '75px',
+                    background: {
+                      type: 'linearGradient',
+                      angle: '110deg',
+                      endColor: '#3c389999',
+                      centerColor: '#3c389955',
+                      startColor: '#3c3899aa',
+                      centerPosition: '65%'
+                    },
+                    offsetEnd: '0px',
                     offsetBottom: '0px',
                     offsetStart: '0px',
-                    offsetEnd: '0px',
-                    backgroundColor: '#6CD4FF66',
-                    paddingAll: '36px',
-                    paddingTop: '19px'
+                    offsetTop: '0px'
                   },
-                  // 右上標題字 - 股票代號
+                  // 標題字 - 股票代號
                   {
                     type: 'box',
                     layout: 'vertical',
@@ -1122,24 +1157,23 @@ bot.on('message', async event => {
                       {
                         type: 'text',
                         text: `${event.message.text}`,
-                        color: '#EAD94C',
+                        color: '#dcedfb',
                         align: 'center',
-                        size: 'xxl',
-                        offsetTop: '3px',
-                        margin: 'xs',
                         gravity: 'center',
                         wrap: false,
                         adjustMode: 'shrink-to-fit',
-                        style: 'italic'
+                        size: 'lg'
                       }
                     ],
                     position: 'absolute',
                     cornerRadius: '15px',
-                    offsetTop: '18px',
-                    backgroundColor: '#6CD4FFdd',
-                    offsetStart: '18px',
-                    height: '49px',
-                    width: '99px'
+                    backgroundColor: '#5e50ffbb',
+                    offsetTop: '70px',
+                    paddingAll: 'xs',
+                    paddingStart: 'md',
+                    paddingEnd: 'md',
+                    offsetStart: '123px',
+                    width: '119px'
                   }
                 ],
                 paddingAll: '0px'

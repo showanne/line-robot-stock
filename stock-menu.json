@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "2330 Stock Menu",
+  "altText": "0056 Stock Menu",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -12,7 +12,7 @@
           "contents": [
             {
               "type": "image",
-              "url": "https://i.imgur.com/HFn5hpS.png",
+              "url": "https://imgur.com/lvTvZ6Z.png",
               "size": "full",
               "aspectMode": "cover",
               "aspectRatio": "15:19",
@@ -34,39 +34,35 @@
                       "layout": "baseline",
                       "contents": [
                         {
-                          "type": "filler"
-                        },
-                        {
                           "type": "icon",
                           "url": "https://img.icons8.com/nolan/344/stock-share.png"
                         },
                         {
                           "type": "text",
                           "text": "stock market",
-                          "color": "#2A1E5C",
+                          "color": "#3c3899",
                           "flex": 0,
                           "offsetTop": "-2px"
-                        },
-                        {
-                          "type": "filler"
                         }
                       ],
-                      "spacing": "sm"
+                      "spacing": "sm",
+                      "paddingStart": "lg"
                     },
                     {
                       "type": "filler"
                     }
                   ],
-                  "borderWidth": "1px",
+                  "borderWidth": "1.5px",
                   "cornerRadius": "4px",
                   "spacing": "sm",
-                  "borderColor": "#8B80F9",
-                  "margin": "xxl",
-                  "height": "40px",
+                  "borderColor": "#5e50ff",
+                  "backgroundColor": "#DEDAFBaa",
+                  "margin": "md",
+                  "height": "45px",
                   "action": {
                     "type": "postback",
                     "label": "stock market",
-                    "data": "2330 market"
+                    "data": "0056 market"
                   }
                 },
                 {
@@ -80,9 +76,6 @@
                       "type": "box",
                       "layout": "baseline",
                       "contents": [
-                        {
-                          "type": "filler"
-                        },
                         {
                           "type": "icon",
                           "url": "https://img.icons8.com/nolan/344/card-exchange.png"
@@ -90,30 +83,29 @@
                         {
                           "type": "text",
                           "text": "stock news",
-                          "color": "#2A1E5C",
+                          "color": "#3c3899",
                           "flex": 0,
                           "offsetTop": "-2px"
-                        },
-                        {
-                          "type": "filler"
                         }
                       ],
-                      "spacing": "sm"
+                      "spacing": "sm",
+                      "paddingStart": "lg"
                     },
                     {
                       "type": "filler"
                     }
                   ],
-                  "borderWidth": "1px",
+                  "borderWidth": "1.5px",
                   "cornerRadius": "4px",
                   "spacing": "sm",
-                  "borderColor": "#8B80F9",
-                  "margin": "xxl",
-                  "height": "40px",
+                  "borderColor": "#5e50ff",
+                  "backgroundColor": "#DEDAFBaa",
+                  "margin": "md",
+                  "height": "45px",
                   "action": {
                     "type": "postback",
                     "label": "stock news",
-                    "data": "2330 news"
+                    "data": "0056 news"
                   }
                 },
                 {
@@ -128,49 +120,97 @@
                       "layout": "baseline",
                       "contents": [
                         {
-                          "type": "filler"
-                        },
-                        {
                           "type": "icon",
                           "url": "https://img.icons8.com/nolan/344/pay-date.png"
                         },
                         {
                           "type": "text",
                           "text": "stock history",
-                          "color": "#2A1E5C",
+                          "color": "#3c3899",
                           "flex": 0,
                           "offsetTop": "-2px"
-                        },
-                        {
-                          "type": "filler"
                         }
                       ],
                       "spacing": "sm",
                       "action": {
                         "type": "uri",
                         "label": "stock history",
-                        "uri": "https://www.google.com/finance/quote/2330:TPE?window=MAX"
-                      }
+                        "uri": "https://www.google.com/finance/quote/0056:TPE?window=MAX"
+                      },
+                      "paddingStart": "lg"
                     },
                     {
                       "type": "filler"
                     }
                   ],
+                  "borderWidth": "1.5px",
                   "cornerRadius": "4px",
                   "spacing": "sm",
-                  "borderColor": "#8B80F9",
-                  "margin": "xxl",
-                  "height": "40px",
-                  "borderWidth": "1px"
+                  "borderColor": "#5e50ff",
+                  "backgroundColor": "#DEDAFBaa",
+                  "margin": "md",
+                  "height": "45px"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "baseline",
+                      "contents": [
+                        {
+                          "type": "icon",
+                          "url": "https://img.icons8.com/nolan/344/stock-share.png"
+                        },
+                        {
+                          "type": "text",
+                          "text": "Instructions",
+                          "color": "#3c3899",
+                          "flex": 0,
+                          "offsetTop": "-2px"
+                        }
+                      ],
+                      "spacing": "sm",
+                      "paddingStart": "lg"
+                    },
+                    {
+                      "type": "filler"
+                    }
+                  ],
+                  "borderWidth": "1.5px",
+                  "cornerRadius": "4px",
+                  "spacing": "sm",
+                  "borderColor": "#5e50ff",
+                  "backgroundColor": "#DEDAFBaa",
+                  "margin": "md",
+                  "height": "45px",
+                  "action": {
+                    "type": "postback",
+                    "label": "action",
+                    "data": "stock market live"
+                  }
                 }
               ],
               "position": "absolute",
+              "paddingAll": "70px",
+              "paddingTop": "115px",
+              "paddingEnd": "75px",
+              "background": {
+                "type": "linearGradient",
+                "angle": "110deg",
+                "endColor": "#3c389999",
+                "centerColor": "#3c389955",
+                "startColor": "#3c3899aa",
+                "centerPosition": "65%"
+              },
+              "offsetEnd": "0px",
               "offsetBottom": "0px",
               "offsetStart": "0px",
-              "offsetEnd": "0px",
-              "backgroundColor": "#6CD4FF66",
-              "paddingAll": "36px",
-              "paddingTop": "19px"
+              "offsetTop": "0px"
             },
             {
               "type": "box",
@@ -178,25 +218,24 @@
               "contents": [
                 {
                   "type": "text",
-                  "text": "2330",
-                  "color": "#EAD94C",
+                  "text": "0056",
+                  "color": "#dcedfb",
                   "align": "center",
-                  "size": "xxl",
-                  "offsetTop": "3px",
-                  "margin": "xs",
                   "gravity": "center",
                   "wrap": false,
                   "adjustMode": "shrink-to-fit",
-                  "style": "italic"
+                  "size": "lg"
                 }
               ],
               "position": "absolute",
               "cornerRadius": "15px",
-              "offsetTop": "18px",
-              "backgroundColor": "#6CD4FFdd",
-              "offsetStart": "18px",
-              "height": "49px",
-              "width": "99px"
+              "backgroundColor": "#5e50ffbb",
+              "offsetTop": "70px",
+              "paddingAll": "xs",
+              "paddingStart": "md",
+              "paddingEnd": "md",
+              "offsetStart": "123px",
+              "width": "119px"
             }
           ],
           "paddingAll": "0px"

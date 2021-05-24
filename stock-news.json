@@ -9,7 +9,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4650626/xl/c2d775db37b57b3795496f9463e54389.jpg",
+          "url": "https://cimg.cnyes.cool/prod/news/4651279/xl/8d3067417e9f018dbe08dd65b766474c.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213",
@@ -25,14 +25,14 @@
           "contents": [
             {
               "type": "text",
-              "text": "〈美股早盤〉Markit PMI報告將揭曉 美股延續反彈態勢 道瓊漲超200點",
+              "text": "〈美股早盤〉道瓊漲超百點 納指費半揚逾1% 科技股強勢領漲",
               "weight": "bold",
               "size": "sm",
               "wrap": true,
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4650626"
+                "uri": "https://news.cnyes.com/news/id/4651279"
               },
               "maxLines": 3
             },
@@ -52,7 +52,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/21 ",
+                  "text": "2021/5/24 ",
                   "size": "xs",
                   "color": "#8c8c8c",
                   "margin": "md",
@@ -71,7 +71,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "美股、早盤、通膨、財報、Markit、PMI、美國經濟",
+                      "text": "美股、早盤、比特幣、中國、基建法案、拜登、通膨、PCE",
                       "wrap": false,
                       "style": "italic",
                       "color": "#8c8c8c",
@@ -92,7 +92,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4650626/xl/c2d775db37b57b3795496f9463e54389.jpg",
+          "url": "https://cimg.cnyes.cool/prod/news/4651279/xl/8d3067417e9f018dbe08dd65b766474c.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213",
@@ -108,14 +108,14 @@
           "contents": [
             {
               "type": "text",
-              "text": "新冠疫情停課下 哪類股再翻紅衝一波？",
+              "text": "公共工程及廠辦需求延續 環泥Q2混凝土出貨估增1成",
               "weight": "bold",
               "size": "sm",
               "wrap": true,
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4650407"
+                "uri": "https://news.cnyes.com/news/id/4651421"
               },
               "maxLines": 3
             },
@@ -135,7 +135,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/21 ",
+                  "text": "2021/5/24 ",
                   "size": "xs",
                   "color": "#8c8c8c",
                   "margin": "md",
@@ -154,7 +154,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "台股、萬寶投顧、陳子榕",
+                      "text": "環泥、混凝土、台積電",
                       "wrap": false,
                       "style": "italic",
                       "color": "#8c8c8c",
@@ -175,7 +175,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4650626/xl/c2d775db37b57b3795496f9463e54389.jpg",
+          "url": "https://cimg.cnyes.cool/prod/news/4651279/xl/8d3067417e9f018dbe08dd65b766474c.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213",
@@ -191,14 +191,14 @@
           "contents": [
             {
               "type": "text",
-              "text": "【永豐期貨】電子族群回神 台股收復十日線關卡",
+              "text": "【永豐期貨】消化疫情利空衝擊 台股翻紅重回5日線",
               "weight": "bold",
               "size": "sm",
               "wrap": true,
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4650760"
+                "uri": "https://news.cnyes.com/news/id/4651251"
               },
               "maxLines": 3
             },
@@ -218,7 +218,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/21 ",
+                  "text": "2021/5/24 ",
                   "size": "xs",
                   "color": "#8c8c8c",
                   "margin": "md",
