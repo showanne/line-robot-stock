@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "2330 Stock News",
+  "altText": "00881 Stock News",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -9,7 +9,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4651279/xl/8d3067417e9f018dbe08dd65b766474c.jpg",
+          "url": "https://cimg.cnyes.cool/prod/news/4631757/l/a9fbd181af81318231abad6036154004.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213",
@@ -25,14 +25,14 @@
           "contents": [
             {
               "type": "text",
-              "text": "〈美股早盤〉道瓊漲超百點 納指費半揚逾1% 科技股強勢領漲",
+              "text": "台股進攻萬八投資術 看好「雙G」ETF價差、股息兩頭賺",
               "weight": "bold",
               "size": "sm",
               "wrap": true,
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4651279"
+                "uri": "https://news.cnyes.com/news/id/4636103"
               },
               "maxLines": 3
             },
@@ -52,7 +52,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/24 ",
+                  "text": "2021/5/2 上",
                   "size": "xs",
                   "color": "#8c8c8c",
                   "margin": "md",
@@ -71,7 +71,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "美股、早盤、比特幣、中國、基建法案、拜登、通膨、PCE",
+                      "text": "台股、ETF、5G、ESG、股息、高股息、00881、00878、萬八",
                       "wrap": false,
                       "style": "italic",
                       "color": "#8c8c8c",
@@ -92,7 +92,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4651279/xl/8d3067417e9f018dbe08dd65b766474c.jpg",
+          "url": "https://cimg.cnyes.cool/prod/news/4631757/l/a9fbd181af81318231abad6036154004.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213",
@@ -108,14 +108,14 @@
           "contents": [
             {
               "type": "text",
-              "text": "公共工程及廠辦需求延續 環泥Q2混凝土出貨估增1成",
+              "text": "<mark>00881</mark>首次成分股調整 新納入3檔電動車概念股",
               "weight": "bold",
               "size": "sm",
               "wrap": true,
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4651421"
+                "uri": "https://news.cnyes.com/news/id/4631757"
               },
               "maxLines": 3
             },
@@ -135,7 +135,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/24 ",
+                  "text": "2021/4/20 ",
                   "size": "xs",
                   "color": "#8c8c8c",
                   "margin": "md",
@@ -154,7 +154,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "環泥、混凝土、台積電",
+                      "text": "00881、5G、電動車、國泰台灣5G+、信邦、南電、佳世達、ETF",
                       "wrap": false,
                       "style": "italic",
                       "color": "#8c8c8c",
@@ -175,7 +175,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4651279/xl/8d3067417e9f018dbe08dd65b766474c.jpg",
+          "url": "https://cimg.cnyes.cool/prod/news/4631757/l/a9fbd181af81318231abad6036154004.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213",
@@ -191,14 +191,14 @@
           "contents": [
             {
               "type": "text",
-              "text": "【永豐期貨】消化疫情利空衝擊 台股翻紅重回5日線",
+              "text": "ETF強強滾 <mark>00881</mark>挾國家隊優勢狂吸33萬受益人",
               "weight": "bold",
               "size": "sm",
               "wrap": true,
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4651251"
+                "uri": "https://news.cnyes.com/news/id/4630101"
               },
               "maxLines": 3
             },
@@ -218,7 +218,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/24 ",
+                  "text": "2021/4/15 ",
                   "size": "xs",
                   "color": "#8c8c8c",
                   "margin": "md",
@@ -237,7 +237,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "永豐期貨、期貨、台股",
+                      "text": "5G、5G ETF、ETF、00881、國泰台灣5G+",
                       "wrap": false,
                       "style": "italic",
                       "color": "#8c8c8c",
