@@ -341,19 +341,23 @@ bot.on('message', async event => {
           //   `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(event.message.text.substr(0, (event.message.text.indexOf("news")-1)))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
           // )
 
-          // const responseCnyesCharting = await axios.get(
-          //   `https://ws.api.cnyes.com/ws/api/v1/charting/history?resolution=1&symbol=TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK&quote=1`
-          // )
+          const responseCnyesCharting = await axios.get(
+            `https://ws.api.cnyes.com/ws/api/v1/charting/history?resolution=1&symbol=TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK&quote=1`
+          )
 
-          const responseCnyesQuote = await axios.get(
+          const responseCnyesQuoteK = await axios.get(
             `https://ws.api.cnyes.com/ws/api/v1/quote/quotes/TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK?column=K`
           )
 
-          // console.log(responseCnyesQuote.data)
-          // console.log(responseCnyesQuote.data.data[0])
-          console.log(responseCnyesQuote.data.data[0]['200056'])
+          const responseCnyesQuoteI = await axios.get(
+            `https://ws.api.cnyes.com/ws/api/v1/quote/quotes/TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK?column=I`
+          )
 
-          // 200056
+          // console.log(responseCnyesQuoteK.data.data[0])
+          // console.log(responseCnyesQuoteK.data.data[0]['200056'])
+          // console.log(responseCnyesCharting.data.data.quote)
+          // console.log(responseCnyesCharting.data.data.quote['800001'])
+          // console.log(responseCnyesCharting.data.data.o[responseCnyesCharting.data.data.o.length - 1])
 
           const flex = [
             // 個股日成交資訊
@@ -392,7 +396,49 @@ bot.on('message', async event => {
                     margin: 'xxl',
                     spacing: 'sm',
                     contents: [
-                      // 開盤價 priceOpen
+                      // 現在
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '現在 (跟收盤不一樣?)',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseCnyesCharting.data.data.quote['6']}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 昨收
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '昨收',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseCnyesCharting.data.data.quote['21']}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 開盤價 priceOpen o
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -406,14 +452,14 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.priceOpen.price}`,
+                            text: `${responseCnyesCharting.data.data.o[responseCnyesCharting.data.data.o.length - 1]}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
                           }
                         ]
                       },
-                      // 最高價 priceHigh
+                      // 最高價 priceHigh h
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -427,14 +473,14 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.priceHigh.price}`,
+                            text: `${responseCnyesCharting.data.data.h[responseCnyesCharting.data.data.h.length - 1]}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
                           }
                         ]
                       },
-                      // 最低價 priceLow
+                      // 最低價 priceLow l
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -448,14 +494,14 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.priceLow.price}`,
+                            text: `${responseCnyesCharting.data.data.l[responseCnyesCharting.data.data.l.length - 1]}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
                           }
                         ]
                       },
-                      // 收盤價 chart 的最後一分鐘的 close
+                      // 收盤價 c
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -469,14 +515,77 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: '000',
+                            text: `${responseCnyesCharting.data.data.c[responseCnyesCharting.data.data.c.length - 1]}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
                           }
                         ]
                       },
-                      // 漲跌 change
+                      // 本益比 '700001'
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '本益比',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseCnyesQuoteI.data.data[0]['700001']}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 本淨比 '700006'
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '本淨比',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseCnyesQuoteI.data.data[0]['700006']}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 市值 (億) '700005'
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '市值 (億)',
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
+                            text: `${responseCnyesQuoteI.data.data[0]['700005']}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      // 漲跌 change '11'
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -490,14 +599,14 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.change}`,
+                            text: `${responseCnyesCharting.data.data.quote['11']}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
                           }
                         ]
                       },
-                      // 漲跌幅 changePercent
+                      // 漲跌幅 changePercent '56'
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -511,14 +620,14 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.changePercent}`,
+                            text: `${responseCnyesCharting.data.data.quote['56']}%`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
                           }
                         ]
                       },
-                      // 總成交張數 unit
+                      // 成交張數 unit '800001'
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -532,7 +641,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.total.unit}`,
+                            text: `${responseCnyesCharting.data.data.quote['800001']}`,
                             size: 'sm',
                             color: '#111111',
                             align: 'end'
@@ -881,7 +990,7 @@ bot.on('message', async event => {
                                 type: 'filler'
                               }
                             ],
-                            width: `${responseCnyesQuote.data.data[0]['200056']}%`,
+                            width: `${responseCnyesQuoteK.data.data[0]['200056']}%`,
                             backgroundColor: '#FF5D73',
                             height: '6px'
                           }
@@ -897,7 +1006,7 @@ bot.on('message', async event => {
                           // 內盤
                           {
                             type: 'text',
-                            text: `${responseCnyesQuote.data.data[0]['200056']}% (${responseCnyesQuote.data.data[0]['200054']})`,
+                            text: `${responseCnyesQuoteK.data.data[0]['200056']}% (${responseCnyesQuoteK.data.data[0]['200054']})`,
                             size: 'xxs',
                             gravity: 'top',
                             color: '#FF5D73',
@@ -911,7 +1020,7 @@ bot.on('message', async event => {
                           // 外盤
                           {
                             type: 'text',
-                            text: `${responseCnyesQuote.data.data[0]['200057']}% (${responseCnyesQuote.data.data[0]['200055']})`,
+                            text: `${responseCnyesQuoteK.data.data[0]['200057']}% (${responseCnyesQuoteK.data.data[0]['200055']})`,
                             size: 'xxs',
                             gravity: 'top',
                             color: '#06A77D',

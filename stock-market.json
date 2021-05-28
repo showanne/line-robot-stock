@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "0056 Stock Market",
+  "altText": "2330 Stock Market",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -12,7 +12,7 @@
           "contents": [
             {
               "type": "text",
-              "text": "0056",
+              "text": "2330",
               "weight": "bold",
               "size": "xxl",
               "margin": "none",
@@ -20,7 +20,7 @@
             },
             {
               "type": "text",
-              "text": "元大高股息",
+              "text": "台積電",
               "size": "sm",
               "color": "#2A1E5Caa",
               "wrap": true,
@@ -43,14 +43,54 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "開盤價",
+                      "text": "現在 (跟收盤不一樣?)",
                       "size": "sm",
                       "color": "#555555",
                       "flex": 0
                     },
                     {
                       "type": "text",
-                      "text": "34.5",
+                      "text": "590",
+                      "size": "sm",
+                      "color": "#111111",
+                      "align": "end"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "昨收",
+                      "size": "sm",
+                      "color": "#555555",
+                      "flex": 0
+                    },
+                    {
+                      "type": "text",
+                      "text": "582",
+                      "size": "sm",
+                      "color": "#111111",
+                      "align": "end"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "開盤",
+                      "size": "sm",
+                      "color": "#555555",
+                      "flex": 0
+                    },
+                    {
+                      "type": "text",
+                      "text": "587",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -70,7 +110,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.55",
+                      "text": "587",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -90,7 +130,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.32",
+                      "text": "584",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -110,7 +150,67 @@
                     },
                     {
                       "type": "text",
-                      "text": "000",
+                      "text": "586",
+                      "size": "sm",
+                      "color": "#111111",
+                      "align": "end"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "本益比",
+                      "size": "sm",
+                      "color": "#555555",
+                      "flex": 0
+                    },
+                    {
+                      "type": "text",
+                      "text": "109.46",
+                      "size": "sm",
+                      "color": "#111111",
+                      "align": "end"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "本淨比",
+                      "size": "sm",
+                      "color": "#555555",
+                      "flex": 0
+                    },
+                    {
+                      "type": "text",
+                      "text": "7.89",
+                      "size": "sm",
+                      "color": "#111111",
+                      "align": "end"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "市值 (億)",
+                      "size": "sm",
+                      "color": "#555555",
+                      "flex": 0
+                    },
+                    {
+                      "type": "text",
+                      "text": "15298924470220",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -130,7 +230,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "0.27",
+                      "text": "8",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -150,7 +250,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "0.00787631271879",
+                      "text": "1.37%",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -170,7 +270,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "8596",
+                      "text": "30720.737",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -197,12 +297,12 @@
                   "action": {
                     "type": "uri",
                     "label": "action",
-                    "uri": "https://www.google.com/finance/quote/0056:TPE?window=MAX"
+                    "uri": "https://www.google.com/finance/quote/2330:TPE?window=MAX"
                   }
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/28 14:11",
+                  "text": "2021/5/28 22:45",
                   "color": "#aaaaaa",
                   "size": "xs",
                   "align": "end"
@@ -225,7 +325,7 @@
           "contents": [
             {
               "type": "text",
-              "text": "0056",
+              "text": "2330",
               "weight": "bold",
               "size": "xxl",
               "margin": "none",
@@ -233,7 +333,7 @@
             },
             {
               "type": "text",
-              "text": "元大高股息",
+              "text": "台積電",
               "size": "sm",
               "color": "#2A1E5Caa",
               "wrap": true,
@@ -279,7 +379,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "2",
+                      "text": "6",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -288,7 +388,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.54",
+                      "text": "590",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -300,7 +400,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.55",
+                      "text": "591",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "start",
@@ -309,7 +409,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "105",
+                      "text": "923",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "end",
@@ -324,7 +424,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "12",
+                      "text": "193",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -333,7 +433,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.53",
+                      "text": "589",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -345,7 +445,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.56",
+                      "text": "592",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "start",
@@ -354,7 +454,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "18",
+                      "text": "2013",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "end",
@@ -369,7 +469,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "25",
+                      "text": "353",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -378,7 +478,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.52",
+                      "text": "588",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -390,7 +490,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.57",
+                      "text": "593",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "start",
@@ -399,7 +499,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "133",
+                      "text": "1255",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "end",
@@ -414,7 +514,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "50",
+                      "text": "382",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -423,7 +523,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.51",
+                      "text": "587",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -435,7 +535,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.58",
+                      "text": "594",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "start",
@@ -444,7 +544,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "32",
+                      "text": "679",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "end",
@@ -459,7 +559,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "242",
+                      "text": "425",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -468,7 +568,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.5",
+                      "text": "586",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -480,7 +580,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "34.59",
+                      "text": "595",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "start",
@@ -489,7 +589,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "13",
+                      "text": "1432",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "end",
@@ -510,7 +610,7 @@
                           "type": "filler"
                         }
                       ],
-                      "width": "41.27%",
+                      "width": "36.83%",
                       "backgroundColor": "#FF5D73",
                       "height": "6px"
                     }
@@ -525,7 +625,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "41.27% (3343)",
+                      "text": "36.83% (10543)",
                       "size": "xxs",
                       "gravity": "top",
                       "color": "#FF5D73",
@@ -538,7 +638,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "58.73% (4758)",
+                      "text": "63.17% (18082)",
                       "size": "xxs",
                       "gravity": "top",
                       "color": "#06A77D",
@@ -569,12 +669,12 @@
                   "action": {
                     "type": "uri",
                     "label": "action",
-                    "uri": "https://www.google.com/finance/quote/0056:TPE"
+                    "uri": "https://www.google.com/finance/quote/2330:TPE"
                   }
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/28 14:11",
+                  "text": "2021/5/28 22:45",
                   "color": "#aaaaaa",
                   "size": "xs",
                   "align": "end",
