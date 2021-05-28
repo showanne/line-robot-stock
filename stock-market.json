@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "2884 Stock Market",
+  "altText": "0056 Stock Market",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -12,7 +12,7 @@
           "contents": [
             {
               "type": "text",
-              "text": "2884",
+              "text": "0056",
               "weight": "bold",
               "size": "xxl",
               "margin": "none",
@@ -20,7 +20,7 @@
             },
             {
               "type": "text",
-              "text": "玉山金",
+              "text": "元大高股息",
               "size": "sm",
               "color": "#2A1E5Caa",
               "wrap": true,
@@ -50,7 +50,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.25",
+                      "text": "34.5",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -70,7 +70,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.35",
+                      "text": "34.55",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -90,7 +90,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.2",
+                      "text": "34.32",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -130,7 +130,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "-0.2",
+                      "text": "0.27",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -150,7 +150,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "-0.00785854616896",
+                      "text": "0.00787631271879",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -170,7 +170,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "13879",
+                      "text": "8596",
                       "size": "sm",
                       "color": "#111111",
                       "align": "end"
@@ -181,7 +181,7 @@
             },
             {
               "type": "separator",
-              "margin": "xxl"
+              "margin": "xl"
             },
             {
               "type": "box",
@@ -197,12 +197,12 @@
                   "action": {
                     "type": "uri",
                     "label": "action",
-                    "uri": "https://www.google.com/finance/quote/2884:TPE?window=MAX"
+                    "uri": "https://www.google.com/finance/quote/0056:TPE?window=MAX"
                   }
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/25 0:55",
+                  "text": "2021/5/28 14:11",
                   "color": "#aaaaaa",
                   "size": "xs",
                   "align": "end"
@@ -225,7 +225,7 @@
           "contents": [
             {
               "type": "text",
-              "text": "2884",
+              "text": "0056",
               "weight": "bold",
               "size": "xxl",
               "margin": "none",
@@ -233,7 +233,7 @@
             },
             {
               "type": "text",
-              "text": "玉山金",
+              "text": "元大高股息",
               "size": "sm",
               "color": "#2A1E5Caa",
               "wrap": true,
@@ -279,7 +279,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "3164",
+                      "text": "2",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -288,7 +288,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.25",
+                      "text": "34.54",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -300,19 +300,19 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.3",
+                      "text": "34.55",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "start",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     },
                     {
                       "type": "text",
-                      "text": "60",
+                      "text": "105",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "end",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     }
@@ -324,7 +324,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "2975",
+                      "text": "12",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -333,7 +333,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.2",
+                      "text": "34.53",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -345,19 +345,19 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.35",
+                      "text": "34.56",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "start",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     },
                     {
                       "type": "text",
-                      "text": "65",
+                      "text": "18",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "end",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     }
@@ -369,7 +369,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "1340",
+                      "text": "25",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -378,7 +378,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.15",
+                      "text": "34.52",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -390,19 +390,19 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.4",
+                      "text": "34.57",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "start",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     },
                     {
                       "type": "text",
-                      "text": "247",
+                      "text": "133",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "end",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     }
@@ -414,7 +414,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "1556",
+                      "text": "50",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -423,7 +423,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.1",
+                      "text": "34.51",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -435,19 +435,19 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.45",
+                      "text": "34.58",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "start",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     },
                     {
                       "type": "text",
-                      "text": "484",
+                      "text": "32",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "end",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     }
@@ -459,7 +459,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "691",
+                      "text": "242",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -468,7 +468,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.05",
+                      "text": "34.5",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "end",
@@ -480,19 +480,19 @@
                     },
                     {
                       "type": "text",
-                      "text": "25.5",
+                      "text": "34.59",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "start",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     },
                     {
                       "type": "text",
-                      "text": "454",
+                      "text": "13",
                       "size": "sm",
                       "color": "#06A77D",
-                      "align": "center",
+                      "align": "end",
                       "wrap": false,
                       "adjustMode": "shrink-to-fit"
                     }
@@ -510,20 +510,49 @@
                           "type": "filler"
                         }
                       ],
-                      "width": "39%",
+                      "width": "41.27%",
                       "backgroundColor": "#FF5D73",
-                      "height": "8px"
+                      "height": "6px"
                     }
                   ],
                   "backgroundColor": "#06A77D",
-                  "height": "8px",
-                  "margin": "md"
+                  "height": "6px",
+                  "margin": "sm"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "41.27% (3343)",
+                      "size": "xxs",
+                      "gravity": "top",
+                      "color": "#FF5D73",
+                      "align": "start",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "filler"
+                    },
+                    {
+                      "type": "text",
+                      "text": "58.73% (4758)",
+                      "size": "xxs",
+                      "gravity": "top",
+                      "color": "#06A77D",
+                      "align": "end",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    }
+                  ]
                 }
               ]
             },
             {
               "type": "separator",
-              "margin": "xxl"
+              "margin": "md"
             },
             {
               "type": "box",
@@ -540,12 +569,12 @@
                   "action": {
                     "type": "uri",
                     "label": "action",
-                    "uri": "https://www.google.com/finance/quote/2884:TPE"
+                    "uri": "https://www.google.com/finance/quote/0056:TPE"
                   }
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/25 0:55",
+                  "text": "2021/5/28 14:11",
                   "color": "#aaaaaa",
                   "size": "xs",
                   "align": "end",

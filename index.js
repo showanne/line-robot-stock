@@ -341,7 +341,22 @@ bot.on('message', async event => {
           //   `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(event.message.text.substr(0, (event.message.text.indexOf("news")-1)))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
           // )
 
+          // const responseCnyesCharting = await axios.get(
+          //   `https://ws.api.cnyes.com/ws/api/v1/charting/history?resolution=1&symbol=TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK&quote=1`
+          // )
+
+          const responseCnyesQuote = await axios.get(
+            `https://ws.api.cnyes.com/ws/api/v1/quote/quotes/TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK?column=K`
+          )
+
+          // console.log(responseCnyesQuote.data)
+          // console.log(responseCnyesQuote.data.data[0])
+          console.log(responseCnyesQuote.data.data[0]['200056'])
+
+          // 200056
+
           const flex = [
+            // 個股日成交資訊
             {
               type: 'bubble',
               body: {
@@ -528,7 +543,7 @@ bot.on('message', async event => {
                   },
                   {
                     type: 'separator',
-                    margin: 'xxl'
+                    margin: 'xl'
                   },
                   // 歷史走勢
                   {
@@ -567,6 +582,7 @@ bot.on('message', async event => {
                 }
               }
             },
+            // 五檔
             {
               type: 'bubble',
               body: {
@@ -657,7 +673,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[0].price}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -666,7 +682,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[0].unit}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
@@ -702,7 +718,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[1].price}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -711,7 +727,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[1].unit}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
@@ -747,7 +763,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[2].price}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -756,7 +772,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[2].unit}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
@@ -792,7 +808,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[3].price}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -801,7 +817,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[3].unit}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
@@ -837,7 +853,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[4].price}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'start',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           },
@@ -846,7 +862,7 @@ bot.on('message', async event => {
                             text: `${responseQuote.data.data.quote.order.bestAsks[4].unit}`,
                             size: 'sm',
                             color: '#06A77D',
-                            align: 'center',
+                            align: 'end',
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
@@ -865,20 +881,51 @@ bot.on('message', async event => {
                                 type: 'filler'
                               }
                             ],
-                            width: '39%',
+                            width: `${responseCnyesQuote.data.data[0]['200056']}%`,
                             backgroundColor: '#FF5D73',
-                            height: '8px'
+                            height: '6px'
                           }
                         ],
                         backgroundColor: '#06A77D',
-                        height: '8px',
-                        margin: 'md'
+                        height: '6px',
+                        margin: 'sm'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          // 內盤
+                          {
+                            type: 'text',
+                            text: `${responseCnyesQuote.data.data[0]['200056']}% (${responseCnyesQuote.data.data[0]['200054']})`,
+                            size: 'xxs',
+                            gravity: 'top',
+                            color: '#FF5D73',
+                            align: 'start',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'filler'
+                          },
+                          // 外盤
+                          {
+                            type: 'text',
+                            text: `${responseCnyesQuote.data.data[0]['200057']}% (${responseCnyesQuote.data.data[0]['200055']})`,
+                            size: 'xxs',
+                            gravity: 'top',
+                            color: '#06A77D',
+                            align: 'end',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          }
+                        ]
                       }
                     ]
                   },
                   {
                     type: 'separator',
-                    margin: 'xxl'
+                    margin: 'md'
                   },
                   {
                     type: 'box',
@@ -1503,6 +1550,7 @@ bot.on('postback', async event => {
         // )
 
         const flex = [
+          // 個股日成交資訊
           {
             type: 'bubble',
             body: {
@@ -1728,6 +1776,7 @@ bot.on('postback', async event => {
               }
             }
           },
+          // 五檔
           {
             type: 'bubble',
             body: {
@@ -1818,7 +1867,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[0].price}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'start',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         },
@@ -1827,7 +1876,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[0].unit}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'end',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         }
@@ -1863,7 +1912,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[1].price}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'start',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         },
@@ -1872,7 +1921,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[1].unit}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'end',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         }
@@ -1908,7 +1957,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[2].price}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'start',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         },
@@ -1917,7 +1966,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[2].unit}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'end',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         }
@@ -1953,7 +2002,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[3].price}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'start',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         },
@@ -1962,7 +2011,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[3].unit}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'end',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         }
@@ -1998,7 +2047,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[4].price}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'start',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         },
@@ -2007,7 +2056,7 @@ bot.on('postback', async event => {
                           text: `${responseQuote.data.data.quote.order.bestAsks[4].unit}`,
                           size: 'sm',
                           color: '#06A77D',
-                          align: 'center',
+                          align: 'end',
                           wrap: false,
                           adjustMode: 'shrink-to-fit'
                         }
