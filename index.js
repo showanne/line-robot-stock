@@ -38,6 +38,36 @@ const getlist = async () => {
 }
 getlist()
 
+const stockPop = [
+  '人氣股票',
+  '0050',
+  '0056',
+  '00888',
+  '00692',
+  '2330',
+  '2890',
+  '2886',
+  '1101',
+  '2884',
+  '2881',
+  '1434',
+  '2385',
+  '1102',
+  '2542',
+  '2892',
+  '3702',
+  '2887',
+  '5880',
+  '2852',
+  '2851',
+  '6024',
+  '6023'
+]
+// 1 ~ stockPop.length 的隨機
+const stockRandom = () => {
+  return Math.floor(Math.random() * stockPop.length) + 1
+}
+
 bot.listen('/', process.env.PORT, () => {
   console.log('機器人啟動')
 })
@@ -50,9 +80,211 @@ bot.on('message', async event => {
     // console.log(arrSymbolId.includes(event.message.text))
     try {
       if (event.message.type === 'text') {
+        if (event.message.text.includes('Instructions')) {
+          // console.log(arrSymbolId.length)  //120107
+          console.log(stockRandom())
+          console.log(stockPop[stockRandom()])
+
+          const flex = [
+            {
+              type: 'bubble',
+              header: {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'box',
+                    layout: 'horizontal',
+                    contents: [
+                      {
+                        type: 'image',
+                        url: 'https://www.frevvo.com/blog/wp-content/uploads/2020/01/Frevvo-Improve-Finance-hero.png',
+                        size: 'full',
+                        aspectMode: 'cover',
+                        aspectRatio: '150:196',
+                        gravity: 'center',
+                        flex: 1
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: 'Stock',
+                            size: 'xs',
+                            color: '#ffffff',
+                            align: 'center',
+                            gravity: 'center'
+                          }
+                        ],
+                        backgroundColor: '#e55732',
+                        paddingAll: '2px',
+                        paddingStart: '4px',
+                        paddingEnd: '4px',
+                        flex: 0,
+                        position: 'absolute',
+                        offsetStart: '18px',
+                        offsetTop: '18px',
+                        cornerRadius: '100px',
+                        width: '59px',
+                        height: '25px'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [
+                          {
+                            type: 'box',
+                            layout: 'vertical',
+                            contents: [
+                              {
+                                type: 'text',
+                                contents: [],
+                                size: 'xl',
+                                wrap: true,
+                                text: '歡迎來到…',
+                                color: '#064d88',
+                                weight: 'bold'
+                              },
+                              {
+                                type: 'text',
+                                text: '在這個聊天室您可以直接輸入股票代號，協助您快速查詢股票資訊！',
+                                color: '#064d88cc',
+                                size: 'sm',
+                                wrap: true
+                              },
+                              {
+                                type: 'text',
+                                text: '或輸入以下關鍵字，將立刻回覆您相關資訊',
+                                color: '#064d88cc',
+                                size: 'sm',
+                                wrap: true,
+                                margin: 'md'
+                              }
+                            ],
+                            spacing: 'sm'
+                          },
+                          {
+                            type: 'box',
+                            layout: 'vertical',
+                            contents: [
+                              {
+                                type: 'box',
+                                layout: 'vertical',
+                                contents: [
+                                  {
+                                    type: 'text',
+                                    contents: [],
+                                    size: 'md',
+                                    wrap: true,
+                                    margin: 'none',
+                                    color: '#064d88de',
+                                    text: '股票代號+news',
+                                    align: 'start',
+                                    action: {
+                                      type: 'message',
+                                      label: `${stockPop[stockRandom()]}+news (e.g.)`,
+                                      text: `${stockPop[stockRandom()]}+news (e.g.)`
+                                    }
+                                  }
+                                ],
+                                paddingAll: '5px',
+                                justifyContent: 'center',
+                                paddingStart: '31px',
+                                backgroundColor: '#ffffff1A'
+                              },
+                              {
+                                type: 'box',
+                                layout: 'vertical',
+                                contents: [
+                                  {
+                                    type: 'text',
+                                    contents: [],
+                                    size: 'md',
+                                    wrap: true,
+                                    margin: 'none',
+                                    color: '#064d88de',
+                                    text: '股票代號+market',
+                                    align: 'start',
+                                    action: {
+                                      type: 'message',
+                                      label: `${stockPop[stockRandom()]}+market (e.g.)`,
+                                      text: `${stockPop[stockRandom()]}+market (e.g.)`
+                                    }
+                                  }
+                                ],
+                                paddingAll: '5px',
+                                justifyContent: 'center',
+                                paddingStart: '31px',
+                                backgroundColor: '#ffffff1A',
+                                margin: 'md'
+                              },
+                              {
+                                type: 'box',
+                                layout: 'vertical',
+                                contents: [
+                                  {
+                                    type: 'text',
+                                    contents: [],
+                                    size: 'md',
+                                    wrap: true,
+                                    margin: 'none',
+                                    color: '#064d88de',
+                                    text: '股票代號+history',
+                                    align: 'start',
+                                    action: {
+                                      type: 'message',
+                                      label: `${stockPop[stockRandom()]}+history (e.g.)`,
+                                      text: `${stockPop[stockRandom()]}+history (e.g.)`
+                                    }
+                                  }
+                                ],
+                                paddingAll: '5px',
+                                justifyContent: 'center',
+                                paddingStart: '31px',
+                                backgroundColor: '#ffffff1A',
+                                margin: 'md'
+                              }
+                            ],
+                            paddingAll: '9px',
+                            cornerRadius: '2px',
+                            margin: 'sm'
+                          }
+                        ],
+                        spacing: 'sm',
+                        position: 'absolute',
+                        offsetTop: '50px',
+                        offsetStart: '50px',
+                        backgroundColor: '#f1cf4cdd',
+                        paddingAll: '30px',
+                        offsetBottom: 'none',
+                        cornerRadius: 'md',
+                        offsetEnd: 'none'
+                      }
+                    ]
+                  }
+                ],
+                paddingAll: '0px'
+              }
+            }
+          ]
+
+          const message = {
+            type: 'flex',
+            altText: '歡迎來到…',
+            contents: {
+              type: 'carousel',
+              contents: flex
+            }
+          }
+
+          fs.writeFileSync('stock-Instructions.json', JSON.stringify(message, null, 2))
+          event.reply(message)
+        }
         if (event.message.text.includes('news')) {
           const newsI = event.message.text.indexOf('news') - 1
-          // console.log(newsI)
+          console.log(newsI)
 
           const responseSearch = await axios.get(`https://api.cnyes.com/media/api/v1/search?q=${encodeURI(event.message.text.substr(0, newsI))}`)
 
@@ -325,7 +557,7 @@ bot.on('message', async event => {
 
         if (event.message.text.includes('market')) {
           const marketI = event.message.text.indexOf('market') - 1
-          // console.log(marketI)
+          console.log(marketI)
 
           const responseMeta = await axios.get(
             `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
@@ -396,14 +628,14 @@ bot.on('message', async event => {
                     margin: 'xxl',
                     spacing: 'sm',
                     contents: [
-                      // 現在
+                      // 股價
                       {
                         type: 'box',
                         layout: 'horizontal',
                         contents: [
                           {
                             type: 'text',
-                            text: '現在 (跟收盤不一樣?)',
+                            text: '股價 (跟收盤不一樣?)',
                             size: 'sm',
                             color: '#555555',
                             flex: 0
@@ -1348,9 +1580,10 @@ bot.on('message', async event => {
 
           fs.writeFileSync('stock-menu.json', JSON.stringify(message, null, 2))
           event.reply(message)
-        } else {
-          event.reply('查無此股票')
         }
+        // else {
+        //   event.reply('查無此股票')
+        // }
       }
     } catch (error) {
       console.log(error)

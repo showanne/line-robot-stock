@@ -171,7 +171,8 @@
             "backgroundColor": "#f1cf4cdd",
             "paddingAll": "30px",
             "offsetBottom": "none",
-            "cornerRadius": "md"
+            "cornerRadius": "md",
+            "offsetEnd": "none"
           }
         ]
       }
