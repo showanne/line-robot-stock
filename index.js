@@ -80,7 +80,7 @@ bot.on('message', async event => {
     // console.log(arrSymbolId.includes(event.message.text))
     try {
       if (event.message.type === 'text') {
-        if (event.message.text.includes('Instructions')) {
+        if (event.message.text.includes('Instructions') || event.message.text.includes('說明')) {
           // console.log(arrSymbolId.length)  //120107
           console.log(stockRandom())
           console.log(stockPop[stockRandom()])
@@ -294,59 +294,23 @@ bot.on('message', async event => {
           const flex = [
             {
               type: 'bubble',
-              size: 'micro',
-              hero: {
-                type: 'image',
-                url: `${newsArr[1].coverSrc.xl.src}`,
-                size: 'full',
-                aspectMode: 'cover',
-                aspectRatio: '320:213',
-                action: {
-                  type: 'uri',
-                  label: 'action',
-                  uri: 'http://linecorp.com/'
-                }
-              },
+              size: 'kilo',
               body: {
                 type: 'box',
                 layout: 'vertical',
                 contents: [
                   {
-                    type: 'text',
-                    text: `${newsArr[0].title}`,
-                    weight: 'bold',
-                    size: 'sm',
-                    wrap: true,
+                    type: 'image',
+                    url: `${newsArr[0].coverSrc.xl.src}`,
+                    size: 'full',
+                    aspectMode: 'cover',
+                    aspectRatio: '1:1',
+                    gravity: 'top',
                     action: {
                       type: 'uri',
                       label: 'action',
                       uri: `https://news.cnyes.com/news/id/${encodeURI(newsArr[0].newsId)}`
-                    },
-                    maxLines: 3
-                  },
-                  {
-                    type: 'box',
-                    layout: 'baseline',
-                    contents: [
-                      {
-                        type: 'icon',
-                        size: 'xs',
-                        url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png'
-                      },
-                      {
-                        type: 'icon',
-                        size: 'xs',
-                        url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png'
-                      },
-                      {
-                        type: 'text',
-                        text: `${new Date(newsArr[0].publishAt * 1000).toLocaleString('zh-tw').substr(0, 10)}`,
-                        size: 'xs',
-                        color: '#8c8c8c',
-                        margin: 'md',
-                        flex: 0
-                      }
-                    ]
+                    }
                   },
                   {
                     type: 'box',
@@ -355,81 +319,71 @@ bot.on('message', async event => {
                       {
                         type: 'box',
                         layout: 'baseline',
-                        spacing: 'sm',
                         contents: [
                           {
                             type: 'text',
-                            text: `${newsArr[0].keyword.join('、')}`,
-                            wrap: false,
-                            style: 'italic',
+                            text: `${new Date(newsArr[0].publishAt * 1000).toLocaleString('zh-tw').substr(0, 10)}`,
+                            color: '#064d8888',
+                            size: 'sm',
+                            flex: 0
+                          },
+                          {
+                            type: 'text',
                             color: '#8c8c8c',
-                            size: 'xs',
-                            flex: 5
+                            size: 'xl',
+                            flex: 0,
+                            text: '|'
+                          },
+                          {
+                            type: 'text',
+                            text: `${newsArr[0].title}`,
+                            size: 'md',
+                            color: '#064d88',
+                            weight: 'bold',
+                            maxLines: 2,
+                            wrap: true,
+                            action: {
+                              type: 'uri',
+                              label: 'action',
+                              uri: `https://news.cnyes.com/news/id/${encodeURI(newsArr[0].newsId)}`
+                            }
                           }
-                        ]
+                        ],
+                        spacing: 'md'
                       }
-                    ]
+                    ],
+                    position: 'absolute',
+                    offsetStart: '0px',
+                    offsetEnd: '0px',
+                    backgroundColor: '#eaf3faee',
+                    paddingAll: '3px',
+                    offsetTop: '0px',
+                    paddingStart: '17px',
+                    paddingEnd: '17px'
                   }
                 ],
-                spacing: 'sm',
-                paddingAll: '13px'
+                paddingAll: '0px'
               }
             },
             {
               type: 'bubble',
-              size: 'micro',
-              hero: {
-                type: 'image',
-                url: `${newsArr[1].coverSrc.xl.src}`,
-                size: 'full',
-                aspectMode: 'cover',
-                aspectRatio: '320:213',
-                action: {
-                  type: 'uri',
-                  label: 'action',
-                  uri: 'http://linecorp.com/'
-                }
-              },
+              size: 'kilo',
               body: {
                 type: 'box',
                 layout: 'vertical',
                 contents: [
                   {
-                    type: 'text',
-                    text: `${newsArr[1].title}`,
-                    weight: 'bold',
-                    size: 'sm',
-                    wrap: true,
+                    type: 'image',
+                    url: `${newsArr[1].coverSrc.xl.src}`,
+                    size: 'full',
+                    aspectMode: 'cover',
+                    aspectRatio: '1:1',
+                    gravity: 'top',
                     action: {
                       type: 'uri',
                       label: 'action',
                       uri: `https://news.cnyes.com/news/id/${encodeURI(newsArr[1].newsId)}`
-                    },
-                    maxLines: 3
-                  },
-                  {
-                    type: 'box',
-                    layout: 'baseline',
-                    contents: [
-                      {
-                        type: 'icon',
-                        size: 'xs',
-                        url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png'
-                      },
-                      {
-                        type: 'icon',
-                        size: 'xs',
-                        url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png'
-                      },
-                      {
-                        type: 'text',
-                        text: `${new Date(newsArr[1].publishAt * 1000).toLocaleString('zh-tw').substr(0, 10)}`,
-                        size: 'xs',
-                        color: '#8c8c8c',
-                        margin: 'md',
-                        flex: 0
-                      }
-                    ]
+                    }
                   },
                   {
                     type: 'box',
@@ -438,110 +392,54 @@ bot.on('message', async event => {
                       {
                         type: 'box',
                         layout: 'baseline',
-                        spacing: 'sm',
                         contents: [
                           {
                             type: 'text',
-                            text: `${newsArr[1].keyword.join('、')}`,
-                            wrap: false,
-                            style: 'italic',
-                            color: '#8c8c8c',
-                            size: 'xs',
-                            flex: 5
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                spacing: 'sm',
-                paddingAll: '13px'
-              }
-            },
-            {
-              type: 'bubble',
-              size: 'micro',
-              hero: {
-                type: 'image',
-                url: `${newsArr[1].coverSrc.xl.src}`,
-                size: 'full',
-                aspectMode: 'cover',
-                aspectRatio: '320:213',
-                action: {
-                  type: 'uri',
-                  label: 'action',
-                  uri: 'http://linecorp.com/'
-                }
-              },
-              body: {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'text',
-                    text: `${newsArr[3].title}`,
-                    weight: 'bold',
-                    size: 'sm',
-                    wrap: true,
-                    action: {
-                      type: 'uri',
-                      label: 'action',
-                      uri: `https://news.cnyes.com/news/id/${encodeURI(newsArr[2].newsId)}`
-                    },
-                    maxLines: 3
-                  },
-                  {
-                    type: 'box',
-                    layout: 'baseline',
-                    contents: [
-                      {
-                        type: 'icon',
-                        size: 'xs',
-                        url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png'
-                      },
-                      {
-                        type: 'icon',
-                        size: 'xs',
-                        url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png'
-                      },
-                      {
-                        type: 'text',
-                        text: `${new Date(newsArr[2].publishAt * 1000).toLocaleString('zh-tw').substr(0, 10)}`,
-                        size: 'xs',
-                        color: '#8c8c8c',
-                        margin: 'md',
-                        flex: 0
-                      }
-                    ]
-                  },
-                  {
-                    type: 'box',
-                    layout: 'vertical',
-                    contents: [
-                      {
-                        type: 'box',
-                        layout: 'baseline',
-                        spacing: 'sm',
-                        contents: [
+                            text: `${new Date(newsArr[1].publishAt * 1000).toLocaleString('zh-tw').substr(0, 10)}`,
+                            color: '#064d8888',
+                            size: 'sm',
+                            flex: 0
+                          },
                           {
                             type: 'text',
-                            text: `${newsArr[3].keyword.join('、')}`,
-                            wrap: false,
-                            style: 'italic',
-                            color: '#8c8c8c',
-                            size: 'xs',
-                            flex: 5
+                            color: '#064d888c',
+                            size: 'xl',
+                            flex: 0,
+                            text: '|'
+                          },
+                          {
+                            type: 'text',
+                            text: `${newsArr[1].title}`,
+                            size: 'md',
+                            color: '#064d88',
+                            weight: 'bold',
+                            maxLines: 2,
+                            wrap: true,
+                            action: {
+                              type: 'uri',
+                              label: 'action',
+                              uri: `https://news.cnyes.com/news/id/${encodeURI(newsArr[1].newsId)}`
+                            }
                           }
-                        ]
+                        ],
+                        spacing: 'md'
                       }
-                    ]
+                    ],
+                    position: 'absolute',
+                    offsetStart: '0px',
+                    offsetEnd: '0px',
+                    backgroundColor: '#eaf3faee',
+                    paddingAll: '3px',
+                    offsetTop: '0px',
+                    paddingStart: '17px',
+                    paddingEnd: '17px'
                   }
                 ],
-                spacing: 'sm',
-                paddingAll: '13px'
+                paddingAll: '0px'
               }
             }
           ]
+
           const message = {
             type: 'flex',
             altText: `${event.message.text.substr(0, newsI)} Stock News`,
@@ -1660,7 +1558,7 @@ bot.on('postback', async event => {
                       type: 'text',
                       text: `${new Date(newsArr[0].publishAt * 1000).toLocaleString('zh-tw').substr(0, 10)}`,
                       size: 'xs',
-                      color: '#8c8c8c',
+                      color: '#064d888c',
                       margin: 'md',
                       flex: 0
                     }

@@ -1,64 +1,28 @@
 {
   "type": "flex",
-  "altText": "00881 Stock News",
+  "altText": "6024 Stock News",
   "contents": {
     "type": "carousel",
     "contents": [
       {
         "type": "bubble",
-        "size": "micro",
-        "hero": {
-          "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4631757/l/a9fbd181af81318231abad6036154004.jpg",
-          "size": "full",
-          "aspectMode": "cover",
-          "aspectRatio": "320:213",
-          "action": {
-            "type": "uri",
-            "label": "action",
-            "uri": "http://linecorp.com/"
-          }
-        },
+        "size": "kilo",
         "body": {
           "type": "box",
           "layout": "vertical",
           "contents": [
             {
-              "type": "text",
-              "text": "台股進攻萬八投資術 看好「雙G」ETF價差、股息兩頭賺",
-              "weight": "bold",
-              "size": "sm",
-              "wrap": true,
+              "type": "image",
+              "url": "https://cimg.cnyes.cool/prod/news/4653051/xl/deb457a4aa9d15246344e738bb15a546.jpg",
+              "size": "full",
+              "aspectMode": "cover",
+              "aspectRatio": "1:1",
+              "gravity": "top",
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4636103"
-              },
-              "maxLines": 3
-            },
-            {
-              "type": "box",
-              "layout": "baseline",
-              "contents": [
-                {
-                  "type": "icon",
-                  "size": "xs",
-                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-                },
-                {
-                  "type": "icon",
-                  "size": "xs",
-                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
-                },
-                {
-                  "type": "text",
-                  "text": "2021/5/2 上",
-                  "size": "xs",
-                  "color": "#8c8c8c",
-                  "margin": "md",
-                  "flex": 0
-                }
-              ]
+                "uri": "https://news.cnyes.com/news/id/4653051"
+              }
             },
             {
               "type": "box",
@@ -67,81 +31,71 @@
                 {
                   "type": "box",
                   "layout": "baseline",
-                  "spacing": "sm",
                   "contents": [
                     {
                       "type": "text",
-                      "text": "台股、ETF、5G、ESG、股息、高股息、00881、00878、萬八",
-                      "wrap": false,
-                      "style": "italic",
+                      "text": "2021/5/28 ",
+                      "color": "#064d8888",
+                      "size": "sm",
+                      "flex": 0
+                    },
+                    {
+                      "type": "text",
                       "color": "#8c8c8c",
-                      "size": "xs",
-                      "flex": 5
+                      "size": "xl",
+                      "flex": 0,
+                      "text": "|"
+                    },
+                    {
+                      "type": "text",
+                      "text": "〈國內疫情升溫〉群益期強化八大防疫措施 規劃中長期輪流居家上班",
+                      "size": "md",
+                      "color": "#064d88",
+                      "weight": "bold",
+                      "maxLines": 2,
+                      "wrap": true,
+                      "action": {
+                        "type": "uri",
+                        "label": "action",
+                        "uri": "https://news.cnyes.com/news/id/4653051"
+                      }
                     }
-                  ]
+                  ],
+                  "spacing": "md"
                 }
-              ]
+              ],
+              "position": "absolute",
+              "offsetStart": "0px",
+              "offsetEnd": "0px",
+              "backgroundColor": "#eaf3faee",
+              "paddingAll": "3px",
+              "offsetTop": "0px",
+              "paddingStart": "17px",
+              "paddingEnd": "17px"
             }
           ],
-          "spacing": "sm",
-          "paddingAll": "13px"
+          "paddingAll": "0px"
         }
       },
       {
         "type": "bubble",
-        "size": "micro",
-        "hero": {
-          "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4631757/l/a9fbd181af81318231abad6036154004.jpg",
-          "size": "full",
-          "aspectMode": "cover",
-          "aspectRatio": "320:213",
-          "action": {
-            "type": "uri",
-            "label": "action",
-            "uri": "http://linecorp.com/"
-          }
-        },
+        "size": "kilo",
         "body": {
           "type": "box",
           "layout": "vertical",
           "contents": [
             {
-              "type": "text",
-              "text": "<mark>00881</mark>首次成分股調整 新納入3檔電動車概念股",
-              "weight": "bold",
-              "size": "sm",
-              "wrap": true,
+              "type": "image",
+              "url": "https://cimg.cnyes.cool/prod/news/4648196/l/21cbae576adf02d69c0fdb7234ce8e1c.jpg",
+              "size": "full",
+              "aspectMode": "cover",
+              "aspectRatio": "1:1",
+              "gravity": "top",
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4631757"
-              },
-              "maxLines": 3
-            },
-            {
-              "type": "box",
-              "layout": "baseline",
-              "contents": [
-                {
-                  "type": "icon",
-                  "size": "xs",
-                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-                },
-                {
-                  "type": "icon",
-                  "size": "xs",
-                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
-                },
-                {
-                  "type": "text",
-                  "text": "2021/4/20 ",
-                  "size": "xs",
-                  "color": "#8c8c8c",
-                  "margin": "md",
-                  "flex": 0
-                }
-              ]
+                "uri": "https://news.cnyes.com/news/id/4648196"
+              }
             },
             {
               "type": "box",
@@ -150,107 +104,50 @@
                 {
                   "type": "box",
                   "layout": "baseline",
-                  "spacing": "sm",
                   "contents": [
                     {
                       "type": "text",
-                      "text": "00881、5G、電動車、國泰台灣5G+、信邦、南電、佳世達、ETF",
-                      "wrap": false,
-                      "style": "italic",
-                      "color": "#8c8c8c",
-                      "size": "xs",
-                      "flex": 5
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "spacing": "sm",
-          "paddingAll": "13px"
-        }
-      },
-      {
-        "type": "bubble",
-        "size": "micro",
-        "hero": {
-          "type": "image",
-          "url": "https://cimg.cnyes.cool/prod/news/4631757/l/a9fbd181af81318231abad6036154004.jpg",
-          "size": "full",
-          "aspectMode": "cover",
-          "aspectRatio": "320:213",
-          "action": {
-            "type": "uri",
-            "label": "action",
-            "uri": "http://linecorp.com/"
-          }
-        },
-        "body": {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "text",
-              "text": "ETF強強滾 <mark>00881</mark>挾國家隊優勢狂吸33萬受益人",
-              "weight": "bold",
-              "size": "sm",
-              "wrap": true,
-              "action": {
-                "type": "uri",
-                "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4630101"
-              },
-              "maxLines": 3
-            },
-            {
-              "type": "box",
-              "layout": "baseline",
-              "contents": [
-                {
-                  "type": "icon",
-                  "size": "xs",
-                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-                },
-                {
-                  "type": "icon",
-                  "size": "xs",
-                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
-                },
-                {
-                  "type": "text",
-                  "text": "2021/4/15 ",
-                  "size": "xs",
-                  "color": "#8c8c8c",
-                  "margin": "md",
-                  "flex": 0
-                }
-              ]
-            },
-            {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "box",
-                  "layout": "baseline",
-                  "spacing": "sm",
-                  "contents": [
+                      "text": "2021/5/20 ",
+                      "color": "#064d8888",
+                      "size": "sm",
+                      "flex": 0
+                    },
                     {
                       "type": "text",
-                      "text": "5G、5G ETF、ETF、00881、國泰台灣5G+",
-                      "wrap": false,
-                      "style": "italic",
-                      "color": "#8c8c8c",
-                      "size": "xs",
-                      "flex": 5
+                      "color": "#064d888c",
+                      "size": "xl",
+                      "flex": 0,
+                      "text": "|"
+                    },
+                    {
+                      "type": "text",
+                      "text": "盤前財經大事搶先讀2021年05月20日",
+                      "size": "md",
+                      "color": "#064d88",
+                      "weight": "bold",
+                      "maxLines": 2,
+                      "wrap": true,
+                      "action": {
+                        "type": "uri",
+                        "label": "action",
+                        "uri": "https://news.cnyes.com/news/id/4648196"
+                      }
                     }
-                  ]
+                  ],
+                  "spacing": "md"
                 }
-              ]
+              ],
+              "position": "absolute",
+              "offsetStart": "0px",
+              "offsetEnd": "0px",
+              "backgroundColor": "#eaf3faee",
+              "paddingAll": "3px",
+              "offsetTop": "0px",
+              "paddingStart": "17px",
+              "paddingEnd": "17px"
             }
           ],
-          "spacing": "sm",
-          "paddingAll": "13px"
+          "paddingAll": "0px"
         }
       }
     ]
