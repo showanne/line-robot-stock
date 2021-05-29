@@ -102,8 +102,8 @@
                               "align": "start",
                               "action": {
                                 "type": "message",
-                                "label": "1434+news (e.g.)",
-                                "text": "2887+news (e.g.)"
+                                "label": "2542+news (e.g.)",
+                                "text": "5880+news (e.g.)"
                               }
                             }
                           ],
@@ -127,8 +127,8 @@
                               "align": "start",
                               "action": {
                                 "type": "message",
-                                "label": "5880+market (e.g.)",
-                                "text": "00692+market (e.g.)"
+                                "label": "2886+market (e.g.)",
+                                "text": "2385+market (e.g.)"
                               }
                             }
                           ],
@@ -153,8 +153,8 @@
                               "align": "start",
                               "action": {
                                 "type": "message",
-                                "label": "2887+history (e.g.)",
-                                "text": "2884+history (e.g.)"
+                                "label": "1434+history (e.g.)",
+                                "text": "2330+history (e.g.)"
                               }
                             }
                           ],

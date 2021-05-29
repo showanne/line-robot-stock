@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "6024 Stock News",
+  "altText": "2887 Stock News",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -13,7 +13,7 @@
           "contents": [
             {
               "type": "image",
-              "url": "https://cimg.cnyes.cool/prod/news/4653051/xl/deb457a4aa9d15246344e738bb15a546.jpg",
+              "url": "https://cimg.cnyes.cool/prod/news/4652089/l/469b3fc703a94530179f09fbe503b05c.jpg",
               "size": "full",
               "aspectMode": "cover",
               "aspectRatio": "1:1",
@@ -21,7 +21,7 @@
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4653051"
+                "uri": "https://news.cnyes.com/news/id/4652089"
               }
             },
             {
@@ -34,7 +34,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "2021/5/28 ",
+                      "text": "2021/5/26 ",
                       "color": "#064d8888",
                       "size": "sm",
                       "flex": 0
@@ -48,7 +48,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "〈國內疫情升溫〉群益期強化八大防疫措施 規劃中長期輪流居家上班",
+                      "text": "台新金捐3000萬元 挺雙北政府、醫院抗疫",
                       "size": "md",
                       "color": "#064d88",
                       "weight": "bold",
@@ -57,7 +57,7 @@
                       "action": {
                         "type": "uri",
                         "label": "action",
-                        "uri": "https://news.cnyes.com/news/id/4653051"
+                        "uri": "https://news.cnyes.com/news/id/4652089"
                       }
                     }
                   ],
@@ -86,7 +86,7 @@
           "contents": [
             {
               "type": "image",
-              "url": "https://cimg.cnyes.cool/prod/news/4648196/l/21cbae576adf02d69c0fdb7234ce8e1c.jpg",
+              "url": "https://cimg.cnyes.cool/prod/news/4651930/xl/85b2850c24fee5c576c836012235c9e0.jpg",
               "size": "full",
               "aspectMode": "cover",
               "aspectRatio": "1:1",
@@ -94,7 +94,7 @@
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4648196"
+                "uri": "https://news.cnyes.com/news/id/4651930"
               }
             },
             {
@@ -107,7 +107,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "2021/5/20 ",
+                      "text": "2021/5/25 ",
                       "color": "#064d8888",
                       "size": "sm",
                       "flex": 0
@@ -121,7 +121,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "盤前財經大事搶先讀2021年05月20日",
+                      "text": "台新金一招解套兩案 併保德信人壽、彰銀退場露曙光",
                       "size": "md",
                       "color": "#064d88",
                       "weight": "bold",
@@ -130,7 +130,7 @@
                       "action": {
                         "type": "uri",
                         "label": "action",
-                        "uri": "https://news.cnyes.com/news/id/4648196"
+                        "uri": "https://news.cnyes.com/news/id/4651930"
                       }
                     }
                   ],
