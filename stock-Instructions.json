@@ -6,6 +6,7 @@
     "contents": [
       {
         "type": "bubble",
+        "size": "mega",
         "header": {
           "type": "box",
           "layout": "vertical",
@@ -19,7 +20,7 @@
                   "url": "https://www.frevvo.com/blog/wp-content/uploads/2020/01/Frevvo-Improve-Finance-hero.png",
                   "size": "full",
                   "aspectMode": "cover",
-                  "aspectRatio": "150:196",
+                  "aspectRatio": "9:11",
                   "gravity": "center",
                   "flex": 1
                 },
@@ -29,7 +30,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "Stock",
+                      "text": "Stock.Find",
                       "size": "xs",
                       "color": "#ffffff",
                       "align": "center",
@@ -45,7 +46,7 @@
                   "offsetStart": "18px",
                   "offsetTop": "18px",
                   "cornerRadius": "100px",
-                  "width": "59px",
+                  "width": "89px",
                   "height": "25px"
                 },
                 {
@@ -102,8 +103,8 @@
                               "align": "start",
                               "action": {
                                 "type": "message",
-                                "label": "2542+news (e.g.)",
-                                "text": "5880+news (e.g.)"
+                                "label": "2884+news (e.g.)",
+                                "text": "00692+news (e.g.)"
                               }
                             }
                           ],
@@ -127,8 +128,8 @@
                               "align": "start",
                               "action": {
                                 "type": "message",
-                                "label": "2886+market (e.g.)",
-                                "text": "2385+market (e.g.)"
+                                "label": "0050+market (e.g.)",
+                                "text": "3702+market (e.g.)"
                               }
                             }
                           ],
@@ -153,8 +154,8 @@
                               "align": "start",
                               "action": {
                                 "type": "message",
-                                "label": "1434+history (e.g.)",
-                                "text": "2330+history (e.g.)"
+                                "label": "5880+history (e.g.)",
+                                "text": "2887+history (e.g.)"
                               }
                             }
                           ],

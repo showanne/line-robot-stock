@@ -63,9 +63,9 @@ const stockPop = [
   '6024',
   '6023'
 ]
-// 1 ~ stockPop.length 的隨機
+// 1 ~ stockPop.length-1 的隨機
 const stockRandom = () => {
-  return Math.floor(Math.random() * stockPop.length) + 1
+  return Math.floor(Math.random() * stockPop.length - 1) + 1
 }
 
 bot.listen('/', process.env.PORT, () => {
@@ -83,11 +83,12 @@ bot.on('message', async event => {
         if (event.message.text.includes('Instructions') || event.message.text.includes('說明')) {
           // console.log(arrSymbolId.length)  //120107
           console.log(stockRandom())
-          console.log(stockPop[stockRandom()])
+          // console.log(stockPop[stockRandom()])
 
           const flex = [
             {
               type: 'bubble',
+              size: 'mega',
               header: {
                 type: 'box',
                 layout: 'vertical',
@@ -101,7 +102,7 @@ bot.on('message', async event => {
                         url: 'https://www.frevvo.com/blog/wp-content/uploads/2020/01/Frevvo-Improve-Finance-hero.png',
                         size: 'full',
                         aspectMode: 'cover',
-                        aspectRatio: '150:196',
+                        aspectRatio: '9:11',
                         gravity: 'center',
                         flex: 1
                       },
@@ -111,7 +112,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: 'Stock',
+                            text: 'Stock.Find',
                             size: 'xs',
                             color: '#ffffff',
                             align: 'center',
@@ -127,7 +128,7 @@ bot.on('message', async event => {
                         offsetStart: '18px',
                         offsetTop: '18px',
                         cornerRadius: '100px',
-                        width: '59px',
+                        width: '89px',
                         height: '25px'
                       },
                       {
@@ -284,7 +285,7 @@ bot.on('message', async event => {
         }
         if (event.message.text.includes('news')) {
           const newsI = event.message.text.indexOf('news') - 1
-          console.log(newsI)
+          // console.log(newsI)
 
           const responseSearch = await axios.get(`https://api.cnyes.com/media/api/v1/search?q=${encodeURI(event.message.text.substr(0, newsI))}`)
 
@@ -455,17 +456,13 @@ bot.on('message', async event => {
 
         if (event.message.text.includes('market')) {
           const marketI = event.message.text.indexOf('market') - 1
-          console.log(marketI)
+          // console.log(marketI)
 
           const responseMeta = await axios.get(
-            `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
-              event.message.text.substr(0, marketI)
-            )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+            `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(event.message.text.substr(0, marketI))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
           )
           const responseQuote = await axios.get(
-            `https://api.fugle.tw/realtime/v0.2/intraday/quote?symbolId=${encodeURI(
-              event.message.text.substr(0, marketI)
-            )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+            `https://api.fugle.tw/realtime/v0.2/intraday/quote?symbolId=${encodeURI(event.message.text.substr(0, marketI))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
           )
           // const responseDealts = await axios.get(
           //   `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(event.message.text.substr(0, (event.message.text.indexOf("news")-1)))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
@@ -475,13 +472,9 @@ bot.on('message', async event => {
             `https://ws.api.cnyes.com/ws/api/v1/charting/history?resolution=1&symbol=TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK&quote=1`
           )
 
-          const responseCnyesQuoteK = await axios.get(
-            `https://ws.api.cnyes.com/ws/api/v1/quote/quotes/TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK?column=K`
-          )
+          const responseCnyesQuoteK = await axios.get(`https://ws.api.cnyes.com/ws/api/v1/quote/quotes/TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK?column=K`)
 
-          const responseCnyesQuoteI = await axios.get(
-            `https://ws.api.cnyes.com/ws/api/v1/quote/quotes/TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK?column=I`
-          )
+          const responseCnyesQuoteI = await axios.get(`https://ws.api.cnyes.com/ws/api/v1/quote/quotes/TWS:${encodeURI(event.message.text.substr(0, marketI))}:STOCK?column=I`)
 
           // console.log(responseCnyesQuoteK.data.data[0])
           // console.log(responseCnyesQuoteK.data.data[0]['200056'])
@@ -491,6 +484,485 @@ bot.on('message', async event => {
 
           const flex = [
             // 個股日成交資訊
+            {
+              type: 'bubble',
+              body: {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  // 個股資訊背景
+                  // {
+                  //   type: 'image',
+                  //   url: 'https://imgur.com/7BTFHmI.png',
+                  //   aspectMode: 'cover',
+                  //   aspectRatio: '11:16',
+                  //   flex: 1,
+                  //   gravity: 'top',
+                  //   size: 'full',
+                  //   align: 'center'
+                  // },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'box',
+                            layout: 'vertical',
+                            contents: [
+                              // 股票代號
+                              {
+                                type: 'text',
+                                text: `${responseMeta.data.data.info.symbolId}`,
+                                weight: 'bold',
+                                size: 'xxl',
+                                margin: 'none',
+                                color: '#2A1E5C'
+                              },
+                              // 股票中文名稱
+                              {
+                                type: 'text',
+                                text: `${responseMeta.data.data.meta.nameZhTw}`,
+                                size: 'sm',
+                                color: '#2A1E5Caa',
+                                wrap: true,
+                                margin: 'sm',
+                                offsetStart: 'xs'
+                              }
+                            ],
+                            width: '40%'
+                          },
+                          {
+                            type: 'box',
+                            layout: 'horizontal',
+                            contents: [
+                              // 漲跌 change '11'
+                              {
+                                type: 'box',
+                                layout: 'vertical',
+                                contents: [
+                                  {
+                                    type: 'text',
+                                    text: '漲跌',
+                                    size: 'xxs',
+                                    color: '#555555',
+                                    flex: 0
+                                  },
+                                  {
+                                    type: 'text',
+                                    text: `${responseCnyesCharting.data.data.quote['11']}`,
+                                    size: 'lg',
+                                    color: '#111111',
+                                    align: 'start',
+                                    offsetStart: '19px'
+                                  }
+                                ]
+                              },
+                              // 漲跌幅 changePercent '56'
+                              {
+                                type: 'box',
+                                layout: 'vertical',
+                                contents: [
+                                  {
+                                    type: 'text',
+                                    text: '漲跌幅',
+                                    size: 'xxs',
+                                    color: '#555555',
+                                    flex: 0
+                                  },
+                                  {
+                                    type: 'text',
+                                    text: `${responseCnyesCharting.data.data.quote['56']}%`,
+                                    size: 'lg',
+                                    color: '#111111',
+                                    align: 'start'
+                                  }
+                                ]
+                              }
+                            ],
+                            margin: 'sm',
+                            cornerRadius: 'lg',
+                            paddingAll: 'md',
+                            backgroundColor: '#e6ff9288',
+                            spacing: 'md',
+                            paddingTop: 'xl'
+                          }
+                        ]
+                      },
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        spacing: 'sm',
+                        contents: [
+                          {
+                            type: 'box',
+                            layout: 'horizontal',
+                            contents: [
+                              {
+                                type: 'box',
+                                layout: 'vertical',
+                                contents: [
+                                  {
+                                    type: 'box',
+                                    layout: 'vertical',
+                                    contents: [
+                                      // 股價
+                                      {
+                                        type: 'text',
+                                        text: '股價',
+                                        size: 'sm',
+                                        color: '#555555',
+                                        flex: 0
+                                      },
+                                      {
+                                        type: 'text',
+                                        text: `${responseCnyesCharting.data.data.quote['6']}`,
+                                        size: 'sm',
+                                        color: '#111111',
+                                        align: 'start',
+                                        offsetStart: '19px'
+                                      }
+                                    ]
+                                  },
+                                  // 開盤價 priceOpen o
+                                  {
+                                    type: 'box',
+                                    layout: 'vertical',
+                                    contents: [
+                                      {
+                                        type: 'text',
+                                        text: '開盤價',
+                                        size: 'sm',
+                                        color: '#555555',
+                                        flex: 0
+                                      },
+                                      {
+                                        type: 'text',
+                                        text: `${responseCnyesCharting.data.data.o[responseCnyesCharting.data.data.o.length - 1]}`,
+                                        size: 'sm',
+                                        color: '#111111',
+                                        align: 'start',
+                                        offsetStart: '19px'
+                                      }
+                                    ],
+                                    margin: 'md'
+                                  },
+                                  // 最高價 priceHigh h
+                                  {
+                                    type: 'box',
+                                    layout: 'vertical',
+                                    contents: [
+                                      {
+                                        type: 'text',
+                                        text: '最高價',
+                                        size: 'sm',
+                                        color: '#555555',
+                                        flex: 0,
+                                        margin: 'sm'
+                                      },
+                                      {
+                                        type: 'text',
+                                        text: `${responseCnyesCharting.data.data.h[responseCnyesCharting.data.data.h.length - 1]}`,
+                                        size: 'sm',
+                                        color: '#111111',
+                                        align: 'start',
+                                        offsetStart: '19px'
+                                      }
+                                    ]
+                                  },
+                                  // 最低價 priceLow l
+                                  {
+                                    type: 'box',
+                                    layout: 'vertical',
+                                    contents: [
+                                      {
+                                        type: 'text',
+                                        text: '最低價',
+                                        size: 'sm',
+                                        color: '#555555',
+                                        flex: 0,
+                                        margin: 'xs'
+                                      },
+                                      {
+                                        type: 'text',
+                                        text: `${responseCnyesCharting.data.data.l[responseCnyesCharting.data.data.l.length - 1]}`,
+                                        size: 'sm',
+                                        color: '#111111',
+                                        align: 'start',
+                                        offsetStart: '19px'
+                                      }
+                                    ]
+                                  },
+                                  // 收盤價 c
+                                  {
+                                    type: 'box',
+                                    layout: 'vertical',
+                                    contents: [
+                                      {
+                                        type: 'text',
+                                        text: '收盤價',
+                                        size: 'sm',
+                                        color: '#555555',
+                                        flex: 0,
+                                        margin: 'xs'
+                                      },
+                                      {
+                                        type: 'text',
+                                        text: `${responseCnyesCharting.data.data.c[responseCnyesCharting.data.data.c.length - 1]}`,
+                                        size: 'sm',
+                                        color: '#111111',
+                                        align: 'start',
+                                        offsetStart: '19px'
+                                      }
+                                    ]
+                                  },
+                                  // 昨收
+                                  {
+                                    type: 'box',
+                                    layout: 'vertical',
+                                    contents: [
+                                      {
+                                        type: 'text',
+                                        text: '昨收',
+                                        size: 'sm',
+                                        color: '#555555',
+                                        flex: 0
+                                      },
+                                      {
+                                        type: 'text',
+                                        text: `${responseCnyesCharting.data.data.quote['21']}`,
+                                        size: 'sm',
+                                        color: '#111111',
+                                        align: 'start',
+                                        offsetStart: '19px'
+                                      }
+                                    ],
+                                    margin: 'md'
+                                  }
+                                ],
+                                backgroundColor: '#ffae8e66',
+                                cornerRadius: 'lg',
+                                paddingAll: 'md',
+                                width: '40%',
+                                paddingStart: 'xxl'
+                              },
+                              {
+                                type: 'box',
+                                layout: 'vertical',
+                                contents: [
+                                  {
+                                    type: 'box',
+                                    layout: 'vertical',
+                                    contents: [
+                                      // 成交張數 unit '800001'
+                                      {
+                                        type: 'box',
+                                        layout: 'vertical',
+                                        contents: [
+                                          {
+                                            type: 'text',
+                                            text: '總成交張數',
+                                            size: 'sm',
+                                            color: '#555555',
+                                            flex: 0
+                                          },
+                                          {
+                                            type: 'text',
+                                            text: `${responseCnyesCharting.data.data.quote['800001']}`,
+                                            size: 'sm',
+                                            color: '#111111',
+                                            align: 'start',
+                                            offsetStart: '19px'
+                                          }
+                                        ]
+                                      },
+                                      // 1日高低 '13'~'12'
+                                      {
+                                        type: 'box',
+                                        layout: 'vertical',
+                                        contents: [
+                                          {
+                                            type: 'text',
+                                            text: '1日高低',
+                                            size: 'sm',
+                                            color: '#555555',
+                                            flex: 0
+                                          },
+                                          {
+                                            type: 'text',
+                                            text: `${responseCnyesQuoteI.data.data[0]['13']} ~ ${responseCnyesQuoteI.data.data[0]['12']}`,
+                                            size: 'sm',
+                                            color: '#111111',
+                                            align: 'start',
+                                            offsetStart: '19px'
+                                          }
+                                        ]
+                                      },
+                                      // 52週高低 '3266'~'3265'
+                                      {
+                                        type: 'box',
+                                        layout: 'vertical',
+                                        contents: [
+                                          {
+                                            type: 'text',
+                                            text: '52週高低',
+                                            size: 'sm',
+                                            color: '#555555',
+                                            flex: 0
+                                          },
+                                          {
+                                            type: 'text',
+                                            text: `${responseCnyesQuoteI.data.data[0]['3266']} ~ ${responseCnyesQuoteI.data.data[0]['3265']}`,
+                                            size: 'sm',
+                                            color: '#111111',
+                                            align: 'start',
+                                            offsetStart: '19px'
+                                          }
+                                        ]
+                                      }
+                                    ],
+                                    backgroundColor: '#c4e3ff88',
+                                    paddingAll: 'md',
+                                    cornerRadius: 'lg'
+                                  },
+                                  // 本益比 '700001'
+                                  {
+                                    type: 'box',
+                                    layout: 'vertical',
+                                    contents: [
+                                      {
+                                        type: 'box',
+                                        layout: 'vertical',
+                                        contents: [
+                                          {
+                                            type: 'text',
+                                            text: '本益比',
+                                            size: 'sm',
+                                            color: '#555555',
+                                            flex: 0
+                                          },
+                                          {
+                                            type: 'text',
+                                            text: `${responseCnyesQuoteI.data.data[0]['700001']}`,
+                                            size: 'sm',
+                                            color: '#111111',
+                                            align: 'start',
+                                            offsetStart: '19px'
+                                          }
+                                        ]
+                                      },
+                                      // 本淨比 '700006'
+                                      {
+                                        type: 'box',
+                                        layout: 'vertical',
+                                        contents: [
+                                          {
+                                            type: 'text',
+                                            text: '本淨比',
+                                            size: 'sm',
+                                            color: '#555555',
+                                            flex: 0
+                                          },
+                                          {
+                                            type: 'text',
+                                            text: `${responseCnyesQuoteI.data.data[0]['700006']}`,
+                                            size: 'sm',
+                                            color: '#111111',
+                                            align: 'start',
+                                            offsetStart: '19px'
+                                          }
+                                        ]
+                                      },
+                                      // 市值 (億) '700005'
+                                      {
+                                        type: 'box',
+                                        layout: 'vertical',
+                                        contents: [
+                                          {
+                                            type: 'text',
+                                            text: '市值(億)',
+                                            size: 'sm',
+                                            color: '#555555',
+                                            flex: 0
+                                          },
+                                          {
+                                            type: 'text',
+                                            text: `${responseCnyesQuoteI.data.data[0]['700005'] / 100000000} `,
+                                            size: 'sm',
+                                            color: '#111111',
+                                            align: 'start',
+                                            offsetStart: '19px'
+                                          }
+                                        ]
+                                      }
+                                    ],
+                                    backgroundColor: '#c4e3ff88',
+                                    margin: 'md',
+                                    cornerRadius: 'lg',
+                                    paddingAll: 'md'
+                                  }
+                                ],
+                                margin: 'lg'
+                              }
+                            ],
+                            margin: 'md'
+                          }
+                        ]
+                      },
+                      {
+                        type: 'separator',
+                        margin: 'xl'
+                      },
+                      // 歷史走勢
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        margin: 'md',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '歷史走勢',
+                            size: 'xs',
+                            color: '#aaaaaa',
+                            flex: 0,
+                            action: {
+                              type: 'uri',
+                              label: 'action',
+                              uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, marketI))}:TPE?window=MAX`
+                            }
+                          },
+                          // 當下時間
+                          {
+                            type: 'text',
+                            text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
+                              new Date().getMinutes() + 1
+                            }:${new Date().getSeconds()}`,
+                            color: '#aaaaaa',
+                            size: 'xs',
+                            align: 'end'
+                          }
+                        ]
+                      }
+                    ],
+                    position: 'absolute',
+                    offsetTop: '0px',
+                    offsetBottom: '0px',
+                    offsetStart: '0px',
+                    offsetEnd: '0px',
+                    paddingAll: 'xxl'
+                  }
+                ],
+                paddingAll: '0px'
+              },
+              styles: {
+                footer: {
+                  separator: true
+                }
+              }
+            },
             {
               type: 'bubble',
               body: {
@@ -523,339 +995,9 @@ bot.on('message', async event => {
                   {
                     type: 'box',
                     layout: 'vertical',
-                    margin: 'xxl',
-                    spacing: 'sm',
-                    contents: [
-                      // 股價
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '股價 (跟收盤不一樣?)',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesCharting.data.data.quote['6']}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 昨收
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '昨收',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesCharting.data.data.quote['21']}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 開盤價 priceOpen o
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '開盤價',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesCharting.data.data.o[responseCnyesCharting.data.data.o.length - 1]}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 最高價 priceHigh h
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '最高價',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesCharting.data.data.h[responseCnyesCharting.data.data.h.length - 1]}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 最低價 priceLow l
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '最低價',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesCharting.data.data.l[responseCnyesCharting.data.data.l.length - 1]}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 收盤價 c
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '收盤價',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesCharting.data.data.c[responseCnyesCharting.data.data.c.length - 1]}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 本益比 '700001'
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '本益比',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesQuoteI.data.data[0]['700001']}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 本淨比 '700006'
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '本淨比',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesQuoteI.data.data[0]['700006']}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 市值 (億) '700005'
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '市值 (億)',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesQuoteI.data.data[0]['700005']}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 漲跌 change '11'
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '漲跌',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesCharting.data.data.quote['11']}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 漲跌幅 changePercent '56'
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '漲跌幅',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesCharting.data.data.quote['56']}%`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      },
-                      // 成交張數 unit '800001'
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '總成交張數',
-                            size: 'sm',
-                            color: '#555555',
-                            flex: 0
-                          },
-                          {
-                            type: 'text',
-                            text: `${responseCnyesCharting.data.data.quote['800001']}`,
-                            size: 'sm',
-                            color: '#111111',
-                            align: 'end'
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    type: 'separator',
-                    margin: 'xl'
-                  },
-                  // 歷史走勢
-                  {
-                    type: 'box',
-                    layout: 'horizontal',
-                    margin: 'md',
-                    contents: [
-                      {
-                        type: 'text',
-                        text: '歷史走勢',
-                        size: 'xs',
-                        color: '#aaaaaa',
-                        flex: 0,
-                        action: {
-                          type: 'uri',
-                          label: 'action',
-                          uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, marketI))}:TPE?window=MAX`
-                        }
-                      },
-                      {
-                        type: 'text',
-                        text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
-                          new Date().getMinutes() + 1
-                        }`,
-                        color: '#aaaaaa',
-                        size: 'xs',
-                        align: 'end'
-                      }
-                    ]
-                  }
-                ]
-              },
-              styles: {
-                footer: {
-                  separator: true
-                }
-              }
-            },
-            // 五檔
-            {
-              type: 'bubble',
-              body: {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'text',
-                    text: `${responseMeta.data.data.info.symbolId}`,
-                    weight: 'bold',
-                    size: 'xxl',
-                    margin: 'none',
-                    color: '#2A1E5C'
-                  },
-                  {
-                    type: 'text',
-                    text: `${responseMeta.data.data.meta.nameZhTw}`,
-                    size: 'sm',
-                    color: '#2A1E5Caa',
-                    wrap: true,
-                    margin: 'sm',
-                    offsetStart: 'xs'
-                  },
-                  {
-                    type: 'separator',
-                    margin: 'xxl'
-                  },
-                  {
-                    type: 'box',
-                    layout: 'vertical',
                     margin: 'md',
                     spacing: 'sm',
                     contents: [
-                      // for (let i=0;i<5;i++ ;){i}
                       // 買 bestBids 賣 bestAsks
                       {
                         type: 'box',
@@ -877,11 +1019,10 @@ bot.on('message', async event => {
                             color: '#06A77D'
                           }
                         ],
-                        // backgroundColor: '#6CD4FFaa',
-                        // paddingAll: 'sm',
                         justifyContent: 'space-between',
-                        margin: 'lg'
+                        margin: 'md'
                       },
+                      // 0
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -925,8 +1066,10 @@ bot.on('message', async event => {
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
-                        ]
+                        ],
+                        margin: 'md'
                       },
+                      // 1
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -970,8 +1113,10 @@ bot.on('message', async event => {
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
-                        ]
+                        ],
+                        margin: 'md'
                       },
+                      // 2
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -1015,8 +1160,10 @@ bot.on('message', async event => {
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
-                        ]
+                        ],
+                        margin: 'md'
                       },
+                      // 3
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -1060,8 +1207,10 @@ bot.on('message', async event => {
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
-                        ]
+                        ],
+                        margin: 'md'
                       },
+                      // 4
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -1105,9 +1254,58 @@ bot.on('message', async event => {
                             wrap: false,
                             adjustMode: 'shrink-to-fit'
                           }
-                        ]
+                        ],
+                        margin: 'md'
                       },
-                      // 百分比
+                      // 內外盤比
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '內外盤比',
+                            align: 'center',
+                            color: '#2A1E5Cdd'
+                          }
+                        ],
+                        justifyContent: 'space-between',
+                        margin: 'xl'
+                      },
+                      // 內外盤比 百分比
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          // 內盤
+                          {
+                            type: 'text',
+                            text: `${responseCnyesQuoteK.data.data[0]['200056']}%`,
+                            size: 'sm',
+                            gravity: 'top',
+                            color: '#FF5D73',
+                            align: 'start',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          },
+                          {
+                            type: 'filler'
+                          },
+                          // 外盤
+                          {
+                            type: 'text',
+                            text: `${responseCnyesQuoteK.data.data[0]['200057']}%`,
+                            size: 'sm',
+                            gravity: 'top',
+                            color: '#06A77D',
+                            align: 'end',
+                            wrap: false,
+                            adjustMode: 'shrink-to-fit'
+                          }
+                        ],
+                        margin: 'sm'
+                      },
+                      // 內外盤比 百分比 長條圖
                       {
                         type: 'box',
                         layout: 'vertical',
@@ -1122,13 +1320,14 @@ bot.on('message', async event => {
                             ],
                             width: `${responseCnyesQuoteK.data.data[0]['200056']}%`,
                             backgroundColor: '#FF5D73',
-                            height: '6px'
+                            height: '8px'
                           }
                         ],
                         backgroundColor: '#06A77D',
-                        height: '6px',
+                        height: '8px',
                         margin: 'sm'
                       },
+                      // 內外盤比 張數
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -1136,8 +1335,8 @@ bot.on('message', async event => {
                           // 內盤
                           {
                             type: 'text',
-                            text: `${responseCnyesQuoteK.data.data[0]['200056']}% (${responseCnyesQuoteK.data.data[0]['200054']})`,
-                            size: 'xxs',
+                            text: `${responseCnyesQuoteK.data.data[0]['200054']}`,
+                            size: 'sm',
                             gravity: 'top',
                             color: '#FF5D73',
                             align: 'start',
@@ -1150,8 +1349,8 @@ bot.on('message', async event => {
                           // 外盤
                           {
                             type: 'text',
-                            text: `${responseCnyesQuoteK.data.data[0]['200057']}% (${responseCnyesQuoteK.data.data[0]['200055']})`,
-                            size: 'xxs',
+                            text: `${responseCnyesQuoteK.data.data[0]['200055']}`,
+                            size: 'sm',
                             gravity: 'top',
                             color: '#06A77D',
                             align: 'end',
@@ -1164,8 +1363,9 @@ bot.on('message', async event => {
                   },
                   {
                     type: 'separator',
-                    margin: 'md'
+                    margin: 'lg'
                   },
+                  // 即時走勢
                   {
                     type: 'box',
                     layout: 'horizontal',
@@ -1184,11 +1384,12 @@ bot.on('message', async event => {
                           uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, marketI))}:TPE`
                         }
                       },
+                      // 當下時間
                       {
                         type: 'text',
                         text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
                           new Date().getMinutes() + 1
-                        }`,
+                        }:${new Date().getSeconds()}`,
                         color: '#aaaaaa',
                         size: 'xs',
                         align: 'end',
@@ -1776,14 +1977,10 @@ bot.on('postback', async event => {
         // console.log(marketI)
 
         const responseMeta = await axios.get(
-          `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
-            event.postback.data.substr(0, marketI)
-          )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+          `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(event.postback.data.substr(0, marketI))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
         )
         const responseQuote = await axios.get(
-          `https://api.fugle.tw/realtime/v0.2/intraday/quote?symbolId=${encodeURI(
-            event.postback.data.substr(0, marketI)
-          )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
+          `https://api.fugle.tw/realtime/v0.2/intraday/quote?symbolId=${encodeURI(event.postback.data.substr(0, marketI))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
         )
         // const responseDealts = await axios.get(
         //   `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(event.postback.data.substr(0, (event.postback.data.indexOf("news")-1)))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
@@ -1999,9 +2196,7 @@ bot.on('postback', async event => {
                     },
                     {
                       type: 'text',
-                      text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
-                        new Date().getMinutes() + 1
-                      }`,
+                      text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes() + 1}`,
                       color: '#aaaaaa',
                       size: 'xs',
                       align: 'end'
@@ -2350,9 +2545,7 @@ bot.on('postback', async event => {
                     },
                     {
                       type: 'text',
-                      text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
-                        new Date().getMinutes() + 1
-                      }`,
+                      text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes() + 1}`,
                       color: '#aaaaaa',
                       size: 'xs',
                       align: 'end',

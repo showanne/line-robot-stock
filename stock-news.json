@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "2887 Stock News",
+  "altText": "00692 Stock News",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -13,7 +13,7 @@
           "contents": [
             {
               "type": "image",
-              "url": "https://cimg.cnyes.cool/prod/news/4652089/l/469b3fc703a94530179f09fbe503b05c.jpg",
+              "url": "https://cimg.cnyes.cool/prod/news/4536318/xl/3e69c1d3bf9d26b57cbcb51e0048fec7.jpg",
               "size": "full",
               "aspectMode": "cover",
               "aspectRatio": "1:1",
@@ -21,7 +21,7 @@
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4652089"
+                "uri": "https://news.cnyes.com/news/id/4536318"
               }
             },
             {
@@ -34,7 +34,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "2021/5/26 ",
+                      "text": "2020/10/27",
                       "color": "#064d8888",
                       "size": "sm",
                       "flex": 0
@@ -48,7 +48,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "台新金捐3000萬元 挺雙北政府、醫院抗疫",
+                      "text": "存股只看殖利率？公司治理100指數報酬大勝高股息",
                       "size": "md",
                       "color": "#064d88",
                       "weight": "bold",
@@ -57,7 +57,7 @@
                       "action": {
                         "type": "uri",
                         "label": "action",
-                        "uri": "https://news.cnyes.com/news/id/4652089"
+                        "uri": "https://news.cnyes.com/news/id/4536318"
                       }
                     }
                   ],
@@ -86,7 +86,7 @@
           "contents": [
             {
               "type": "image",
-              "url": "https://cimg.cnyes.cool/prod/news/4651930/xl/85b2850c24fee5c576c836012235c9e0.jpg",
+              "url": "https://cimg.cnyes.cool/prod/news/4531921/l/c99ad4f554231563895c9f0410f6b824.jpg",
               "size": "full",
               "aspectMode": "cover",
               "aspectRatio": "1:1",
@@ -94,7 +94,7 @@
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4651930"
+                "uri": "https://news.cnyes.com/news/id/4531921"
               }
             },
             {
@@ -107,7 +107,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "2021/5/25 ",
+                      "text": "2020/10/11",
                       "color": "#064d8888",
                       "size": "sm",
                       "flex": 0
@@ -121,7 +121,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "台新金一招解套兩案 併保德信人壽、彰銀退場露曙光",
+                      "text": "〈ESG狂潮〉存股族最愛ESG ETF三雄 推升規模進逼350億元",
                       "size": "md",
                       "color": "#064d88",
                       "weight": "bold",
@@ -130,7 +130,7 @@
                       "action": {
                         "type": "uri",
                         "label": "action",
-                        "uri": "https://news.cnyes.com/news/id/4651930"
+                        "uri": "https://news.cnyes.com/news/id/4531921"
                       }
                     }
                   ],
