@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "00692 Stock News",
+  "altText": "2890 Stock News",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -13,7 +13,7 @@
           "contents": [
             {
               "type": "image",
-              "url": "https://cimg.cnyes.cool/prod/news/4536318/xl/3e69c1d3bf9d26b57cbcb51e0048fec7.jpg",
+              "url": "https://cimg.cnyes.cool/prod/news/4654786/xl/bb2fb6243eb207682bbbd31d4fb57b65.jpg",
               "size": "full",
               "aspectMode": "cover",
               "aspectRatio": "1:1",
@@ -21,7 +21,7 @@
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4536318"
+                "uri": "https://news.cnyes.com/news/id/4654786"
               }
             },
             {
@@ -34,7 +34,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "2020/10/27",
+                      "text": "6/2 下",
                       "color": "#064d8888",
                       "size": "sm",
                       "flex": 0
@@ -48,20 +48,20 @@
                     },
                     {
                       "type": "text",
-                      "text": "存股只看殖利率？公司治理100指數報酬大勝高股息",
+                      "text": "〈國內疫情升溫〉三家金融業再添確診案例 全產業已59人染疫",
                       "size": "md",
                       "color": "#064d88",
                       "weight": "bold",
-                      "maxLines": 2,
+                      "maxLines": 1,
                       "wrap": true,
                       "action": {
                         "type": "uri",
                         "label": "action",
-                        "uri": "https://news.cnyes.com/news/id/4536318"
+                        "uri": "https://news.cnyes.com/news/id/4654786"
                       }
                     }
                   ],
-                  "spacing": "md"
+                  "spacing": "sm"
                 }
               ],
               "position": "absolute",
@@ -86,7 +86,7 @@
           "contents": [
             {
               "type": "image",
-              "url": "https://cimg.cnyes.cool/prod/news/4531921/l/c99ad4f554231563895c9f0410f6b824.jpg",
+              "url": "https://cimg.cnyes.cool/prod/news/4653709/xl/1bb16c63578038bca6081073d55a307b.jpg",
               "size": "full",
               "aspectMode": "cover",
               "aspectRatio": "1:1",
@@ -94,7 +94,7 @@
               "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "https://news.cnyes.com/news/id/4531921"
+                "uri": "https://news.cnyes.com/news/id/4653709"
               }
             },
             {
@@ -107,7 +107,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "2020/10/11",
+                      "text": "5/31 ",
                       "color": "#064d8888",
                       "size": "sm",
                       "flex": 0
@@ -121,20 +121,20 @@
                     },
                     {
                       "type": "text",
-                      "text": "〈ESG狂潮〉存股族最愛ESG ETF三雄 推升規模進逼350億元",
+                      "text": "挺綠能 永豐主辦首宗漁電共生聯貸逾30億元 第四季將正式發電",
                       "size": "md",
                       "color": "#064d88",
                       "weight": "bold",
-                      "maxLines": 2,
+                      "maxLines": 1,
                       "wrap": true,
                       "action": {
                         "type": "uri",
                         "label": "action",
-                        "uri": "https://news.cnyes.com/news/id/4531921"
+                        "uri": "https://news.cnyes.com/news/id/4653709"
                       }
                     }
                   ],
-                  "spacing": "md"
+                  "spacing": "sm"
                 }
               ],
               "position": "absolute",

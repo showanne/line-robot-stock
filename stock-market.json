@@ -1,6 +1,6 @@
 {
   "type": "flex",
-  "altText": "3702 Stock Market",
+  "altText": "1101 Stock Market",
   "contents": {
     "type": "carousel",
     "contents": [
@@ -10,6 +10,16 @@
           "type": "box",
           "layout": "vertical",
           "contents": [
+            {
+              "type": "image",
+              "url": "https://imgur.com/7BTFHmI.png",
+              "aspectMode": "cover",
+              "aspectRatio": "115:150",
+              "flex": 1,
+              "gravity": "top",
+              "size": "full",
+              "align": "center"
+            },
             {
               "type": "box",
               "layout": "vertical",
@@ -24,7 +34,7 @@
                       "contents": [
                         {
                           "type": "text",
-                          "text": "3702",
+                          "text": "1101",
                           "weight": "bold",
                           "size": "xxl",
                           "margin": "none",
@@ -32,7 +42,7 @@
                         },
                         {
                           "type": "text",
-                          "text": "大聯大",
+                          "text": "台泥",
                           "size": "sm",
                           "color": "#2A1E5Caa",
                           "wrap": true,
@@ -59,7 +69,7 @@
                             },
                             {
                               "type": "text",
-                              "text": "0.3",
+                              "text": "-0.4",
                               "size": "lg",
                               "color": "#111111",
                               "align": "start",
@@ -80,7 +90,7 @@
                             },
                             {
                               "type": "text",
-                              "text": "0.58%",
+                              "text": "-0.76%",
                               "size": "lg",
                               "color": "#111111",
                               "align": "start"
@@ -88,7 +98,7 @@
                           ]
                         }
                       ],
-                      "margin": "sm",
+                      "margin": "lg",
                       "cornerRadius": "lg",
                       "paddingAll": "md",
                       "backgroundColor": "#e6ff9288",
@@ -144,7 +154,7 @@
                                 },
                                 {
                                   "type": "text",
-                                  "text": "51.7",
+                                  "text": "52.3",
                                   "size": "sm",
                                   "color": "#111111",
                                   "align": "start",
@@ -167,7 +177,7 @@
                                 },
                                 {
                                   "type": "text",
-                                  "text": "51.8",
+                                  "text": "52.3",
                                   "size": "sm",
                                   "color": "#111111",
                                   "align": "start",
@@ -189,7 +199,7 @@
                                 },
                                 {
                                   "type": "text",
-                                  "text": "51.7",
+                                  "text": "52",
                                   "size": "sm",
                                   "color": "#111111",
                                   "align": "start",
@@ -211,7 +221,7 @@
                                 },
                                 {
                                   "type": "text",
-                                  "text": "51.8",
+                                  "text": "52.1",
                                   "size": "sm",
                                   "color": "#111111",
                                   "align": "start",
@@ -232,7 +242,7 @@
                                 },
                                 {
                                   "type": "text",
-                                  "text": "51.6",
+                                  "text": "52.3",
                                   "size": "sm",
                                   "color": "#111111",
                                   "align": "start",
@@ -269,7 +279,7 @@
                                     },
                                     {
                                       "type": "text",
-                                      "text": "3208.799",
+                                      "text": "12355.472",
                                       "size": "sm",
                                       "color": "#111111",
                                       "align": "start",
@@ -290,7 +300,7 @@
                                     },
                                     {
                                       "type": "text",
-                                      "text": "51.3 ~ 52",
+                                      "text": "51.7 ~ 52.3",
                                       "size": "sm",
                                       "color": "#111111",
                                       "align": "start",
@@ -311,7 +321,7 @@
                                     },
                                     {
                                       "type": "text",
-                                      "text": "37.6 ~ 52.4",
+                                      "text": "40 ~ 58.7",
                                       "size": "sm",
                                       "color": "#111111",
                                       "align": "start",
@@ -341,7 +351,7 @@
                                     },
                                     {
                                       "type": "text",
-                                      "text": "36.04",
+                                      "text": "91.05",
                                       "size": "sm",
                                       "color": "#111111",
                                       "align": "start",
@@ -362,7 +372,7 @@
                                     },
                                     {
                                       "type": "text",
-                                      "text": "1.43",
+                                      "text": "1.49",
                                       "size": "sm",
                                       "color": "#111111",
                                       "align": "start",
@@ -383,7 +393,7 @@
                                     },
                                     {
                                       "type": "text",
-                                      "text": "871.430496327 ",
+                                      "text": "3059.840090793 ",
                                       "size": "sm",
                                       "color": "#111111",
                                       "align": "start",
@@ -393,7 +403,7 @@
                                 }
                               ],
                               "backgroundColor": "#c4e3ff88",
-                              "margin": "md",
+                              "margin": "lg",
                               "cornerRadius": "lg",
                               "paddingAll": "md"
                             }
@@ -403,37 +413,8 @@
                       ],
                       "margin": "md"
                     }
-                  ]
-                },
-                {
-                  "type": "separator",
-                  "margin": "xl"
-                },
-                {
-                  "type": "box",
-                  "layout": "horizontal",
-                  "margin": "md",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "歷史走勢",
-                      "size": "xs",
-                      "color": "#aaaaaa",
-                      "flex": 0,
-                      "action": {
-                        "type": "uri",
-                        "label": "action",
-                        "uri": "https://www.google.com/finance/quote/3702:TPE?window=MAX"
-                      }
-                    },
-                    {
-                      "type": "text",
-                      "text": "2021/5/31 23:10:59",
-                      "color": "#aaaaaa",
-                      "size": "xs",
-                      "align": "end"
-                    }
-                  ]
+                  ],
+                  "margin": "md"
                 }
               ],
               "position": "absolute",
@@ -460,7 +441,7 @@
           "contents": [
             {
               "type": "text",
-              "text": "3702",
+              "text": "1101",
               "weight": "bold",
               "size": "xxl",
               "margin": "none",
@@ -468,7 +449,7 @@
             },
             {
               "type": "text",
-              "text": "大聯大",
+              "text": "台泥",
               "size": "sm",
               "color": "#2A1E5Caa",
               "wrap": true,
@@ -477,7 +458,7 @@
             },
             {
               "type": "separator",
-              "margin": "xxl"
+              "margin": "md"
             },
             {
               "type": "box",
@@ -514,53 +495,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "1",
-                      "size": "sm",
-                      "color": "#FF5D73",
-                      "align": "start",
-                      "wrap": false,
-                      "adjustMode": "shrink-to-fit"
-                    },
-                    {
-                      "type": "text",
-                      "text": "51.9",
-                      "size": "sm",
-                      "color": "#FF5D73",
-                      "align": "end",
-                      "wrap": false,
-                      "adjustMode": "shrink-to-fit"
-                    },
-                    {
-                      "type": "filler"
-                    },
-                    {
-                      "type": "text",
-                      "text": "52",
-                      "size": "sm",
-                      "color": "#06A77D",
-                      "align": "start",
-                      "wrap": false,
-                      "adjustMode": "shrink-to-fit"
-                    },
-                    {
-                      "type": "text",
-                      "text": "430",
-                      "size": "sm",
-                      "color": "#06A77D",
-                      "align": "end",
-                      "wrap": false,
-                      "adjustMode": "shrink-to-fit"
-                    }
-                  ],
-                  "margin": "md"
-                },
-                {
-                  "type": "box",
-                  "layout": "horizontal",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "43",
+                      "text": "157",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -581,7 +516,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "52.1",
+                      "text": "51.9",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "start",
@@ -590,7 +525,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "259",
+                      "text": "183",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "end",
@@ -606,7 +541,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "17",
+                      "text": "393",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -627,7 +562,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "52.2",
+                      "text": "52",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "start",
@@ -636,7 +571,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "161",
+                      "text": "3355",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "end",
@@ -652,7 +587,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "40",
+                      "text": "487",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -673,7 +608,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "52.3",
+                      "text": "52.1",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "start",
@@ -682,7 +617,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "96",
+                      "text": "156",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "end",
@@ -698,7 +633,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "82",
+                      "text": "1106",
                       "size": "sm",
                       "color": "#FF5D73",
                       "align": "start",
@@ -719,7 +654,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "52.4",
+                      "text": "52.2",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "start",
@@ -728,7 +663,53 @@
                     },
                     {
                       "type": "text",
-                      "text": "88",
+                      "text": "337",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "end",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    }
+                  ],
+                  "margin": "md"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "426",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "start",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "51.4",
+                      "size": "sm",
+                      "color": "#FF5D73",
+                      "align": "end",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "filler"
+                    },
+                    {
+                      "type": "text",
+                      "text": "52.3",
+                      "size": "sm",
+                      "color": "#06A77D",
+                      "align": "start",
+                      "wrap": false,
+                      "adjustMode": "shrink-to-fit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "663",
                       "size": "sm",
                       "color": "#06A77D",
                       "align": "end",
@@ -754,36 +735,6 @@
                 },
                 {
                   "type": "box",
-                  "layout": "horizontal",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "36.84%",
-                      "size": "sm",
-                      "gravity": "top",
-                      "color": "#FF5D73",
-                      "align": "start",
-                      "wrap": false,
-                      "adjustMode": "shrink-to-fit"
-                    },
-                    {
-                      "type": "filler"
-                    },
-                    {
-                      "type": "text",
-                      "text": "63.16%",
-                      "size": "sm",
-                      "gravity": "top",
-                      "color": "#06A77D",
-                      "align": "end",
-                      "wrap": false,
-                      "adjustMode": "shrink-to-fit"
-                    }
-                  ],
-                  "margin": "sm"
-                },
-                {
-                  "type": "box",
                   "layout": "vertical",
                   "contents": [
                     {
@@ -794,7 +745,7 @@
                           "type": "filler"
                         }
                       ],
-                      "width": "36.84%",
+                      "width": "58.57%",
                       "backgroundColor": "#FF5D73",
                       "height": "8px"
                     }
@@ -809,7 +760,7 @@
                   "contents": [
                     {
                       "type": "text",
-                      "text": "1153",
+                      "text": "58.57% (7168)",
                       "size": "sm",
                       "gravity": "top",
                       "color": "#FF5D73",
@@ -822,7 +773,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "1977",
+                      "text": "41.43% (5071)",
                       "size": "sm",
                       "gravity": "top",
                       "color": "#06A77D",
@@ -836,12 +787,12 @@
             },
             {
               "type": "separator",
-              "margin": "lg"
+              "margin": "md"
             },
             {
               "type": "box",
               "layout": "horizontal",
-              "margin": "lg",
+              "margin": "md",
               "contents": [
                 {
                   "type": "text",
@@ -853,12 +804,12 @@
                   "action": {
                     "type": "uri",
                     "label": "action",
-                    "uri": "https://www.google.com/finance/quote/3702:TPE"
+                    "uri": "https://www.google.com/finance/quote/1101:TPE"
                   }
                 },
                 {
                   "type": "text",
-                  "text": "2021/5/31 23:10:59",
+                  "text": "2021/6/4 23:11:56",
                   "color": "#aaaaaa",
                   "size": "xs",
                   "align": "end",

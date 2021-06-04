@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import axios from 'axios'
 import fs from 'fs'
 import iconv from 'iconv-lite'
+import schedule from 'node-schedule'
 
 // 讓套件讀取 .env 檔案
 dotenv.config()
@@ -36,11 +37,14 @@ const getlist = async () => {
     console.log(error)
   }
 }
+
+// 每天於服務器0點時更新資料
+schedule.scheduleJob('* * 0 * *', getlist)
+// 機器人啟動時也要有資料
 getlist()
 
-const nowDate = new Date().toLocaleDateString('zh-tw') // 2021/6/4
-const nowTime = new Date().toString().substr(16, 9) // "16:38:10 "
-// new Date().toLocaleTimeString('zh-tw') // 下午4:19:53
+const nowTime = new Date().toLocaleString('zh-TW', { hour12: false })
+// "2021/6/4 19:01:18"
 
 const stockPop = [
   '人氣股票',
@@ -287,6 +291,7 @@ bot.on('message', async event => {
           fs.writeFileSync('stock-Instructions.json', JSON.stringify(message, null, 2))
           event.reply(message)
         }
+
         if (event.message.text.includes('news')) {
           const newsI = event.message.text.indexOf('news') - 1
           // console.log(newsI)
@@ -345,7 +350,7 @@ bot.on('message', async event => {
                             size: 'md',
                             color: '#064d88',
                             weight: 'bold',
-                            maxLines: 2,
+                            maxLines: 1,
                             wrap: true,
                             action: {
                               type: 'uri',
@@ -354,7 +359,7 @@ bot.on('message', async event => {
                             }
                           }
                         ],
-                        spacing: 'md'
+                        spacing: 'sm'
                       }
                     ],
                     position: 'absolute',
@@ -418,7 +423,7 @@ bot.on('message', async event => {
                             size: 'md',
                             color: '#064d88',
                             weight: 'bold',
-                            maxLines: 2,
+                            maxLines: 1,
                             wrap: true,
                             action: {
                               type: 'uri',
@@ -427,7 +432,7 @@ bot.on('message', async event => {
                             }
                           }
                         ],
-                        spacing: 'md'
+                        spacing: 'sm'
                       }
                     ],
                     position: 'absolute',
@@ -499,7 +504,7 @@ bot.on('message', async event => {
                     type: 'image',
                     url: 'https://imgur.com/7BTFHmI.png',
                     aspectMode: 'cover',
-                    aspectRatio: '11:16',
+                    aspectRatio: '115:150',
                     flex: 1,
                     gravity: 'top',
                     size: 'full',
@@ -587,7 +592,7 @@ bot.on('message', async event => {
                                 ]
                               }
                             ],
-                            margin: 'sm',
+                            margin: 'lg',
                             cornerRadius: 'lg',
                             paddingAll: 'md',
                             backgroundColor: '#e6ff9288',
@@ -904,7 +909,7 @@ bot.on('message', async event => {
                                       }
                                     ],
                                     backgroundColor: '#c4e3ff88',
-                                    margin: 'md',
+                                    margin: 'lg',
                                     cornerRadius: 'lg',
                                     paddingAll: 'md'
                                   }
@@ -914,39 +919,8 @@ bot.on('message', async event => {
                             ],
                             margin: 'md'
                           }
-                        ]
-                      },
-                      {
-                        type: 'separator',
-                        margin: 'xl'
-                      },
-                      // 歷史走勢
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        margin: 'md',
-                        contents: [
-                          {
-                            type: 'text',
-                            text: '歷史走勢',
-                            size: 'xs',
-                            color: '#aaaaaa',
-                            flex: 0,
-                            action: {
-                              type: 'uri',
-                              label: 'action',
-                              uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, marketI))}:TPE?window=MAX`
-                            }
-                          },
-                          // 當下時間
-                          {
-                            type: 'text',
-                            text: `${nowDate} ${nowTime}`,
-                            color: '#aaaaaa',
-                            size: 'xs',
-                            align: 'end'
-                          }
-                        ]
+                        ],
+                        margin: 'md'
                       }
                     ],
                     position: 'absolute',
@@ -993,7 +967,7 @@ bot.on('message', async event => {
                   },
                   {
                     type: 'separator',
-                    margin: 'xxl'
+                    margin: 'md'
                   },
                   {
                     type: 'box',
@@ -1275,39 +1249,6 @@ bot.on('message', async event => {
                         justifyContent: 'space-between',
                         margin: 'xl'
                       },
-                      // 內外盤比 百分比
-                      {
-                        type: 'box',
-                        layout: 'horizontal',
-                        contents: [
-                          // 內盤
-                          {
-                            type: 'text',
-                            text: `${responseCnyesQuoteK.data.data[0]['200056']}%`,
-                            size: 'sm',
-                            gravity: 'top',
-                            color: '#FF5D73',
-                            align: 'start',
-                            wrap: false,
-                            adjustMode: 'shrink-to-fit'
-                          },
-                          {
-                            type: 'filler'
-                          },
-                          // 外盤
-                          {
-                            type: 'text',
-                            text: `${responseCnyesQuoteK.data.data[0]['200057']}%`,
-                            size: 'sm',
-                            gravity: 'top',
-                            color: '#06A77D',
-                            align: 'end',
-                            wrap: false,
-                            adjustMode: 'shrink-to-fit'
-                          }
-                        ],
-                        margin: 'sm'
-                      },
                       // 內外盤比 百分比 長條圖
                       {
                         type: 'box',
@@ -1330,7 +1271,7 @@ bot.on('message', async event => {
                         height: '8px',
                         margin: 'sm'
                       },
-                      // 內外盤比 張數
+                      // 內外盤比 百分比 及 張數
                       {
                         type: 'box',
                         layout: 'horizontal',
@@ -1338,7 +1279,7 @@ bot.on('message', async event => {
                           // 內盤
                           {
                             type: 'text',
-                            text: `${responseCnyesQuoteK.data.data[0]['200054']}`,
+                            text: `${responseCnyesQuoteK.data.data[0]['200056']}% (${responseCnyesQuoteK.data.data[0]['200054']})`,
                             size: 'sm',
                             gravity: 'top',
                             color: '#FF5D73',
@@ -1352,7 +1293,7 @@ bot.on('message', async event => {
                           // 外盤
                           {
                             type: 'text',
-                            text: `${responseCnyesQuoteK.data.data[0]['200055']}`,
+                            text: `${responseCnyesQuoteK.data.data[0]['200057']}% (${responseCnyesQuoteK.data.data[0]['200055']})`,
                             size: 'sm',
                             gravity: 'top',
                             color: '#06A77D',
@@ -1366,13 +1307,13 @@ bot.on('message', async event => {
                   },
                   {
                     type: 'separator',
-                    margin: 'lg'
+                    margin: 'md'
                   },
                   // 即時走勢
                   {
                     type: 'box',
                     layout: 'horizontal',
-                    margin: 'lg',
+                    margin: 'md',
                     contents: [
                       {
                         type: 'text',
@@ -1390,7 +1331,7 @@ bot.on('message', async event => {
                       // 當下時間
                       {
                         type: 'text',
-                        text: `${nowDate} ${nowTime}`,
+                        text: `${nowTime}`,
                         color: '#aaaaaa',
                         size: 'xs',
                         align: 'end',
@@ -1418,6 +1359,49 @@ bot.on('message', async event => {
           }
 
           fs.writeFileSync('stock-market.json', JSON.stringify(message, null, 2))
+          event.reply(message)
+        }
+
+        if (event.message.text.includes('history')) {
+          const historyI = event.message.text.indexOf('history') - 1
+          console.log(historyI)
+
+          const message = {
+            type: 'text',
+            text: `${event.message.text.substr(0, historyI)} 走勢`,
+            quickReply: {
+              items: [
+                {
+                  type: 'action',
+                  imageUrl: 'https://img.icons8.com/nolan/2x/combo-chart.png',
+                  action: {
+                    type: 'uri',
+                    label: '歷史走勢',
+                    uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, historyI))}:TPE?window=MAX`
+                  }
+                },
+                {
+                  type: 'action',
+                  imageUrl: 'https://img.icons8.com/nolan/2x/combo-chart.png',
+                  action: {
+                    type: 'uri',
+                    label: '即時走勢',
+                    uri: `https://www.google.com/finance/quote/${encodeURI(event.message.text.substr(0, historyI))}:TPE`
+                  }
+                }
+                // ,
+                // {
+                //   type: 'action',
+                //   action: {
+                //     type: 'location',
+                //     label: '選擇地點'
+                //   }
+                // }
+              ]
+            }
+          }
+
+          fs.writeFileSync('stock-history.json', JSON.stringify(message, null, 2))
           event.reply(message)
         }
 
