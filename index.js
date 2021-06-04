@@ -38,6 +38,10 @@ const getlist = async () => {
 }
 getlist()
 
+const nowDate = new Date().toLocaleDateString('zh-tw') // 2021/6/4
+const nowTime = new Date().toString().substr(16, 9) // "16:38:10 "
+// new Date().toLocaleTimeString('zh-tw') // 下午4:19:53
+
 const stockPop = [
   '人氣股票',
   '0050',
@@ -323,7 +327,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: `${new Date(newsArr[0].publishAt * 1000).toLocaleString('zh-tw').substr(0, 10)}`,
+                            text: `${new Date(newsArr[0].publishAt * 1000).toLocaleString('zh-tw').substr(5, 5)}`,
                             color: '#064d8888',
                             size: 'sm',
                             flex: 0
@@ -396,7 +400,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: `${new Date(newsArr[1].publishAt * 1000).toLocaleString('zh-tw').substr(0, 10)}`,
+                            text: `${new Date(newsArr[1].publishAt * 1000).toLocaleString('zh-tw').substr(5, 5)}`,
                             color: '#064d8888',
                             size: 'sm',
                             flex: 0
@@ -491,16 +495,16 @@ bot.on('message', async event => {
                 layout: 'vertical',
                 contents: [
                   // 個股資訊背景
-                  // {
-                  //   type: 'image',
-                  //   url: 'https://imgur.com/7BTFHmI.png',
-                  //   aspectMode: 'cover',
-                  //   aspectRatio: '11:16',
-                  //   flex: 1,
-                  //   gravity: 'top',
-                  //   size: 'full',
-                  //   align: 'center'
-                  // },
+                  {
+                    type: 'image',
+                    url: 'https://imgur.com/7BTFHmI.png',
+                    aspectMode: 'cover',
+                    aspectRatio: '11:16',
+                    flex: 1,
+                    gravity: 'top',
+                    size: 'full',
+                    align: 'center'
+                  },
                   {
                     type: 'box',
                     layout: 'vertical',
@@ -937,9 +941,7 @@ bot.on('message', async event => {
                           // 當下時間
                           {
                             type: 'text',
-                            text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
-                              new Date().getMinutes() + 1
-                            }:${new Date().getSeconds()}`,
+                            text: `${nowDate} ${nowTime}`,
                             color: '#aaaaaa',
                             size: 'xs',
                             align: 'end'
@@ -963,6 +965,7 @@ bot.on('message', async event => {
                 }
               }
             },
+            // 個股 最佳五檔及內外盤比
             {
               type: 'bubble',
               body: {
@@ -1387,9 +1390,7 @@ bot.on('message', async event => {
                       // 當下時間
                       {
                         type: 'text',
-                        text: `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${
-                          new Date().getMinutes() + 1
-                        }:${new Date().getSeconds()}`,
+                        text: `${nowDate} ${nowTime}`,
                         color: '#aaaaaa',
                         size: 'xs',
                         align: 'end',
