@@ -99,37 +99,12 @@
                               "wrap": true,
                               "margin": "none",
                               "color": "#064d88de",
-                              "text": "股票代號+news",
-                              "align": "start",
-                              "action": {
-                                "type": "message",
-                                "label": "2881+news (e.g.)",
-                                "text": "2890+news (e.g.)"
-                              }
-                            }
-                          ],
-                          "paddingAll": "5px",
-                          "justifyContent": "center",
-                          "paddingStart": "31px",
-                          "backgroundColor": "#ffffff1A"
-                        },
-                        {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "contents": [],
-                              "size": "md",
-                              "wrap": true,
-                              "margin": "none",
-                              "color": "#064d88de",
                               "text": "股票代號+market",
                               "align": "start",
                               "action": {
                                 "type": "message",
-                                "label": "2851+market (e.g.)",
-                                "text": "3702+market (e.g.)"
+                                "label": "2892+market (e.g.)",
+                                "text": "2330+market (e.g.)"
                               }
                             }
                           ],
@@ -150,12 +125,37 @@
                               "wrap": true,
                               "margin": "none",
                               "color": "#064d88de",
+                              "text": "股票代號+news",
+                              "align": "start",
+                              "action": {
+                                "type": "message",
+                                "label": "6023+news (e.g.)",
+                                "text": "2851+news (e.g.)"
+                              }
+                            }
+                          ],
+                          "paddingAll": "5px",
+                          "justifyContent": "center",
+                          "paddingStart": "31px",
+                          "backgroundColor": "#ffffff1A"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "contents": [],
+                              "size": "md",
+                              "wrap": true,
+                              "margin": "none",
+                              "color": "#064d88de",
                               "text": "股票代號+history",
                               "align": "start",
                               "action": {
                                 "type": "message",
-                                "label": "2385+history (e.g.)",
-                                "text": "0056+history (e.g.)"
+                                "label": "2330+history (e.g.)",
+                                "text": "5880+history (e.g.)"
                               }
                             }
                           ],

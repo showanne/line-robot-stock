@@ -1,6 +1,6 @@
 {
   "type": "text",
-  "text": "0056 走勢",
+  "text": "2330 走勢",
   "quickReply": {
     "items": [
       {
@@ -9,7 +9,7 @@
         "action": {
           "type": "uri",
           "label": "歷史走勢",
-          "uri": "https://www.google.com/finance/quote/0056:TPE?window=MAX"
+          "uri": "https://www.google.com/finance/quote/2330:TPE?window=MAX"
         }
       },
       {
@@ -18,7 +18,7 @@
         "action": {
           "type": "uri",
           "label": "即時走勢",
-          "uri": "https://www.google.com/finance/quote/0056:TPE"
+          "uri": "https://www.google.com/finance/quote/2330:TPE"
         }
       }
     ]
