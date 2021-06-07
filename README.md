@@ -2,10 +2,10 @@
 
 ### 我可以即時查詢股票資訊唷~ 快加我為好友吧！
 > - Bot basic ID： **@625frasl**
-![](https://i.imgur.com/onyXT0o.png)
+- ![](https://i.imgur.com/onyXT0o.png)
 
 - 歡迎畫面
-![](https://i.imgur.com/MGDtw1t.png)
+- ![](https://i.imgur.com/MGDtw1t.png)
 
 
 > ### 直接輸入股票代號，快速查詢股票資訊
@@ -20,15 +20,15 @@
 
 
 - 股票代號+market
- ![](https://i.imgur.com/9UUcJun.png)
+- ![](https://i.imgur.com/9UUcJun.png)
 
 
 - 股票代號+history
- ![](https://i.imgur.com/nOEJSND.png)
+- ![](https://i.imgur.com/nOEJSND.png)
 
 
 - 說明
- ![](https://i.imgur.com/P8i5CJI.png)
+- ![](https://i.imgur.com/P8i5CJI.png)
 
 > #### 串接的公開資料~
 - [台灣證券交易所](https://www.twse.com.tw/zh/)
