@@ -46,7 +46,10 @@ schedule.scheduleJob('* * 0 * *', getlist)
 // 機器人啟動時也要有資料
 getlist()
 
-const nowTime = new Date().toLocaleString('zh-TW', { hour12: false })
+const nowTime = new Date().toLocaleString('zh-TW', {
+  hour12: false,
+  timeZone: 'UTC'
+})
 // "2021/6/4 19:01:18"
 
 const stockPop = [
