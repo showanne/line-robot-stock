@@ -14,6 +14,7 @@ const bot = linebot({
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
 })
 
+// 目前所有股票清單抓取
 const arrSymbolId = []
 const getlist = async () => {
   try {
@@ -46,14 +47,15 @@ schedule.scheduleJob('* * 0 * *', getlist)
 // 機器人啟動時也要有資料
 getlist()
 
+// 現在時間
 const nowTime = new Date().toLocaleString('zh-TW', {
   hour12: false,
-  timeZone: 'UTC'
+  timeZone: 'Asia/Taipei'
 })
 // "2021/6/4 19:01:18"
 
+// '人氣股票' 用於範例
 const stockPop = [
-  // '人氣股票',
   '00888',
   '0050',
   '0056',
