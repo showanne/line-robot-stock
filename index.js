@@ -96,6 +96,8 @@ bot.on('message', async event => {
     // console.log(arrSymbolId.includes(event.message.text))
     try {
       if (event.message.type === 'text') {
+        // toLowerCase 英文大寫轉小寫，中文字不影響
+        event.message.text = event.message.text.toLowerCase()
         if (event.message.text.includes('market')) {
           const marketI = event.message.text.indexOf('market') - 1
           // console.log(marketI)
@@ -2050,6 +2052,9 @@ bot.on('postback', async event => {
     // console.log(event.postback.data)
     // console.log(arrSymbolId.includes(event.postback.data))
     try {
+      // toLowerCase 英文大寫轉小寫，中文字不影響
+      event.postback.data = event.postback.data.toLowerCase()
+
       if (event.postback.data.includes('market')) {
         const marketI = event.postback.data.indexOf('market') - 1
         // console.log(marketI)
