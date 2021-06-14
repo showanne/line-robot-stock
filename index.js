@@ -1787,6 +1787,21 @@ bot.on('message', async event => {
             JSON.stringify(message, null, 2)
           )
           event.reply(message)
+        } else if (
+          event.message.text.includes('rate') ||
+          event.message.text.includes('即時匯率')
+        ) {
+          // const flex = {}
+          const message = {
+            type: 'text',
+            text: `${event.message.text}：https://tw.rter.info/index.php`
+          }
+
+          // fs.writeFileSync(
+          //   './fs/stock-history.json',
+          //   JSON.stringify(message, null, 2)
+          // )
+          event.reply(message)
         } else {
           // 不屬於以上 4 類的任意文字
           // (event.message.text.includes('Instructions') ||event.message.text.includes('說明'))
