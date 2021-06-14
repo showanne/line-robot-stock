@@ -48,10 +48,10 @@ schedule.scheduleJob('* * 0 * *', getlist)
 getlist()
 
 // 現在時間
-const nowTime = new Date().toLocaleString('zh-TW', {
-  hour12: false,
-  timeZone: 'Asia/Taipei'
-})
+// const nowTime = new Date().toLocaleString('zh-TW', {
+//   hour12: false,
+//   timeZone: 'Asia/Taipei'
+// })
 // "2021/6/4 19:01:18"
 
 // '人氣股票' 用於範例
@@ -98,9 +98,17 @@ bot.on('message', async event => {
       if (event.message.type === 'text') {
         // toLowerCase 英文大寫轉小寫，中文字不影響
         event.message.text = event.message.text.toLowerCase()
+
         if (event.message.text.includes('market')) {
           const marketI = event.message.text.indexOf('market') - 1
           // console.log(marketI)
+
+          // 現在時間
+          const nowTime = new Date().toLocaleString('zh-TW', {
+            hour12: false,
+            timeZone: 'Asia/Taipei'
+          })
+          // "2021/6/4 19:01:18"
 
           const responseMeta = await axios.get(
             `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
@@ -1798,6 +1806,11 @@ bot.on('message', async event => {
           event.message.text.includes('rate') ||
           event.message.text.includes('即時匯率')
         ) {
+          // 美金兌各幣別匯率 https://tw.rter.info/capi.php
+          // 如果要找出台幣兌換日幣的匯率，請於程式中轉換成美金後再轉換成日幣。for example: TWD -> USD -> JPY
+          // 各幣別即時買賣匯率 https://tw.rter.info/json.php?t=index&_=1623644527743
+          // https://tw.rter.info/exchange/TWD-BTC.html
+
           // const flex = {}
           const message = {
             type: 'text',
@@ -2058,6 +2071,13 @@ bot.on('postback', async event => {
       if (event.postback.data.includes('market')) {
         const marketI = event.postback.data.indexOf('market') - 1
         // console.log(marketI)
+
+        // 現在時間
+        const nowTime = new Date().toLocaleString('zh-TW', {
+          hour12: false,
+          timeZone: 'Asia/Taipei'
+        })
+        // "2021/6/4 19:01:18"
 
         const responseMeta = await axios.get(
           `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
