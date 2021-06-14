@@ -1143,6 +1143,17 @@ bot.on('message', async event => {
                           }
                         ],
                         spacing: 'sm'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [],
+                        width: '100%',
+                        height: '0.7px',
+                        borderWidth: 'normal',
+                        borderColor: '#a3ccf8',
+                        position: 'absolute',
+                        offsetTop: '35px'
                       }
                     ],
                     position: 'absolute',
@@ -1222,6 +1233,17 @@ bot.on('message', async event => {
                           }
                         ],
                         spacing: 'sm'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [],
+                        width: '100%',
+                        height: '0.7px',
+                        borderWidth: 'normal',
+                        borderColor: '#a3ccf8',
+                        position: 'absolute',
+                        offsetTop: '35px'
                       }
                     ],
                     position: 'absolute',
@@ -1301,6 +1323,17 @@ bot.on('message', async event => {
                           }
                         ],
                         spacing: 'sm'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [],
+                        width: '100%',
+                        height: '0.7px',
+                        borderWidth: 'normal',
+                        borderColor: '#a3ccf8',
+                        position: 'absolute',
+                        offsetTop: '35px'
                       }
                     ],
                     position: 'absolute',
@@ -1380,6 +1413,17 @@ bot.on('message', async event => {
                           }
                         ],
                         spacing: 'sm'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [],
+                        width: '100%',
+                        height: '0.7px',
+                        borderWidth: 'normal',
+                        borderColor: '#a3ccf8',
+                        position: 'absolute',
+                        offsetTop: '35px'
                       }
                     ],
                     position: 'absolute',
@@ -1459,6 +1503,17 @@ bot.on('message', async event => {
                           }
                         ],
                         spacing: 'sm'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [],
+                        width: '100%',
+                        height: '0.7px',
+                        borderWidth: 'normal',
+                        borderColor: '#a3ccf8',
+                        position: 'absolute',
+                        offsetTop: '35px'
                       }
                     ],
                     position: 'absolute',
@@ -3112,6 +3167,17 @@ bot.on('postback', async event => {
                         }
                       ],
                       spacing: 'sm'
+                    },
+                    {
+                      type: 'box',
+                      layout: 'vertical',
+                      contents: [],
+                      width: '100%',
+                      height: '0.7px',
+                      borderWidth: 'normal',
+                      borderColor: '#a3ccf8',
+                      position: 'absolute',
+                      offsetTop: '35px'
                     }
                   ],
                   position: 'absolute',
@@ -3191,6 +3257,17 @@ bot.on('postback', async event => {
                         }
                       ],
                       spacing: 'sm'
+                    },
+                    {
+                      type: 'box',
+                      layout: 'vertical',
+                      contents: [],
+                      width: '100%',
+                      height: '0.7px',
+                      borderWidth: 'normal',
+                      borderColor: '#a3ccf8',
+                      position: 'absolute',
+                      offsetTop: '35px'
                     }
                   ],
                   position: 'absolute',
@@ -3270,6 +3347,17 @@ bot.on('postback', async event => {
                         }
                       ],
                       spacing: 'sm'
+                    },
+                    {
+                      type: 'box',
+                      layout: 'vertical',
+                      contents: [],
+                      width: '100%',
+                      height: '0.7px',
+                      borderWidth: 'normal',
+                      borderColor: '#a3ccf8',
+                      position: 'absolute',
+                      offsetTop: '35px'
                     }
                   ],
                   position: 'absolute',
@@ -3349,6 +3437,17 @@ bot.on('postback', async event => {
                         }
                       ],
                       spacing: 'sm'
+                    },
+                    {
+                      type: 'box',
+                      layout: 'vertical',
+                      contents: [],
+                      width: '100%',
+                      height: '0.7px',
+                      borderWidth: 'normal',
+                      borderColor: '#a3ccf8',
+                      position: 'absolute',
+                      offsetTop: '35px'
                     }
                   ],
                   position: 'absolute',
@@ -3428,6 +3527,17 @@ bot.on('postback', async event => {
                         }
                       ],
                       spacing: 'sm'
+                    },
+                    {
+                      type: 'box',
+                      layout: 'vertical',
+                      contents: [],
+                      width: '100%',
+                      height: '0.7px',
+                      borderWidth: 'normal',
+                      borderColor: '#a3ccf8',
+                      position: 'absolute',
+                      offsetTop: '35px'
                     }
                   ],
                   position: 'absolute',
