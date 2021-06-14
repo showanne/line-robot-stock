@@ -51,9 +51,9 @@ const nowTime = new Date().toLocaleString('zh-TW', { hour12: false })
 
 const stockPop = [
   // '人氣股票',
+  '00888',
   '0050',
   '0056',
-  '00888',
   '00692',
   '2330',
   '2890',
@@ -74,9 +74,9 @@ const stockPop = [
   '6024',
   '6023'
 ]
-// 1 ~ stockPop.length-1 的隨機
+// 0 ~ stockPop.length 的隨機
 const stockRandom = () => {
-  return Math.floor(Math.random() * stockPop.length - 1) + 1
+  return Math.floor(Math.random() * stockPop.length)
 }
 
 bot.listen('/', process.env.PORT, () => {
@@ -1019,7 +1019,7 @@ bot.on('message', async event => {
 
           const message = {
             type: 'flex',
-            altText: `${event.message.text.substr(0, marketI)} Stock Market`,
+            altText: `${event.message.text.substr(0, marketI)} 即時股市行情`,
             contents: {
               type: 'carousel',
               contents: flex
@@ -1043,7 +1043,7 @@ bot.on('message', async event => {
 
           const newsArr = responseSearch.data.items.data
 
-          const SrcUrl = (i) => {
+          const SrcUrl = i => {
             // console.log(newsArr)
             let urlIF = ''
             // for (let i = 0; i < newsArr.length; i++) {
@@ -1463,14 +1463,17 @@ bot.on('message', async event => {
 
           const message = {
             type: 'flex',
-            altText: `${event.message.text.substr(0, newsI)} Stock News`,
+            altText: `${event.message.text.substr(0, newsI)} 個股新聞`,
             contents: {
               type: 'carousel',
               contents: flex
             }
           }
 
-          fs.writeFileSync('./fs/stock-news.json', JSON.stringify(message, null, 2))
+          fs.writeFileSync(
+            './fs/stock-news.json',
+            JSON.stringify(message, null, 2)
+          )
           event.reply(message)
         } else if (event.message.text.includes('history')) {
           const historyI = event.message.text.indexOf('history') - 1
@@ -1779,7 +1782,10 @@ bot.on('message', async event => {
             }
           }
 
-          fs.writeFileSync('./fs/stock-menu.json', JSON.stringify(message, null, 2))
+          fs.writeFileSync(
+            './fs/stock-menu.json',
+            JSON.stringify(message, null, 2)
+          )
           event.reply(message)
         } else {
           // 不屬於以上 4 類的任意文字
@@ -1901,8 +1907,8 @@ bot.on('message', async event => {
                                 paddingAll: '5px',
                                 justifyContent: 'center',
                                 paddingStart: '31px',
-                                backgroundColor: '#ffffff1A',
-                                margin: 'md'
+                                backgroundColor: '#ffffff1A'
+                                // margin: 'md'
                               },
                               // 股票代號+news
                               {
@@ -1932,7 +1938,8 @@ bot.on('message', async event => {
                                 paddingAll: '5px',
                                 justifyContent: 'center',
                                 paddingStart: '31px',
-                                backgroundColor: '#ffffff1A'
+                                backgroundColor: '#ffffff1A',
+                                margin: 'md'
                               },
                               // 股票代號+history
                               {
@@ -2951,14 +2958,17 @@ bot.on('postback', async event => {
 
         const message = {
           type: 'flex',
-          altText: `${event.postback.data.substr(0, marketI)} Stock Market`,
+          altText: `${event.postback.data.substr(0, marketI)} 即時股市行情`,
           contents: {
             type: 'carousel',
             contents: flex
           }
         }
 
-        fs.writeFileSync('./fs/stock-market.json', JSON.stringify(message, null, 2))
+        fs.writeFileSync(
+          './fs/stock-market.json',
+          JSON.stringify(message, null, 2)
+        )
         event.reply(message)
       } else if (event.postback.data.includes('news')) {
         const newsI = event.postback.data.indexOf('news') - 1
@@ -2972,7 +2982,7 @@ bot.on('postback', async event => {
 
         const newsArr = responseSearch.data.items.data
 
-        const SrcUrl = (i) => {
+        const SrcUrl = i => {
           // console.log(newsArr)
           let urlIF = ''
           // for (let i = 0; i < newsArr.length; i++) {
@@ -3392,14 +3402,17 @@ bot.on('postback', async event => {
 
         const message = {
           type: 'flex',
-          altText: `${event.postback.data.substr(0, newsI)} Stock News`,
+          altText: `${event.postback.data.substr(0, newsI)} 個股新聞`,
           contents: {
             type: 'carousel',
             contents: flex
           }
         }
 
-        fs.writeFileSync('./fs/stock-news.json', JSON.stringify(message, null, 2))
+        fs.writeFileSync(
+          './fs/stock-news.json',
+          JSON.stringify(message, null, 2)
+        )
         event.reply(message)
       } else if (event.postback.data.includes('history')) {
         const historyI = event.postback.data.indexOf('history') - 1
@@ -3444,7 +3457,10 @@ bot.on('postback', async event => {
           }
         }
 
-        fs.writeFileSync('./fs/stock-history.json', JSON.stringify(message, null, 2))
+        fs.writeFileSync(
+          './fs/stock-history.json',
+          JSON.stringify(message, null, 2)
+        )
         event.reply(message)
       } else if (arrSymbolId.includes(event.postback.data)) {
         // 回復選單
@@ -3705,7 +3721,10 @@ bot.on('postback', async event => {
           }
         }
 
-        fs.writeFileSync('./fs/stock-menu.json', JSON.stringify(message, null, 2))
+        fs.writeFileSync(
+          './fs/stock-menu.json',
+          JSON.stringify(message, null, 2)
+        )
         event.reply(message)
       } else {
         // 不屬於以上 4 類的任意文字
@@ -3827,8 +3846,8 @@ bot.on('postback', async event => {
                               paddingAll: '5px',
                               justifyContent: 'center',
                               paddingStart: '31px',
-                              backgroundColor: '#ffffff1A',
-                              margin: 'md'
+                              backgroundColor: '#ffffff1A'
+                              // margin: 'md'
                             },
                             // 股票代號+news
                             {
@@ -3858,7 +3877,8 @@ bot.on('postback', async event => {
                               paddingAll: '5px',
                               justifyContent: 'center',
                               paddingStart: '31px',
-                              backgroundColor: '#ffffff1A'
+                              backgroundColor: '#ffffff1A',
+                              margin: 'md'
                             },
                             // 股票代號+history
                             {
