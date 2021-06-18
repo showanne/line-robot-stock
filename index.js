@@ -43,7 +43,7 @@ const getlist = async () => {
 }
 
 // 每天於服務器0點時更新資料
-schedule.scheduleJob('* * 0 * *', getlist)
+schedule.scheduleJob('0 0 0 * * *', getlist)
 // 機器人啟動時也要有資料
 getlist()
 
