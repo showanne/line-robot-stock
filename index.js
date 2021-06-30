@@ -110,6 +110,16 @@ bot.on('message', async event => {
           })
           // "2021/6/4 19:01:18"
 
+          const marketData = D => {
+            let mD
+            if (D === null || D === undefined || isNaN(D)) {
+              mD = '- -'
+            } else {
+              mD = D
+            }
+            return mD
+          }
+
           const responseMeta = await axios.get(
             `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
               event.message.text.substr(0, marketI)
@@ -532,7 +542,7 @@ bot.on('message', async event => {
                                           },
                                           {
                                             type: 'text',
-                                            text: `${responseCnyesQuoteI.data.data[0]['700001']}`,
+                                            text: `${marketData(responseCnyesQuoteI.data.data[0]['700001'])}`,
                                             size: 'sm',
                                             color: '#111111',
                                             align: 'start',
@@ -554,7 +564,7 @@ bot.on('message', async event => {
                                           },
                                           {
                                             type: 'text',
-                                            text: `${responseCnyesQuoteI.data.data[0]['700006']}`,
+                                            text: `${marketData(responseCnyesQuoteI.data.data[0]['700006'])}`,
                                             size: 'sm',
                                             color: '#111111',
                                             align: 'start',
@@ -577,9 +587,9 @@ bot.on('message', async event => {
                                           {
                                             type: 'text',
                                             text: `${
-                                              responseCnyesQuoteI.data.data[0][
+                                              marketData(responseCnyesQuoteI.data.data[0][
                                                 '700005'
-                                              ] / 100000000
+                                              ] / 100000000)
                                             } `,
                                             size: 'sm',
                                             color: '#111111',
@@ -2136,6 +2146,15 @@ bot.on('postback', async event => {
         })
         // "2021/6/4 19:01:18"
 
+        const marketData = D => {
+          let mD
+          if (D === null || D === undefined || isNaN(D)) {
+            mD = '- -'
+          } else {
+            mD = D
+          }
+          return mD
+        }
         const responseMeta = await axios.get(
           `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
             event.postback.data.substr(0, marketI)
@@ -2558,7 +2577,7 @@ bot.on('postback', async event => {
                                         },
                                         {
                                           type: 'text',
-                                          text: `${responseCnyesQuoteI.data.data[0]['700001']}`,
+                                          text: `${marketData(responseCnyesQuoteI.data.data[0]['700001'])}`,
                                           size: 'sm',
                                           color: '#111111',
                                           align: 'start',
@@ -2580,7 +2599,7 @@ bot.on('postback', async event => {
                                         },
                                         {
                                           type: 'text',
-                                          text: `${responseCnyesQuoteI.data.data[0]['700006']}`,
+                                          text: `${marketData(responseCnyesQuoteI.data.data[0]['700006'])}`,
                                           size: 'sm',
                                           color: '#111111',
                                           align: 'start',
@@ -2603,9 +2622,9 @@ bot.on('postback', async event => {
                                         {
                                           type: 'text',
                                           text: `${
-                                            responseCnyesQuoteI.data.data[0][
+                                            marketData(responseCnyesQuoteI.data.data[0][
                                               '700005'
-                                            ] / 100000000
+                                            ] / 100000000)
                                           } `,
                                           size: 'sm',
                                           color: '#111111',
