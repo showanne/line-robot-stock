@@ -1586,7 +1586,7 @@ bot.on('message', async event => {
                 justifyContent: 'center'
               },
               action: {
-                type: 'message',
+                type: 'uri',
                 label: '即時走勢',
                 uri: `https://www.google.com/finance/quote/${encodeURI(
                       event.message.text.substr(0, historyI))}:TPE`
@@ -1913,7 +1913,7 @@ bot.on('message', async event => {
                     contents: [
                       {
                         type: 'image',
-                        url: 'https://www.frevvo.com/blog/wp-content/uploads/2020/01/Frevvo-Improve-Finance-hero.png',
+                        url: 'https://i.imgur.com/pXUHk5i.jpg',
                         size: 'full',
                         aspectMode: 'cover',
                         aspectRatio: '9:11',
@@ -1926,24 +1926,24 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: 'Stock.Find',
-                            size: 'xs',
-                            color: '#ffffff',
+                            text: '歡迎來到 Stock.Find',
+                            size: 'md',
+                            color: '#064d88',
                             align: 'center',
                             gravity: 'center'
                           }
                         ],
-                        backgroundColor: '#e55732',
+                        backgroundColor: '#faf188aa',
                         paddingAll: '2px',
-                        paddingStart: '4px',
-                        paddingEnd: '4px',
+                        paddingStart: 'lg',
+                        paddingEnd: 'lg',
                         flex: 0,
                         position: 'absolute',
-                        offsetStart: '18px',
-                        offsetTop: '18px',
-                        cornerRadius: '100px',
-                        width: '89px',
-                        height: '25px'
+                        offsetTop: '35px',
+                        offsetStart: '39px',
+                        height: '35px',
+                        justifyContent: 'center',
+                        alignItems: 'center'
                       },
                       {
                         type: 'box',
@@ -1955,20 +1955,18 @@ bot.on('message', async event => {
                             contents: [
                               {
                                 type: 'text',
-                                contents: [],
-                                size: 'xl',
-                                wrap: true,
-                                text: '歡迎來到…',
-                                color: '#064d88',
-                                weight: 'bold'
-                              },
-                              {
-                                type: 'text',
                                 text: '在這個聊天室您可以直接輸入股票代號，協助您快速查詢股票資訊！',
                                 color: '#064d88cc',
                                 size: 'sm',
                                 wrap: true
-                              },
+                              }
+                            ],
+                            spacing: 'sm'
+                          },
+                          {
+                            type: 'box',
+                            layout: 'vertical',
+                            contents: [
                               {
                                 type: 'text',
                                 text: '或輸入以下關鍵字，將立刻回覆您相關資訊',
@@ -1978,7 +1976,8 @@ bot.on('message', async event => {
                                 margin: 'md'
                               }
                             ],
-                            spacing: 'sm'
+                            spacing: 'sm',
+                            paddingStart: '14px'
                           },
                           {
                             type: 'box',
@@ -1994,26 +1993,23 @@ bot.on('message', async event => {
                                     contents: [],
                                     size: 'md',
                                     wrap: true,
-                                    margin: 'none',
                                     color: '#064d88de',
                                     text: '股票代號+market',
                                     align: 'start',
                                     action: {
                                       type: 'message',
-                                      label: `${
-                                        stockPop[stockRandom()]
-                                      }+market (e.g.)`,
+                                      label: 'market (e.g.)',
                                       text: `${
                                         stockPop[stockRandom()]
                                       }+market (e.g.)`
                                     }
                                   }
                                 ],
-                                paddingAll: '5px',
-                                justifyContent: 'center',
-                                paddingStart: '31px',
-                                backgroundColor: '#ffffff1A'
-                                // margin: 'md'
+                                backgroundColor: '#b6eefb66',
+                                borderWidth: 'semi-bold',
+                                paddingAll: '7px',
+                                borderColor: '#b6eefb',
+                                margin: 'md'
                               },
                               // 股票代號+news
                               {
@@ -2025,25 +2021,22 @@ bot.on('message', async event => {
                                     contents: [],
                                     size: 'md',
                                     wrap: true,
-                                    margin: 'none',
                                     color: '#064d88de',
                                     text: '股票代號+news',
                                     align: 'start',
                                     action: {
                                       type: 'message',
-                                      label: `${
-                                        stockPop[stockRandom()]
-                                      }+news (e.g.)`,
+                                      label: 'news (e.g.)',
                                       text: `${
                                         stockPop[stockRandom()]
                                       }+news (e.g.)`
                                     }
                                   }
                                 ],
-                                paddingAll: '5px',
-                                justifyContent: 'center',
-                                paddingStart: '31px',
-                                backgroundColor: '#ffffff1A',
+                                paddingAll: '7px',
+                                backgroundColor: '#b6eefb66',
+                                borderColor: '#b6eefb',
+                                borderWidth: 'semi-bold',
                                 margin: 'md'
                               },
                               // 股票代號+history
@@ -2056,42 +2049,36 @@ bot.on('message', async event => {
                                     contents: [],
                                     size: 'md',
                                     wrap: true,
-                                    margin: 'none',
                                     color: '#064d88de',
                                     text: '股票代號+history',
                                     align: 'start',
                                     action: {
                                       type: 'message',
-                                      label: `${
-                                        stockPop[stockRandom()]
-                                      }+history (e.g.)`,
+                                      label: 'history (e.g.)',
                                       text: `${
                                         stockPop[stockRandom()]
                                       }+history (e.g.)`
                                     }
                                   }
                                 ],
-                                paddingAll: '5px',
-                                justifyContent: 'center',
-                                paddingStart: '31px',
-                                backgroundColor: '#ffffff1A',
-                                margin: 'md'
+                                paddingAll: '7px',
+                                backgroundColor: '#b6eefb66',
+                                margin: 'md',
+                                borderColor: '#b6eefb',
+                                borderWidth: 'semi-bold'
                               }
                             ],
-                            paddingAll: '9px',
-                            cornerRadius: '2px',
-                            margin: 'sm'
+                            margin: 'sm',
+                            paddingStart: 'xl',
+                            paddingEnd: 'xl'
                           }
                         ],
                         spacing: 'sm',
-                        position: 'absolute',
-                        offsetTop: '50px',
-                        offsetStart: '50px',
-                        backgroundColor: '#f1cf4cdd',
-                        paddingAll: '30px',
-                        offsetBottom: 'none',
+                        backgroundColor: '#ffffff00',
+                        paddingAll: '55px',
                         cornerRadius: 'md',
-                        offsetEnd: 'none'
+                        position: 'absolute',
+                        paddingTop: '75px'
                       }
                     ]
                   }
@@ -3625,7 +3612,7 @@ bot.on('postback', async event => {
               justifyContent: 'center'
             },
             action: {
-              type: 'message',
+              type: 'uri',
               label: '即時走勢',
               uri: `https://www.google.com/finance/quote/${encodeURI(
                     event.postback.data.substr(0, historyI))}:TPE`
@@ -3931,7 +3918,7 @@ bot.on('postback', async event => {
                   contents: [
                     {
                       type: 'image',
-                      url: 'https://www.frevvo.com/blog/wp-content/uploads/2020/01/Frevvo-Improve-Finance-hero.png',
+                      url: 'https://i.imgur.com/pXUHk5i.jpg',
                       size: 'full',
                       aspectMode: 'cover',
                       aspectRatio: '9:11',
@@ -3944,24 +3931,24 @@ bot.on('postback', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: 'Stock.Find',
-                          size: 'xs',
-                          color: '#ffffff',
+                          text: '歡迎來到 Stock.Find',
+                          size: 'md',
+                          color: '#064d88',
                           align: 'center',
                           gravity: 'center'
                         }
                       ],
-                      backgroundColor: '#e55732',
+                      backgroundColor: '#faf188aa',
                       paddingAll: '2px',
-                      paddingStart: '4px',
-                      paddingEnd: '4px',
+                      paddingStart: 'lg',
+                      paddingEnd: 'lg',
                       flex: 0,
                       position: 'absolute',
-                      offsetStart: '18px',
-                      offsetTop: '18px',
-                      cornerRadius: '100px',
-                      width: '89px',
-                      height: '25px'
+                      offsetTop: '35px',
+                      offsetStart: '39px',
+                      height: '35px',
+                      justifyContent: 'center',
+                      alignItems: 'center'
                     },
                     {
                       type: 'box',
@@ -3973,20 +3960,18 @@ bot.on('postback', async event => {
                           contents: [
                             {
                               type: 'text',
-                              contents: [],
-                              size: 'xl',
-                              wrap: true,
-                              text: '歡迎來到…',
-                              color: '#064d88',
-                              weight: 'bold'
-                            },
-                            {
-                              type: 'text',
                               text: '在這個聊天室您可以直接輸入股票代號，協助您快速查詢股票資訊！',
                               color: '#064d88cc',
                               size: 'sm',
                               wrap: true
-                            },
+                            }
+                          ],
+                          spacing: 'sm'
+                        },
+                        {
+                          type: 'box',
+                          layout: 'vertical',
+                          contents: [
                             {
                               type: 'text',
                               text: '或輸入以下關鍵字，將立刻回覆您相關資訊',
@@ -3996,7 +3981,8 @@ bot.on('postback', async event => {
                               margin: 'md'
                             }
                           ],
-                          spacing: 'sm'
+                          spacing: 'sm',
+                          paddingStart: '14px'
                         },
                         {
                           type: 'box',
@@ -4012,26 +3998,23 @@ bot.on('postback', async event => {
                                   contents: [],
                                   size: 'md',
                                   wrap: true,
-                                  margin: 'none',
                                   color: '#064d88de',
                                   text: '股票代號+market',
                                   align: 'start',
                                   action: {
                                     type: 'message',
-                                    label: `${
-                                      stockPop[stockRandom()]
-                                    }+market (e.g.)`,
+                                    label: 'market (e.g.)',
                                     text: `${
                                       stockPop[stockRandom()]
                                     }+market (e.g.)`
                                   }
                                 }
                               ],
-                              paddingAll: '5px',
-                              justifyContent: 'center',
-                              paddingStart: '31px',
-                              backgroundColor: '#ffffff1A'
-                              // margin: 'md'
+                              backgroundColor: '#b6eefb66',
+                              borderWidth: 'semi-bold',
+                              paddingAll: '7px',
+                              borderColor: '#b6eefb',
+                              margin: 'md'
                             },
                             // 股票代號+news
                             {
@@ -4043,25 +4026,22 @@ bot.on('postback', async event => {
                                   contents: [],
                                   size: 'md',
                                   wrap: true,
-                                  margin: 'none',
                                   color: '#064d88de',
                                   text: '股票代號+news',
                                   align: 'start',
                                   action: {
                                     type: 'message',
-                                    label: `${
-                                      stockPop[stockRandom()]
-                                    }+news (e.g.)`,
+                                    label: 'news (e.g.)',
                                     text: `${
                                       stockPop[stockRandom()]
                                     }+news (e.g.)`
                                   }
                                 }
                               ],
-                              paddingAll: '5px',
-                              justifyContent: 'center',
-                              paddingStart: '31px',
-                              backgroundColor: '#ffffff1A',
+                              paddingAll: '7px',
+                              backgroundColor: '#b6eefb66',
+                              borderColor: '#b6eefb',
+                              borderWidth: 'semi-bold',
                               margin: 'md'
                             },
                             // 股票代號+history
@@ -4074,42 +4054,36 @@ bot.on('postback', async event => {
                                   contents: [],
                                   size: 'md',
                                   wrap: true,
-                                  margin: 'none',
                                   color: '#064d88de',
                                   text: '股票代號+history',
                                   align: 'start',
                                   action: {
                                     type: 'message',
-                                    label: `${
-                                      stockPop[stockRandom()]
-                                    }+history (e.g.)`,
+                                    label: 'history (e.g.)',
                                     text: `${
                                       stockPop[stockRandom()]
                                     }+history (e.g.)`
                                   }
                                 }
                               ],
-                              paddingAll: '5px',
-                              justifyContent: 'center',
-                              paddingStart: '31px',
-                              backgroundColor: '#ffffff1A',
-                              margin: 'md'
+                              paddingAll: '7px',
+                              backgroundColor: '#b6eefb66',
+                              margin: 'md',
+                              borderColor: '#b6eefb',
+                              borderWidth: 'semi-bold'
                             }
                           ],
-                          paddingAll: '9px',
-                          cornerRadius: '2px',
-                          margin: 'sm'
+                          margin: 'sm',
+                          paddingStart: 'xl',
+                          paddingEnd: 'xl'
                         }
                       ],
                       spacing: 'sm',
-                      position: 'absolute',
-                      offsetTop: '50px',
-                      offsetStart: '50px',
-                      backgroundColor: '#f1cf4cdd',
-                      paddingAll: '30px',
-                      offsetBottom: 'none',
+                      backgroundColor: '#ffffff00',
+                      paddingAll: '55px',
                       cornerRadius: 'md',
-                      offsetEnd: 'none'
+                      position: 'absolute',
+                      paddingTop: '75px'
                     }
                   ]
                 }
