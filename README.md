@@ -6,31 +6,31 @@
 ![](https://i.imgur.com/onyXT0o.png)
 
 - 歡迎畫面
-  ![](./images/readme/wellcome.png)
+- ![](./images/readme/wellcome.png)
 
 
 > ### 直接輸入股票代號，快速查詢股票資訊
-  ![](./images/readme/stock.png)
+- ![](./images/readme/stock.png)
 
 
 
 
 > ### 或輸入以下關鍵字，立刻回覆您相關資訊
 - 股票代號+news
-  ![](./images/readme/news.png)
+- ![](./images/readme/news.png)
 
 
 - 股票代號+market
-  ![](./images/readme/stock-1.png)
-  ![](./images/readme/stock-2.png)
+- ![](./images/readme/stock-1.png)
+- ![](./images/readme/stock-2.png)
 
 
 - 股票代號+history
-  ![](./images/readme/history.png)
+- ![](./images/readme/history.png)
 
 
 - 說明
-  ![](./images/readme/instructions.png)
+- ![](./images/readme/instructions.png)
 
 
 > #### 串接的公開資料~
