@@ -22,7 +22,7 @@
 
 - 股票代號+market
 - ![](./images/readme/stock-1.png)
-- ![](./images/readme/stock-2.png)
+  ![](./images/readme/stock-2.png)
 
 
 - 股票代號+history
