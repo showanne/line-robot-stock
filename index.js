@@ -5,6 +5,18 @@ import fs from 'fs'
 import iconv from 'iconv-lite'
 import schedule from 'node-schedule'
 
+// import { flexNews } from './message/news.js'
+// console.log(flexNews)
+
+// TODO: 部分頁面背景未新做，待改
+// TODO: richmenu 三欄
+// TODO: 匯率查詢 1898行 rate https://tw.rter.info/capi.php
+// TODO: 抓取 cathaysecIstock 折線圖圖片及股東會資料
+// TODO: 項將每個 flex 獨立出去
+// TODO: news 用迴圈跑，可以重複
+// TODO: 個股資訊 市值(億) 顯示
+// REVIEW: 查無此股票 及 發生錯誤QQ 時機??
+
 // 讓套件讀取 .env 檔案
 dotenv.config()
 // 讀取後可以用 process.env.變數 使用
@@ -579,7 +591,7 @@ bot.on('message', async event => {
                                         contents: [
                                           {
                                             type: 'text',
-                                            text: '市值(億)',
+                                            text: '市值',
                                             size: 'sm',
                                             color: '#555555',
                                             flex: 0
@@ -2614,7 +2626,7 @@ bot.on('postback', async event => {
                                       contents: [
                                         {
                                           type: 'text',
-                                          text: '市值(億)',
+                                          text: '市值',
                                           size: 'sm',
                                           color: '#555555',
                                           flex: 0
