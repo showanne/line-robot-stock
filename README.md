@@ -1,9 +1,8 @@
 # line-robot-stock ReadMe
 
-
 > ### 我可以即時查詢股票資訊唷~ 快加我為好友吧！
 - Bot basic ID： **@625frasl**
-![](https://i.imgur.com/onyXT0o.png)
+- ![](https://i.imgur.com/onyXT0o.png)
 
 - 歡迎畫面
 - ![](./images/readme/wellcome.png)
@@ -22,7 +21,7 @@
 
 - 股票代號+market
 - ![](./images/readme/stock-1.png)
-  ![](./images/readme/stock-2.png)
+     ![](./images/readme/stock-2.png)
 
 
 - 股票代號+history
@@ -33,7 +32,7 @@
 - ![](./images/readme/instructions.png)
 
 
-> #### 串接的公開資料~
+> ### 串接的公開資料
 - [台灣證券交易所](https://www.twse.com.tw/zh/)
 - [Anue鉅亨網](https://www.cnyes.com/twstock/index.htm)
 - [富果](https://www.fugle.tw/)
