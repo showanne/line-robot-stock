@@ -133,17 +133,17 @@ bot.on('message', async event => {
           }
 
           const responseMeta = await axios.get(
-            `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
+            `https://api.fugle.tw/realtime/v0.3/intraday/meta?symbolId=${encodeURI(
               event.message.text.substr(0, marketI)
             )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
           )
           const responseQuote = await axios.get(
-            `https://api.fugle.tw/realtime/v0.2/intraday/quote?symbolId=${encodeURI(
+            `https://api.fugle.tw/realtime/v0.3/intraday/quote?symbolId=${encodeURI(
               event.message.text.substr(0, marketI)
             )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
           )
           // const responseDealts = await axios.get(
-          //   `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(event.message.text.substr(0, (event.message.text.indexOf("news")-1)))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
+          //   `https://api.fugle.tw/realtime/v0.3/intraday/dealts?symbolId=${encodeURI(event.message.text.substr(0, (event.message.text.indexOf("news")-1)))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
           // )
 
           const responseCnyesCharting = await axios.get(
@@ -2168,17 +2168,17 @@ bot.on('postback', async event => {
           return mD
         }
         const responseMeta = await axios.get(
-          `https://api.fugle.tw/realtime/v0.2/intraday/meta?symbolId=${encodeURI(
+          `https://api.fugle.tw/realtime/v0.3/intraday/meta?symbolId=${encodeURI(
             event.postback.data.substr(0, marketI)
           )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
         )
         const responseQuote = await axios.get(
-          `https://api.fugle.tw/realtime/v0.2/intraday/quote?symbolId=${encodeURI(
+          `https://api.fugle.tw/realtime/v0.3/intraday/quote?symbolId=${encodeURI(
             event.postback.data.substr(0, marketI)
           )}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0`
         )
         // const responseDealts = await axios.get(
-        //   `https://api.fugle.tw/realtime/v0.2/intraday/dealts?symbolId=${encodeURI(event.postback.data.substr(0, (event.postback.data.indexOf("news")-1)))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
+        //   `https://api.fugle.tw/realtime/v0.3/intraday/dealts?symbolId=${encodeURI(event.postback.data.substr(0, (event.postback.data.indexOf("news")-1)))}&apiToken=bcb3f1d25b0a8e5d3ad0e7acbdbe10b0&limit=9`
         // )
 
         const responseCnyesCharting = await axios.get(
