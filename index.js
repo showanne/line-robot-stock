@@ -709,7 +709,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[0].unit}`,
+                            text: `${responseQuote.data.data.quote.order.bids[0].volume}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'start',
@@ -718,7 +718,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[0].price}`,
+                            text: `${responseQuote.data.data.quote.order.bids[0].price}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'end',
@@ -730,7 +730,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[0].price}`,
+                            text: `${responseQuote.data.data.quote.order.asks[0].price}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'start',
@@ -739,7 +739,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[0].unit}`,
+                            text: `${responseQuote.data.data.quote.order.asks[0].volume}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'end',
@@ -756,7 +756,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[1].unit}`,
+                            text: `${responseQuote.data.data.quote.order.bids[1].volume}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'start',
@@ -765,7 +765,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[1].price}`,
+                            text: `${responseQuote.data.data.quote.order.bids[1].price}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'end',
@@ -777,7 +777,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[1].price}`,
+                            text: `${responseQuote.data.data.quote.order.asks[1].price}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'start',
@@ -786,7 +786,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[1].unit}`,
+                            text: `${responseQuote.data.data.quote.order.asks[1].volume}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'end',
@@ -803,7 +803,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[2].unit}`,
+                            text: `${responseQuote.data.data.quote.order.bids[2].volume}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'start',
@@ -812,7 +812,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[2].price}`,
+                            text: `${responseQuote.data.data.quote.order.bids[2].price}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'end',
@@ -824,7 +824,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[2].price}`,
+                            text: `${responseQuote.data.data.quote.order.asks[2].price}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'start',
@@ -833,7 +833,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[2].unit}`,
+                            text: `${responseQuote.data.data.quote.order.asks[2].volume}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'end',
@@ -850,7 +850,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[3].unit}`,
+                            text: `${responseQuote.data.data.quote.order.bids[3].volume}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'start',
@@ -859,7 +859,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[3].price}`,
+                            text: `${responseQuote.data.data.quote.order.bids[3].price}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'end',
@@ -871,7 +871,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[3].price}`,
+                            text: `${responseQuote.data.data.quote.order.asks[3].price}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'start',
@@ -880,7 +880,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[3].unit}`,
+                            text: `${responseQuote.data.data.quote.order.asks[3].volume}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'end',
@@ -897,7 +897,7 @@ bot.on('message', async event => {
                         contents: [
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[4].unit}`,
+                            text: `${responseQuote.data.data.quote.order.bids[4].volume}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'start',
@@ -906,7 +906,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestBids[4].price}`,
+                            text: `${responseQuote.data.data.quote.order.bids[4].price}`,
                             size: 'sm',
                             color: '#FF5D73',
                             align: 'end',
@@ -918,7 +918,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[4].price}`,
+                            text: `${responseQuote.data.data.quote.order.asks[4].price}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'start',
@@ -927,7 +927,7 @@ bot.on('message', async event => {
                           },
                           {
                             type: 'text',
-                            text: `${responseQuote.data.data.quote.order.bestAsks[4].unit}`,
+                            text: `${responseQuote.data.data.quote.order.asks[4].volume}`,
                             size: 'sm',
                             color: '#06A77D',
                             align: 'end',
@@ -2744,7 +2744,7 @@ bot.on('postback', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[0].unit}`,
+                          text: `${responseQuote.data.data.quote.order.bids[0].volume}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'start',
@@ -2753,7 +2753,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[0].price}`,
+                          text: `${responseQuote.data.data.quote.order.bids[0].price}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'end',
@@ -2765,7 +2765,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[0].price}`,
+                          text: `${responseQuote.data.data.quote.order.asks[0].price}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'start',
@@ -2774,7 +2774,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[0].unit}`,
+                          text: `${responseQuote.data.data.quote.order.asks[0].volume}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'end',
@@ -2791,7 +2791,7 @@ bot.on('postback', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[1].unit}`,
+                          text: `${responseQuote.data.data.quote.order.bids[1].volume}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'start',
@@ -2800,7 +2800,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[1].price}`,
+                          text: `${responseQuote.data.data.quote.order.bids[1].price}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'end',
@@ -2812,7 +2812,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[1].price}`,
+                          text: `${responseQuote.data.data.quote.order.asks[1].price}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'start',
@@ -2821,7 +2821,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[1].unit}`,
+                          text: `${responseQuote.data.data.quote.order.asks[1].volume}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'end',
@@ -2838,7 +2838,7 @@ bot.on('postback', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[2].unit}`,
+                          text: `${responseQuote.data.data.quote.order.bids[2].volume}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'start',
@@ -2847,7 +2847,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[2].price}`,
+                          text: `${responseQuote.data.data.quote.order.bids[2].price}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'end',
@@ -2859,7 +2859,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[2].price}`,
+                          text: `${responseQuote.data.data.quote.order.asks[2].price}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'start',
@@ -2868,7 +2868,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[2].unit}`,
+                          text: `${responseQuote.data.data.quote.order.asks[2].volume}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'end',
@@ -2885,7 +2885,7 @@ bot.on('postback', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[3].unit}`,
+                          text: `${responseQuote.data.data.quote.order.bids[3].volume}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'start',
@@ -2894,7 +2894,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[3].price}`,
+                          text: `${responseQuote.data.data.quote.order.bids[3].price}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'end',
@@ -2906,7 +2906,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[3].price}`,
+                          text: `${responseQuote.data.data.quote.order.asks[3].price}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'start',
@@ -2915,7 +2915,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[3].unit}`,
+                          text: `${responseQuote.data.data.quote.order.asks[3].volume}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'end',
@@ -2932,7 +2932,7 @@ bot.on('postback', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[4].unit}`,
+                          text: `${responseQuote.data.data.quote.order.bids[4].volume}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'start',
@@ -2941,7 +2941,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestBids[4].price}`,
+                          text: `${responseQuote.data.data.quote.order.bids[4].price}`,
                           size: 'sm',
                           color: '#FF5D73',
                           align: 'end',
@@ -2953,7 +2953,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[4].price}`,
+                          text: `${responseQuote.data.data.quote.order.asks[4].price}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'start',
@@ -2962,7 +2962,7 @@ bot.on('postback', async event => {
                         },
                         {
                           type: 'text',
-                          text: `${responseQuote.data.data.quote.order.bestAsks[4].unit}`,
+                          text: `${responseQuote.data.data.quote.order.asks[4].volume}`,
                           size: 'sm',
                           color: '#06A77D',
                           align: 'end',
