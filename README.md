@@ -1,5 +1,10 @@
 # line-robot-stock ReadMe
 
+## *本機器人目前因資料異動，暫停服務！*
+
+---
+
+
 > ### 我可以即時查詢股票資訊唷~ 快加我為好友吧！
 - Bot basic ID： **@625frasl**
 - ![](https://i.imgur.com/onyXT0o.png)
