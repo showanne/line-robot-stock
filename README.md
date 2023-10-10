@@ -1,7 +1,5 @@
 # line-robot-stock ReadMe
 
-## *本機器人目前因資料異動，暫停服務！*
-
 ---
 
 
@@ -40,6 +38,6 @@
 > ### 串接的公開資料
 - [台灣證券交易所](https://www.twse.com.tw/zh/)
 - [Anue鉅亨網](https://www.cnyes.com/twstock/index.htm)
-- [富果](https://www.fugle.tw/)
+- [富果 fugle](https://www.fugle.tw/)
 - [Google 財經](https://www.google.com/finance/)
 - [中華民國證券投資信託暨顧問商業同業公會](https://www.sitca.org.tw/index_pc.aspx)
